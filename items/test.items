@@ -7,6 +7,11 @@ Switch Light_Test     "Test Light"
 DateTime CurrentDate            "Date [%1$tA, %1$td.%1$tm.%1$tY]"   <calendar>  { channel="ntp:ntp:local:dateTime" }
 
 
+Switch Bookshelf_Light "Bookshelf Lights" <light> ["Lighting"] {http=">[*:POST:http://52.90.29.252/?message=bookshelf+%2$s]"}
+Switch Pool_Light "Pool Light" <light> ["Lighting"] {http=">[*:POST:http://52.90.29.252/?message=pool+light+%2$s]"}
+Switch Landscape_Light "Landscape Lights" <light> ["Lighting"] {http=">[*:POST:http://52.90.29.252/?message=landscape+%2$s]"}
+
+
 Dimmer Pool_Pump "Pool Pump" <pump> ["Lighting"] {mqtt=">[broker:kolcun/outdoor/pool/pump:command:0:Speed1],>[broker:kolcun/outdoor/pool/pump:command:25:Speed2],>[broker:kolcun/outdoor/pool/pump:command:50:Speed3],>[broker:kolcun/outdoor/pool/pump:command:100:Speed4],<[broker:kolcun/outdoor/pool/pump/status:state:MAP(poolpump.map)]"}
 
 
