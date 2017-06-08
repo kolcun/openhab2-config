@@ -6,9 +6,11 @@ sitemap demo label="My home automation" {
 		Switch item=Pool_Pump label="Pump Speed" mappings=[0="Off", 25="Chlorine", 50="Heater", 100="Full Speed"]
 }
 	Frame label="Insteon Test"{
-		Switch item=Bookshelf_Light
+		Slider item=Bookshelf_Light
 		Switch item=Landscape_Light
 		Switch item=Pool_Light
+		Switch item=Master_Fan mappings=[0="Off", 40="Slow", 80="Med", 100="Fast"]
+}
 /*
    Frame label="Sonos"{
    Frame label="Sonos - Upstairs new" {
