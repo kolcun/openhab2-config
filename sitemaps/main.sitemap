@@ -1,0 +1,63 @@
+sitemap main label="My home automation" {
+	Frame label="Date" {
+		Text item=CurrentDate
+	}
+	Frame label="Pool"{
+		Switch item=Pool_Pump label="Pump Speed" mappings=[0="Off", 25="Chlorine", 50="Heater", 100="Full Speed"]
+}
+	Frame label="Insteon Test"{
+		Slider item=Bookshelf_Light
+		Switch item=Landscape_Light
+		Switch item=Pool_Light
+		Switch item=Master_Fan mappings=[0="Off", 40="Slow", 80="Med", 100="Fast"]
+}
+/*
+   Frame label="Sonos"{
+   Frame label="Sonos - Upstairs new" {
+   Default item=SZ_Sonos_Control
+   Slider  item=SZ_Sonos_Volume
+   Switch  item=SZ_Sonos_Mute
+   Switch  item=SZ_Sonos_Led
+   Text    item=SZ_Sonos_CurrentTrack
+   Text    item=SZ_Sonos_State
+   Text    item=SZ_Sonos_ZoneName
+   }
+   Frame label="Sonos - Upstairs" {
+   Default item=Sonos_upstairs_Controller
+   Slider  item=Sonos_upstairs_Volume
+   Switch  item=Sonos_upstairs_Mute
+   Switch  item=Sonos_upstairs_LED
+   Text    item=Sonos_upstairs_CurrentTrack		
+   Text    item=Sonos_upstairs_State
+   Text	item=Sonos_upstairs_ZoneName
+   }
+   Frame label="Sonos - Dining Room" {
+   Default item=Sonos_dining_room_Controller
+   Slider  item=Sonos_dining_room_Volume
+   Switch  item=Sonos_dining_room_Mute
+   Switch  item=Sonos_dining_room_LED
+   Text    item=Sonos_dining_room_CurrentTrack
+   Text    item=Sonos_dining_room_State
+   Text    item=Sonos_dining_room_ZoneName
+   }
+   Frame label="Sonos - TV" {
+   Default item=Sonos_tv_Controller
+   Slider  item=Sonos_tv_Volume
+   Switch  item=Sonos_tv_Mute
+   Switch  item=Sonos_tv_LED
+   Text    item=Sonos_tv_CurrentTrack
+   Text    item=Sonos_tv_State
+   Text    item=Sonos_tv_ZoneName
+   }
+   Frame label="Sonos - Kitchen" {
+   Default item=Sonos_kitchen_Controller
+   Slider  item=Sonos_kitchen_Volume
+   Switch  item=Sonos_kitchen_Mute
+   Switch  item=Sonos_kitchen_LED
+   Text    item=Sonos_kitchen_CurrentTrack
+   Text    item=Sonos_kitchen_State
+   Text    item=Sonos_kitchen_ZoneName
+   }
+   }
+   }
+ */       
