@@ -1,0 +1,201 @@
+/* Sonos setup
+ * Kitchen: sonos:PLAY5:RINCON_000E5888559401400
+ * TV: sonos:PLAY5:RINCON_000E585D73A601400
+ * Dining Room: sonos:PLAY1:RINCON_B8E93789E7C801400
+ * Upstairs: sonos:PLAY3:RINCON_B8E937398E3801400
+ */
+
+
+// FK = Kitchen
+// SZ = TV
+// BD = Dining Room
+// WZ = Upstairs
+
+Group  gSonos            "Sonos Soundsystem"  <"speaker-black">
+
+Group gSonosKitchen (gSonos)
+Group gSonosDiningRoom (gSonos)
+Group gSonosTv (gSonos)
+Group gSonosUpstairs (gSonos)
+
+Group gSonosVolume "Volume"  <soundvolume>
+Group gSonosMute "Mute"    <sonos_mute>
+Group gSonosStop "Stop"    <sonos_stop> {autoupdate="false"}
+
+String SonosGroupID_Kitchen	"Kitchen group [%s]"
+String SonosGroupID_DiningRoom	"Dining Room group [%s]"
+String SonosGroupID_Tv	"TV group [%s]"
+String SonosGroupID_Upstairs	"Upstairs group [%s]"
+
+Number Sonos_Group1_Number "Players in group 1 [%.1f]"
+Number Sonos_Group2_Number "Players in group 2 [%.1f]"
+Number Sonos_Group3_Number "Players in group 3 [%.1f]"
+
+String Sonos_Group1_Visibility "Group 1 visibility [%s]"
+String Sonos_Group2_Visibility "Group 2 visibility [%s]"
+String Sonos_Group3_Visibility "Group 3 visibility [%s]"
+
+/* Kitchen */
+String Kitchen_Sonos_Add                     "Add [%s]"                  <sonos_add>          (gSonosKitchen)            {channel="sonos:PLAY5:RINCON_000E5888559401400:add"}
+Switch Kitchen_Sonos_SetAlarm                "Set Alarm"                 <sonos_alarm>        (gSonosKitchen)            {channel="sonos:PLAY5:RINCON_000E5888559401400:alarm"}
+String Kitchen_Sonos_AlarmProperties         "Alarm Properties [%s]"     <sonos_alarm_prop>   (gSonosKitchen)            {channel="sonos:PLAY5:RINCON_000E5888559401400:alarmproperties"}
+Switch Kitchen_Sonos_AlarmIsrunning          "Alarm is running"          <sonso_alarm_run>    (gSonosKitchen)            {channel="sonos:PLAY5:RINCON_000E5888559401400:alarmrunning"}
+Player Kitchen_Sonos_Control                 "Control"                   <sonos_control>      (gSonosKitchen)            {channel="sonos:PLAY5:RINCON_000E5888559401400:control"}
+String Kitchen_Sonos_CurrentAlbum            "Album [%s]"                <sonos_album>        (gSonosKitchen)            {channel="sonos:PLAY5:RINCON_000E5888559401400:currentalbum"}
+String Kitchen_Sonos_CurrentArtist           "Artist [%s]"               <sonos_artist>       (gSonosKitchen)            {channel="sonos:PLAY5:RINCON_000E5888559401400:currentartist"}
+String Kitchen_Sonos_CurrentTitle            "Title [%s]"                <sonos_title>        (gSonosKitchen)            {channel="sonos:PLAY5:RINCON_000E5888559401400:currenttitle"}
+String Kitchen_Sonos_CurrentTrack            "Track [%s]"                <sonos_track>        (gSonosKitchen)            {channel="sonos:PLAY5:RINCON_000E5888559401400:currenttrack"}
+Switch Kitchen_Sonos_Shuffle                 "Shuffle"                   <sonos_shuffle>      (gSonosKitchen)            {channel="sonos:PLAY5:RINCON_000E5888559401400:shuffle"}
+String Kitchen_Sonos_Repeat                  "Repeat [%s]"               <sonos_repeat>       (gSonosKitchen)            {channel="sonos:PLAY5:RINCON_000E5888559401400:repeat"}
+String Kitchen_Sonos_Favorite                "Favorite [%s]"             <sonos_favorite>     (gSonosKitchen)            {channel="sonos:PLAY5:RINCON_000E5888559401400:favorite"}
+Switch Kitchen_Sonos_Led                     "Led"                       <sonos_led>          (gSonosKitchen)            {channel="sonos:PLAY5:RINCON_000E5888559401400:led"}
+Switch Kitchen_Sonos_LocalCoordinator        "Local Coordinator"         <sonos_coordinator>  (gSonosKitchen)            {channel="sonos:PLAY5:RINCON_000E5888559401400:localcoordinator"}
+Switch Kitchen_Sonos_Mute                    "Mute"                      <sonos_mute>         (gSonosKitchen,gSonosMute) {channel="sonos:PLAY5:RINCON_000E5888559401400:mute"}
+String Kitchen_Sonos_NotificationSound       "Notification Sound [%s]"   <sonos_notification> (gSonosKitchen)            {channel="sonos:PLAY5:RINCON_000E5888559401400:notificationsound"}
+Dimmer Kitchen_Sonos_NotificationVolume      "Notification Sound Volume" <soundvolume>        (gSonosKitchen)            {channel="sonos:PLAY5:RINCON_000E5888559401400:notificationvolume"}
+String Kitchen_Sonos_PlayLineIn 	     "Play Line In [%s]"	 <sonos_playlinein>   (gSonosKitchen)		 {channel="sonos:PLAY5:RINCON_000E5888559401400:playlinein"}
+String Kitchen_Sonos_PlayPlaylist            "Play Playlist [%s]"        <sonos_playlist>     (gSonosKitchen)            {channel="sonos:PLAY5:RINCON_000E5888559401400:playlist"}
+Switch Kitchen_Sonos_PlayQueue               "Play Queue"                <sonos_que>          (gSonosKitchen)            {channel="sonos:PLAY5:RINCON_000E5888559401400:playqueue"}
+Number Kitchen_Sonos_PlayTrack               "Play Track"                <sonos_play_track>   (gSonosKitchen)            {channel="sonos:PLAY5:RINCON_000E5888559401400:playtrack"}
+String Kitchen_Sonos_PlayURI                 "Play URI [%s]"             <sonos_play_uri>     (gSonosKitchen)            {channel="sonos:PLAY5:RINCON_000E5888559401400:playuri"}
+Switch Kitchen_Sonos_PublicAddress           "Public Address"            <sonos_publiv>       (gSonosKitchen)            {channel="sonos:PLAY5:RINCON_000E5888559401400:publicaddress"}
+String Kitchen_Sonos_Radio                   "Radio [%s]"                <sonos_radio>        (gSonosKitchen)            {channel="sonos:PLAY5:RINCON_000E5888559401400:radio"}
+String Kitchen_Sonos_Remove                  "Remove [%s]"               <sonos_remove>       (gSonosKitchen)            {channel="sonos:PLAY5:RINCON_000E5888559401400:remove"}
+Switch Kitchen_Sonos_Restore                 "Restore"                   <sonos_restore>      (gSonosKitchen)            {channel="sonos:PLAY5:RINCON_000E5888559401400:restore"}
+Switch Kitchen_Sonos_RestoreAll              "Restore All"               <sonos_restore_all>  (gSonosKitchen)            {channel="sonos:PLAY5:RINCON_000E5888559401400:restoreall"}
+Switch Kitchen_Sonos_Save                    "Save"                      <sonos_save>         (gSonosKitchen)            {channel="sonos:PLAY5:RINCON_000E5888559401400:save"}
+Switch Kitchen_Sonos_SaveAll                 "Save All"                  <sonos_save_all>     (gSonosKitchen)            {channel="sonos:PLAY5:RINCON_000E5888559401400:saveall"}
+Number Kitchen_Sonos_Snooze                  "Snooze"                    <sonos_snooze>       (gSonosKitchen)            {channel="sonos:PLAY5:RINCON_000E5888559401400:snooze"}
+Switch Kitchen_Sonos_StandAlone              "Stand Alone"               <sonos_stand_alone>  (gSonosKitchen)            {channel="sonos:PLAY5:RINCON_000E5888559401400:standalone"}
+String Kitchen_Sonos_State                   "State [%s]"                <sonos_state>        (gSonosKitchen)            {channel="sonos:PLAY5:RINCON_000E5888559401400:state"}
+Switch Kitchen_Sonos_Stop                    "Stop"                      <sonos_stop>         (gSonosKitchen,gSonosStop) {channel="sonos:PLAY5:RINCON_000E5888559401400:stop", autoupdate="false"}
+Dimmer Kitchen_Sonos_Volume                  "Volume"                   <soundvolume>        (gSonosKitchen,gSonosVolume) {channel="sonos:PLAY5:RINCON_000E5888559401400:volume"}
+String Kitchen_Sonos_ZoneGroupID             "Zone Group ID [%s]"        <sonos_zone>         (gSonosKitchen)            {channel="sonos:PLAY5:RINCON_000E5888559401400:zonegroupid"}
+String Kitchen_Sonos_ZoneName                "Zone Name [%s]"            <sonos_zone>         (gSonosKitchen)            {channel="sonos:PLAY5:RINCON_000E5888559401400:zonename"}
+String Kitchen_Sonos_Coordinator             "Coordinator [%s]"          <sonos_coordinator>  (gSonosKitchen)            {channel="sonos:PLAY5:RINCON_000E5888559401400:coordinator"}
+Number Kitchen_Sonos_SleepTimer              "Sleep Timer"               <sonos_sleep_timer>  (gSonosKitchen)            {channel="sonos:PLAY5:RINCON_000E5888559401400:sleeptimer"}
+String Kitchen_Sonos_CurrentAVtransportURI   "AV transport URI [%s]"     <sonos_uri>          (gSonosKitchen)            {channel="sonos:PLAY5:RINCON_000E5888559401400:currenttransporturi"}
+String Kitchen_Sonos_CurrenttrackURI         "track URI [%s]"            <sonos_uri>          (gSonosKitchen)            {channel="sonos:PLAY5:RINCON_000E5888559401400:currenttrackuri"}
+
+/* TV */
+String Tv_Sonos_Add                     "Add [%s]"                  <sonos_add>          (gSonosTv)            {channel="sonos:PLAY5:RINCON_000E585D73A601400:add"}
+Switch Tv_Sonos_SetAlarm                "Set Alarm"                 <sonos_alarm>        (gSonosTv)            {channel="sonos:PLAY5:RINCON_000E585D73A601400:alarm"}
+String Tv_Sonos_AlarmProperties         "Alarm Properties [%s]"     <sonos_alarm_prop>   (gSonosTv)            {channel="sonos:PLAY5:RINCON_000E585D73A601400:alarmproperties"}
+Switch Tv_Sonos_AlarmIsrunning          "Alarm is running"          <sonso_alarm_run>    (gSonosTv)            {channel="sonos:PLAY5:RINCON_000E585D73A601400:alarmrunning"}
+Player Tv_Sonos_Control                 "Control"                   <sonos_control>      (gSonosTv)            {channel="sonos:PLAY5:RINCON_000E585D73A601400:control"}
+String Tv_Sonos_CurrentAlbum            "Album [%s]"                <sonos_album>        (gSonosTv)            {channel="sonos:PLAY5:RINCON_000E585D73A601400:currentalbum"}
+String Tv_Sonos_CurrentArtist           "Artist [%s]"               <sonos_artist>       (gSonosTv)            {channel="sonos:PLAY5:RINCON_000E585D73A601400:currentartist"}
+String Tv_Sonos_CurrentTitle            "Title [%s]"                <sonos_title>        (gSonosTv)            {channel="sonos:PLAY5:RINCON_000E585D73A601400:currenttitle"}
+String Tv_Sonos_CurrentTrack            "Track [%s]"                <sonos_track>        (gSonosTv)            {channel="sonos:PLAY5:RINCON_000E585D73A601400:currenttrack"}
+Switch Tv_Sonos_Shuffle                 "Shuffle"                   <sonos_shuffle>      (gSonosTv)            {channel="sonos:PLAY5:RINCON_000E585D73A601400:shuffle"}
+String Tv_Sonos_Repeat                  "Repeat [%s]"               <sonos_repeat>       (gSonosTv)            {channel="sonos:PLAY5:RINCON_000E585D73A601400:repeat"}
+String Tv_Sonos_Favorite                "Favorite [%s]"             <sonos_favorite>     (gSonosTv)            {channel="sonos:PLAY5:RINCON_000E585D73A601400:favorite"}
+Switch Tv_Sonos_Led                     "Led"                       <sonos_led>          (gSonosTv)            {channel="sonos:PLAY5:RINCON_000E585D73A601400:led"}
+Switch Tv_Sonos_LocalCoordinator        "Local Coordinator"         <sonos_coordinator>  (gSonosTv)            {channel="sonos:PLAY5:RINCON_000E585D73A601400:localcoordinator"}
+Switch Tv_Sonos_Mute                    "Mute"                      <sonos_mute>         (gSonosTv,gSonosMute) {channel="sonos:PLAY5:RINCON_000E585D73A601400:mute"}
+String Tv_Sonos_NotificationSound       "Notification Sound [%s]"   <sonos_notification> (gSonosTv)            {channel="sonos:PLAY5:RINCON_000E585D73A601400:notificationsound"}
+Dimmer Tv_Sonos_NotificationVolume      "Notification Sound Volume" <soundvolume>        (gSonosTv)            {channel="sonos:PLAY5:RINCON_000E585D73A601400:notificationvolume"}
+String Tv_Sonos_PlayLineIn              "Play Line In [%s]"         <sonos_playlinein>   (gSonosTv)            {channel="sonos:PLAY5:RINCON_000E585D73A601400:playlinein"}
+String Tv_Sonos_PlayPlaylist            "Play Playlist [%s]"        <sonos_playlist>     (gSonosTv)            {channel="sonos:PLAY5:RINCON_000E585D73A601400:playlist"}
+Switch Tv_Sonos_PlayQueue               "Play Queue"                <sonos_que>          (gSonosTv)            {channel="sonos:PLAY5:RINCON_000E585D73A601400:playqueue"}
+Number Tv_Sonos_PlayTrack               "Play Track"                <sonos_play_track>   (gSonosTv)            {channel="sonos:PLAY5:RINCON_000E585D73A601400:playtrack"}
+String Tv_Sonos_PlayURI                 "Play URI [%s]"             <sonos_play_uri>     (gSonosTv)            {channel="sonos:PLAY5:RINCON_000E585D73A601400:playuri"}
+Switch Tv_Sonos_PublicAddress           "Public Address"            <sonos_publiv>       (gSonosTv)            {channel="sonos:PLAY5:RINCON_000E585D73A601400:publicaddress"}
+String Tv_Sonos_Radio                   "Radio [%s]"                <sonos_radio>        (gSonosTv)            {channel="sonos:PLAY5:RINCON_000E585D73A601400:radio"}
+String Tv_Sonos_Remove                  "Remove [%s]"               <sonos_remove>       (gSonosTv)            {channel="sonos:PLAY5:RINCON_000E585D73A601400:remove"}
+Switch Tv_Sonos_Restore                 "Restore"                   <sonos_restore>      (gSonosTv)            {channel="sonos:PLAY5:RINCON_000E585D73A601400:restore"}
+Switch Tv_Sonos_RestoreAll              "Restore All"               <sonos_restore_all>  (gSonosTv)            {channel="sonos:PLAY5:RINCON_000E585D73A601400:restoreall"}
+Switch Tv_Sonos_Save                    "Save"                      <sonos_save>         (gSonosTv)            {channel="sonos:PLAY5:RINCON_000E585D73A601400:save"}
+Switch Tv_Sonos_SaveAll                 "Save All"                  <sonos_save_all>     (gSonosTv)            {channel="sonos:PLAY5:RINCON_000E585D73A601400:saveall"}
+Number Tv_Sonos_Snooze                  "Snooze"                    <sonos_snooze>       (gSonosTv)            {channel="sonos:PLAY5:RINCON_000E585D73A601400:snooze"}
+Switch Tv_Sonos_StandAlone              "Stand Alone"               <sonos_stand_alone>  (gSonosTv)            {channel="sonos:PLAY5:RINCON_000E585D73A601400:standalone"}
+String Tv_Sonos_State                   "State [%s]"                <sonos_state>        (gSonosTv)            {channel="sonos:PLAY5:RINCON_000E585D73A601400:state"}
+Switch Tv_Sonos_Stop                    "Stop"                      <sonos_stop>         (gSonosTv,gSonosStop) {channel="sonos:PLAY5:RINCON_000E585D73A601400:stop", autoupdate="false"}
+Dimmer Tv_Sonos_Volume                  "Volume"                   <soundvolume>        (gSonosTv,gSonosVolume) {channel="sonos:PLAY5:RINCON_000E585D73A601400:volume"}
+String Tv_Sonos_ZoneGroupID             "Zone Group ID [%s]"        <sonos_zone>         (gSonosTv)            {channel="sonos:PLAY5:RINCON_000E585D73A601400:zonegroupid"}
+String Tv_Sonos_ZoneName                "Zone Name [%s]"            <sonos_zone>         (gSonosTv)            {channel="sonos:PLAY5:RINCON_000E585D73A601400:zonename"}
+String Tv_Sonos_Coordinator             "Coordinator [%s]"          <sonos_coordinator>  (gSonosTv)            {channel="sonos:PLAY5:RINCON_000E585D73A601400:coordinator"}
+Number Tv_Sonos_SleepTimer              "Sleep Timer"               <sonos_sleep_timer>  (gSonosTv)            {channel="sonos:PLAY5:RINCON_000E585D73A601400:sleeptimer"}
+String Tv_Sonos_CurrentAVtransportURI   "AV transport URI [%s]"     <sonos_uri>          (gSonosTv)            {channel="sonos:PLAY5:RINCON_000E585D73A601400:currenttransporturi"}
+String Tv_Sonos_CurrenttrackURI         "track URI [%s]"            <sonos_uri>          (gSonosTv)            {channel="sonos:PLAY5:RINCON_000E585D73A601400:currenttrackuri"}
+
+/* Upstairs */
+String Upstairs_Sonos_Add                     "Add [%s]"                  <sonos_add>          (gSonosUpstairs)            {channel="sonos:PLAY3:RINCON_B8E937398E3801400:add"}
+Switch Upstairs_Sonos_SetAlarm                "Set Alarm"                 <sonos_alarm>        (gSonosUpstairs)            {channel="sonos:PLAY3:RINCON_B8E937398E3801400:alarm"}
+String Upstairs_Sonos_AlarmProperties         "Alarm Properties [%s]"     <sonos_alarm_prop>   (gSonosUpstairs)            {channel="sonos:PLAY3:RINCON_B8E937398E3801400:alarmproperties"}
+Switch Upstairs_Sonos_AlarmIsrunning          "Alarm is running"          <sonso_alarm_run>    (gSonosUpstairs)            {channel="sonos:PLAY3:RINCON_B8E937398E3801400:alarmrunning"}
+Player Upstairs_Sonos_Control                 "Control"                   <sonos_control>      (gSonosUpstairs)            {channel="sonos:PLAY3:RINCON_B8E937398E3801400:control"}
+String Upstairs_Sonos_CurrentAlbum            "Album [%s]"                <sonos_album>        (gSonosUpstairs)            {channel="sonos:PLAY3:RINCON_B8E937398E3801400:currentalbum"}
+String Upstairs_Sonos_CurrentArtist           "Artist [%s]"               <sonos_artist>       (gSonosUpstairs)            {channel="sonos:PLAY3:RINCON_B8E937398E3801400:currentartist"}
+String Upstairs_Sonos_CurrentTitle            "Title [%s]"                <sonos_title>        (gSonosUpstairs)            {channel="sonos:PLAY3:RINCON_B8E937398E3801400:currenttitle"}
+String Upstairs_Sonos_CurrentTrack            "Track [%s]"                <sonos_track>        (gSonosUpstairs)            {channel="sonos:PLAY3:RINCON_B8E937398E3801400:currenttrack"}
+Switch Upstairs_Sonos_Shuffle                 "Shuffle"                   <sonos_shuffle>      (gSonosUpstairs)            {channel="sonos:PLAY3:RINCON_B8E937398E3801400:shuffle"}
+String Upstairs_Sonos_Repeat                  "Repeat [%s]"               <sonos_repeat>       (gSonosUpstairs)            {channel="sonos:PLAY3:RINCON_B8E937398E3801400:repeat"}
+String Upstairs_Sonos_Favorite                "Favorite [%s]"             <sonos_favorite>     (gSonosUpstairs)            {channel="sonos:PLAY3:RINCON_B8E937398E3801400:favorite"}
+Switch Upstairs_Sonos_Led                     "Led"                       <sonos_led>          (gSonosUpstairs)            {channel="sonos:PLAY3:RINCON_B8E937398E3801400:led"}
+Switch Upstairs_Sonos_LocalCoordinator        "Local Coordinator"         <sonos_coordinator>  (gSonosUpstairs)            {channel="sonos:PLAY3:RINCON_B8E937398E3801400:localcoordinator"}
+Switch Upstairs_Sonos_Mute                    "Mute"                      <sonos_mute>         (gSonosUpstairs,gSonosMute) {channel="sonos:PLAY3:RINCON_B8E937398E3801400:mute"}
+String Upstairs_Sonos_NotificationSound       "Notification Sound [%s]"   <sonos_notification> (gSonosUpstairs)            {channel="sonos:PLAY3:RINCON_B8E937398E3801400:notificationsound"}
+Dimmer Upstairs_Sonos_NotificationVolume      "Notification Sound Volume" <soundvolume>        (gSonosUpstairs)            {channel="sonos:PLAY3:RINCON_B8E937398E3801400:notificationvolume"}
+String Upstairs_Sonos_PlayPlaylist            "Play Playlist [%s]"        <sonos_playlist>     (gSonosUpstairs)            {channel="sonos:PLAY3:RINCON_B8E937398E3801400:playlist"}
+Switch Upstairs_Sonos_PlayQueue               "Play Queue"                <sonos_que>          (gSonosUpstairs)            {channel="sonos:PLAY3:RINCON_B8E937398E3801400:playqueue"}
+Number Upstairs_Sonos_PlayTrack               "Play Track"                <sonos_play_track>   (gSonosUpstairs)            {channel="sonos:PLAY3:RINCON_B8E937398E3801400:playtrack"}
+String Upstairs_Sonos_PlayURI                 "Play URI [%s]"             <sonos_play_uri>     (gSonosUpstairs)            {channel="sonos:PLAY3:RINCON_B8E937398E3801400:playuri"}
+String Upstairs_Sonos_Radio                   "Radio [%s]"                <sonos_radio>        (gSonosUpstairs)            {channel="sonos:PLAY3:RINCON_B8E937398E3801400:radio"}
+String Upstairs_Sonos_Remove                  "Remove [%s]"               <sonos_remove>       (gSonosUpstairs)            {channel="sonos:PLAY3:RINCON_B8E937398E3801400:remove"}
+Switch Upstairs_Sonos_Restore                 "Restore"                   <sonos_restore>      (gSonosUpstairs)            {channel="sonos:PLAY3:RINCON_B8E937398E3801400:restore"}
+Switch Upstairs_Sonos_RestoreAll              "Restore All"               <sonos_restore_all>  (gSonosUpstairs)            {channel="sonos:PLAY3:RINCON_B8E937398E3801400:restoreall"}
+Switch Upstairs_Sonos_Save                    "Save"                      <sonos_save>         (gSonosUpstairs)            {channel="sonos:PLAY3:RINCON_B8E937398E3801400:save"}
+Switch Upstairs_Sonos_SaveAll                 "Save All"                  <sonos_save_all>     (gSonosUpstairs)            {channel="sonos:PLAY3:RINCON_B8E937398E3801400:saveall"}
+Number Upstairs_Sonos_Snooze                  "Snooze"                    <sonos_snooze>       (gSonosUpstairs)            {channel="sonos:PLAY3:RINCON_B8E937398E3801400:snooze"}
+Switch Upstairs_Sonos_StandAlone              "Stand Alone"               <sonos_stand_alone>  (gSonosUpstairs)            {channel="sonos:PLAY3:RINCON_B8E937398E3801400:standalone"}
+String Upstairs_Sonos_State                   "State [%s]"                <sonos_state>        (gSonosUpstairs)            {channel="sonos:PLAY3:RINCON_B8E937398E3801400:state"}
+Switch Upstairs_Sonos_Stop                    "Stop"                      <sonos_stop>         (gSonosUpstairs,gSonosStop) {channel="sonos:PLAY3:RINCON_B8E937398E3801400:stop", autoupdate="false"}
+Dimmer Upstairs_Sonos_Volume                  "Volume"                   <soundvolume>        (gSonosUpstairs,gSonosVolume) {channel="sonos:PLAY3:RINCON_B8E937398E3801400:volume"}
+String Upstairs_Sonos_ZoneGroupID             "Zone Group ID [%s]"        <sonos_zone>         (gSonosUpstairs)            {channel="sonos:PLAY3:RINCON_B8E937398E3801400:zonegroupid"}
+String Upstairs_Sonos_ZoneName                "Zone Name [%s]"            <sonos_zone>         (gSonosUpstairs)            {channel="sonos:PLAY3:RINCON_B8E937398E3801400:zonename"}
+String Upstairs_Sonos_Coordinator             "Coordinator [%s]"          <sonos_coordinator>  (gSonosUpstairs)            {channel="sonos:PLAY3:RINCON_B8E937398E3801400:coordinator"}
+Number Upstairs_Sonos_SleepTimer              "Sleep Timer"               <sonos_sleep_timer>  (gSonosUpstairs)            {channel="sonos:PLAY3:RINCON_B8E937398E3801400:sleeptimer"}
+String Upstairs_Sonos_CurrentAVtransportURI   "AV transport URI [%s]"     <sonos_uri>          (gSonosUpstairs)            {channel="sonos:PLAY3:RINCON_B8E937398E3801400:currenttransporturi"}
+String Upstairs_Sonos_CurrenttrackURI         "track URI [%s]"            <sonos_uri>          (gSonosUpstairs)            {channel="sonos:PLAY3:RINCON_B8E937398E3801400:currenttrackuri"}
+
+/* Dining Room */
+String Dining_Room_Sonos_Add                     "Add [%s]"                  <sonos_add>          (gSonosDiningRoom)            {channel="sonos:PLAY1:RINCON_B8E93789E7C801400:add"}
+Switch Dining_Room_Sonos_SetAlarm                "Set Alarm"                 <sonos_alarm>        (gSonosDiningRoom)            {channel="sonos:PLAY1:RINCON_B8E93789E7C801400:alarm"}
+String Dining_Room_Sonos_AlarmProperties         "Alarm Properties [%s]"     <sonos_alarm_prop>   (gSonosDiningRoom)            {channel="sonos:PLAY1:RINCON_B8E93789E7C801400:alarmproperties"}
+Switch Dining_Room_Sonos_AlarmIsrunning          "Alarm is running"          <sonso_alarm_run>    (gSonosDiningRoom)            {channel="sonos:PLAY1:RINCON_B8E93789E7C801400:alarmrunning"}
+Player Dining_Room_Sonos_Control                 "Control"                   <sonos_control>      (gSonosDiningRoom)            {channel="sonos:PLAY1:RINCON_B8E93789E7C801400:control"}
+String Dining_Room_Sonos_CurrentAlbum            "Album [%s]"                <sonos_album>        (gSonosDiningRoom)            {channel="sonos:PLAY1:RINCON_B8E93789E7C801400:currentalbum"}
+String Dining_Room_Sonos_CurrentArtist           "Artist [%s]"               <sonos_artist>       (gSonosDiningRoom)            {channel="sonos:PLAY1:RINCON_B8E93789E7C801400:currentartist"}
+String Dining_Room_Sonos_CurrentTitle            "Title [%s]"                <sonos_title>        (gSonosDiningRoom)            {channel="sonos:PLAY1:RINCON_B8E93789E7C801400:currenttitle"}
+String Dining_Room_Sonos_CurrentTrack            "Track [%s]"                <sonos_track>        (gSonosDiningRoom)            {channel="sonos:PLAY1:RINCON_B8E93789E7C801400:currenttrack"}
+Switch Dining_Room_Sonos_Shuffle                 "Shuffle"                   <sonos_shuffle>      (gSonosDiningRoom)            {channel="sonos:PLAY1:RINCON_B8E93789E7C801400:shuffle"}
+String Dining_Room_Sonos_Repeat                  "Repeat [%s]"               <sonos_repeat>       (gSonosDiningRoom)            {channel="sonos:PLAY1:RINCON_B8E93789E7C801400:repeat"}
+String Dining_Room_Sonos_Favorite                "Favorite [%s]"             <sonos_favorite>     (gSonosDiningRoom)            {channel="sonos:PLAY1:RINCON_B8E93789E7C801400:favorite"}
+Switch Dining_Room_Sonos_Led                     "Led"                       <sonos_led>          (gSonosDiningRoom)            {channel="sonos:PLAY1:RINCON_B8E93789E7C801400:led"}
+Switch Dining_Room_Sonos_LocalCoordinator        "Local Coordinator"         <sonos_coordinator>  (gSonosDiningRoom)            {channel="sonos:PLAY1:RINCON_B8E93789E7C801400:localcoordinator"}
+Switch Dining_Room_Sonos_Mute                    "Mute"                      <sonos_mute>         (gSonosDiningRoom,gSonosMute) {channel="sonos:PLAY1:RINCON_B8E93789E7C801400:mute"}
+String Dining_Room_Sonos_NotificationSound       "Notification Sound [%s]"   <sonos_notification> (gSonosDiningRoom)            {channel="sonos:PLAY1:RINCON_B8E93789E7C801400:notificationsound"}
+Dimmer Dining_Room_Sonos_NotificationVolume      "Notification Sound Volume" <soundvolume>        (gSonosDiningRoom)            {channel="sonos:PLAY1:RINCON_B8E93789E7C801400:notificationvolume"}
+String Dining_Room_Sonos_PlayPlaylist            "Play Playlist [%s]"        <sonos_playlist>     (gSonosDiningRoom)            {channel="sonos:PLAY1:RINCON_B8E93789E7C801400:playlist"}
+Switch Dining_Room_Sonos_PlayQueue               "Play Queue"                <sonos_que>          (gSonosDiningRoom)            {channel="sonos:PLAY1:RINCON_B8E93789E7C801400:playqueue"}
+Number Dining_Room_Sonos_PlayTrack               "Play Track"                <sonos_play_track>   (gSonosDiningRoom)            {channel="sonos:PLAY1:RINCON_B8E93789E7C801400:playtrack"}
+String Dining_Room_Sonos_PlayURI                 "Play URI [%s]"             <sonos_play_uri>     (gSonosDiningRoom)            {channel="sonos:PLAY1:RINCON_B8E93789E7C801400:playuri"}
+String Dining_Room_Sonos_Radio                   "Radio [%s]"                <sonos_radio>        (gSonosDiningRoom)            {channel="sonos:PLAY1:RINCON_B8E93789E7C801400:radio"}
+String Dining_Room_Sonos_Remove                  "Remove [%s]"               <sonos_remove>       (gSonosDiningRoom)            {channel="sonos:PLAY1:RINCON_B8E93789E7C801400:remove"}
+Switch Dining_Room_Sonos_Restore                 "Restore"                   <sonos_restore>      (gSonosDiningRoom)            {channel="sonos:PLAY1:RINCON_B8E93789E7C801400:restore"}
+Switch Dining_Room_Sonos_RestoreAll              "Restore All"               <sonos_restore_all>  (gSonosDiningRoom)            {channel="sonos:PLAY1:RINCON_B8E93789E7C801400:restoreall"}
+Switch Dining_Room_Sonos_Save                    "Save"                      <sonos_save>         (gSonosDiningRoom)            {channel="sonos:PLAY1:RINCON_B8E93789E7C801400:save"}
+Switch Dining_Room_Sonos_SaveAll                 "Save All"                  <sonos_save_all>     (gSonosDiningRoom)            {channel="sonos:PLAY1:RINCON_B8E93789E7C801400:saveall"}
+Number Dining_Room_Sonos_Snooze                  "Snooze"                    <sonos_snooze>       (gSonosDiningRoom)            {channel="sonos:PLAY1:RINCON_B8E93789E7C801400:snooze"}
+Switch Dining_Room_Sonos_StandAlone              "Stand Alone"               <sonos_stand_alone>  (gSonosDiningRoom)            {channel="sonos:PLAY1:RINCON_B8E93789E7C801400:standalone"}
+String Dining_Room_Sonos_State                   "State [%s]"                <sonos_state>        (gSonosDiningRoom)            {channel="sonos:PLAY1:RINCON_B8E93789E7C801400:state"}
+Switch Dining_Room_Sonos_Stop                    "Stop"                      <sonos_stop>         (gSonosDiningRoom,gSonosStop) {channel="sonos:PLAY1:RINCON_B8E93789E7C801400:stop", autoupdate="false"}
+Dimmer Dining_Room_Sonos_Volume                  "Volume"                   <soundvolume>        (gSonosDiningRoom,gSonosVolume) {channel="sonos:PLAY1:RINCON_B8E93789E7C801400:volume"}
+String Dining_Room_Sonos_ZoneGroupID             "Zone Group ID [%s]"        <sonos_zone>         (gSonosDiningRoom)            {channel="sonos:PLAY1:RINCON_B8E93789E7C801400:zonegroupid"}
+String Dining_Room_Sonos_ZoneName                "Zone Name [%s]"            <sonos_zone>         (gSonosDiningRoom)            {channel="sonos:PLAY1:RINCON_B8E93789E7C801400:zonename"}
+String Dining_Room_Sonos_Coordinator             "Coordinator [%s]"          <sonos_coordinator>  (gSonosDiningRoom)            {channel="sonos:PLAY1:RINCON_B8E93789E7C801400:coordinator"}
+Number Dining_Room_Sonos_SleepTimer              "Sleep Timer"               <sonos_sleep_timer>  (gSonosDiningRoom)            {channel="sonos:PLAY1:RINCON_B8E93789E7C801400:sleeptimer"}
+String Dining_Room_Sonos_CurrentAVtransportURI   "AV transport URI [%s]"     <sonos_uri>          (gSonosDiningRoom)            {channel="sonos:PLAY1:RINCON_B8E93789E7C801400:currenttransporturi"}
+String Dining_Room_Sonos_CurrenttrackURI         "track URI [%s]"            <sonos_uri>          (gSonosDiningRoom)            {channel="sonos:PLAY1:RINCON_B8E93789E7C801400:currenttrackuri"}
+

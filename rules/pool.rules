@@ -1,0 +1,31 @@
+
+
+
+rule "Pump Off"
+when
+	Item Pool_Pump changed to 0
+then
+	pushover("Pool Pump is Off")
+end
+
+rule "Pump Chlorine"
+when 
+	Item Pool_Pump changed to 25
+then
+	pushover("Pool Pump - Chlorine Speed")
+end
+
+rule "Pump Max"
+when
+	Item Pool_Pump changed to 100
+then
+	pushover("Pool Pump - Max Speed")
+end
+
+rule "Pump Heater"
+when
+	Item Pool_Pump changed to 50
+then
+	pushover("Pool Pump - Heater Speed")
+end
+

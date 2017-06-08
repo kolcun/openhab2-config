@@ -1,0 +1,8 @@
+//Upstairs
+Thing   sonos:PLAY3:RINCON_B8E937398E3801400          [ udn="RINCON_B8E937398E3801400", refresh=60 ]
+//kitchen
+Thing   sonos:PLAY5:RINCON_000E5888559401400	      [ udn="RINCON_000E5888559401400", refresh=60 ]
+//TV
+Thing   sonos:PLAY5:RINCON_000E585D73A601400	      [ udn="RINCON_000E585D73A601400", refresh=60 ]
+//Dining Room
+Thing   sonos:PLAY1:RINCON_B8E93789E7C801400	      [ udn="RINCON_B8E93789E7C801400", refresh=60 ]

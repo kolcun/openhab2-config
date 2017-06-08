@@ -1,0 +1,53 @@
+Switch Light_Test     "Test Light"      
+
+
+//itemtype itemname ["labeltext"] [<iconname>] [(group1, group2, ...)] [["tag1", "tag2", ...]] [{bindingconfig}]
+
+
+DateTime CurrentDate            "Date [%1$tA, %1$td.%1$tm.%1$tY]"   <calendar>  { channel="ntp:ntp:local:dateTime" }
+
+
+Dimmer Pool_Pump "Pool Pump" <pump> ["Lighting"] {mqtt=">[broker:kolcun/outdoor/pool/pump:command:0:Speed1],>[broker:kolcun/outdoor/pool/pump:command:25:Speed2],>[broker:kolcun/outdoor/pool/pump:command:50:Speed3],>[broker:kolcun/outdoor/pool/pump:command:100:Speed4],<[broker:kolcun/outdoor/pool/pump/status:state:MAP(poolpump.map)]"}
+
+
+/*
+Group Sonos
+
+Group SonosUpstairs <player> (Sonos)
+Player Sonos_upstairs_Controller   "Controller"                          (SonosUpstairs) {channel="sonos:PLAY3:RINCON_B8E937398E3801400:control"}
+Dimmer Sonos_upstairs_Volume       "Volume [%.1f %%]" <soundvolume>      (SonosUpstairs) {channel="sonos:PLAY3:RINCON_B8E937398E3801400:volume"}
+Switch Sonos_upstairs_Mute         "Mute"             <soundvolume_mute> (SonosUpstairs) {channel="sonos:PLAY3:RINCON_B8E937398E3801400:mute"}
+Switch Sonos_upstairs_LED          "LED"              <switch>           (SonosUpstairs) {channel="sonos:PLAY3:RINCON_B8E937398E3801400:led"}
+String Sonos_upstairs_CurrentTrack "Now playing [%s]" <text>             (SonosUpstairs) {channel="sonos:PLAY3:RINCON_B8E937398E3801400:currenttrack"}
+String Sonos_upstairs_State        "Status [%s]"      <text>             (SonosUpstairs) {channel="sonos:PLAY3:RINCON_B8E937398E3801400:state"}
+String Sonos_upstairs_ZoneName	   "Zone [%s]"	 	<text>		(SonosUpstairs) {channel="sonos:PLAY3:RINCON_B8E937398E3801400:zonename"}
+
+Group SonosDiningRoom <player> (Sonos)
+Player Sonos_dining_room_Controller   "Controller"                          (SonosDiningRoom) {channel="sonos:PLAY1:RINCON_B8E93789E7C801400:control"}
+Dimmer Sonos_dining_room_Volume       "Volume [%.1f %%]" <soundvolume>      (SonosDiningRoom) {channel="sonos:PLAY1:RINCON_B8E93789E7C801400:volume"}
+Switch Sonos_dining_room_Mute         "Mute"             <soundvolume_mute> (SonosDiningRoom) {channel="sonos:PLAY1:RINCON_B8E93789E7C801400:mute"}
+Switch Sonos_dining_room_LED          "LED"              <switch>           (SonosDiningRoom) {channel="sonos:PLAY1:RINCON_B8E93789E7C801400:led"}
+String Sonos_dining_room_CurrentTrack "Now playing [%s]" <text>             (SonosDiningRoom) {channel="sonos:PLAY1:RINCON_B8E93789E7C801400:currenttrack"}
+String Sonos_dining_room_State        "Status [%s]"      <text>             (SonosDiningRoom) {channel="sonos:PLAY1:RINCON_B8E93789E7C801400:state"}
+String Sonos_dining_room_ZoneName     "Zone [%s]"          <text>          (SonosDiningroom) {channel="sonos:PLAY1:RINCON_B8E93789E7C801400:zonename"}
+
+
+Group SonosKitchen <player> (Sonos)
+Player Sonos_kitchen_Controller   "Controller"                          (SonosKitchen) {channel="sonos:PLAY5:RINCON_000E5888559401400:control"}
+Dimmer Sonos_kitchen_Volume       "Volume [%.1f %%]" <soundvolume>      (SonosKitchen) {channel="sonos:PLAY5:RINCON_000E5888559401400:volume"}
+Switch Sonos_kitchen_Mute         "Mute"             <soundvolume_mute> (SonosKitchen) {channel="sonos:PLAY5:RINCON_000E5888559401400:mute"}
+Switch Sonos_kitchen_LED          "LED"              <switch>           (SonosKitchen) {channel="sonos:PLAY5:RINCON_000E5888559401400:led"}
+String Sonos_kitchen_CurrentTrack "Now playing [%s]" <text>             (SonosKitchen) {channel="sonos:PLAY5:RINCON_000E5888559401400:currenttrack"}
+String Sonos_kitchen_State        "Status [%s]"      <text>             (SonosKitchen) {channel="sonos:PLAY5:RINCON_000E5888559401400:state"}
+String Sonos_kitchen_ZoneName     "Zone [%s]"          <text>          (SonosKitchen) {channel="sonos:PLAY5:RINCON_000E5888559401400:zonename"}
+
+Group SonosTV <player> (Sonos)
+Player Sonos_tv_Controller   "Controller"                          (SonosTV) {channel="sonos:PLAY5:RINCON_000E585D73A601400:control"}
+Dimmer Sonos_tv_Volume       "Volume [%.1f %%]" <soundvolume>      (SonosTV) {channel="sonos:PLAY5:RINCON_000E585D73A601400:volume"}
+Switch Sonos_tv_Mute         "Mute"             <soundvolume_mute> (SonosTV) {channel="sonos:PLAY5:RINCON_000E585D73A601400:mute"}
+Switch Sonos_tv_LED          "LED"              <switch>           (SonosTV) {channel="sonos:PLAY5:RINCON_000E585D73A601400:led"}
+String Sonos_tv_CurrentTrack "Now playing [%s]" <text>             (SonosTV) {channel="sonos:PLAY5:RINCON_000E585D73A601400:currenttrack"}
+String Sonos_tv_State        "Status [%s]"      <text>             (SonosTV) {channel="sonos:PLAY5:RINCON_000E585D73A601400:state"}
+String Sonos_tv_ZoneName     "Zone [%s]"          <text>          (SonosTV) {channel="sonos:PLAY5:RINCON_000E585D73A601400:zonename"}
+*/
+~  

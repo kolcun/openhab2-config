@@ -1,0 +1,11 @@
+sitemap main label="Main Menu"
+{
+
+Frame label="Demo" {
+
+
+Switch item=Light_Test
+
+}
+
+{

@@ -1,0 +1,247 @@
+sitemap sonos label="Sonos" {
+
+	Frame label="Sonos" {
+		Slider  item=gSonosVolume label="Volume all"
+		Switch  item=gSonosStop label="Stop all"	mappings=[OFF="Stop"]
+		Switch  item=gSonosMute label="Mute all"	mappings=[ON="Mute", OFF="Unmute"]
+	}
+
+	Frame visibility=[Sonos_Group1_Visibility!="Hide"]{
+		Text label="Group 1"
+		icon="sonos_control" {
+			Default item=Kitchen_Sonos_Control visibility=[Sonos_Group1_Visibility=="Kitchen"]
+			Default item=Tv_Sonos_Control visibility=[Sonos_Group1_Visibility=="Tv"]
+			Default item=Dining_Room_Sonos_Control visibility=[Sonos_Group1_Visibility=="Dining Room"]
+			Default item=Upstairs_Sonos_Control visibility=[Sonos_Group1_Visibility=="Upstairs"]
+			
+			Slider item=Kitchen_Sonos_Volume visibility=[SonosGroupID_Kitchen=="1"]
+			Slider item=Tv_Sonos_Volume visibility=[SonosGroupID_Tv=="1"]
+			Slider item=Dining_Room_Sonos_Volume visibility=[SonosGroupID_DiningRoom=="1"]
+			Slider item=Upstairs_Sonos_Volume visibility=[SonosGroupID_Upstairs=="1"]
+
+			Switch item=Kitchen_Sonos_Mute visibility=[Sonos_Group1_Visibility=="Kitchen"] 
+			Switch item=Tv_Sonos_Mute visibility=[Sonos_Group1_Visibility=="Tv"]
+			Switch item=Dining_Room_Sonos_Mute visibility=[Sonos_Group1_Visibility=="Dining Room"] 
+			Switch item=Upstairs_Sonos_Mute visibility=[Sonos_Group1_Visibility=="Upstairs"]
+
+			Switch item=Kitchen_Sonos_Shuffle visibility=[Sonos_Group1_Visibility=="Kitchen"] 
+			Switch item=Tv_Sonos_Shuffle visibility=[Sonos_Group1_Visibility=="Tv"]
+			Switch item=Dining_Room_Sonos_Shuffle visibility=[Sonos_Group1_Visibility=="Dining Room"] 
+			Switch item=Upstairs_Sonos_Shuffle visibility=[Sonos_Group1_Visibility=="Upstairs"]
+
+			Switch item=Kitchen_Sonos_Repeat visibility=[Sonos_Group1_Visibility=="Kitchen"]     mappings=[ALL="All", ONE="One", OFF="Off"]
+			Switch item=Tv_Sonos_Repeat visibility=[Sonos_Group1_Visibility=="Tv"]  mappings=[ALL="All", ONE="One", OFF="Off"]
+			Switch item=Dining_Room_Sonos_Repeat visibility=[Sonos_Group1_Visibility=="Dining Room"]    mappings=[ALL="All", ONE="One", OFF="Off"]
+			Switch item=Upstairs_Sonos_Repeat visibility=[Sonos_Group1_Visibility=="Upstairs"] mappings=[ALL="All", ONE="One", OFF="Off"]
+
+/*			Selection item=Sonos_RadioStation_Kitc_Number visibility=[Sonos_Group1_Visibility=="Kitchen"]     mappings=[0="None", 1="NRK P1 Østlandssendingen", 2="NRK P2", 3="NRK P3", 4="NRK Alltid Nyheter", 5="NRK Klassisk", 6="NRK Jazz", 7="NRK MP3", 8="P4 Radio Norge", 9="Radio Norge"]
+			Selection item=Sonos_RadioStation_Bedr_Number visibility=[Sonos_Group1_Visibility=="Dining Room"]  mappings=[0="None", 1="NRK P1 Østlandssendingen", 2="NRK P2", 3="NRK P3", 4="NRK Alltid Nyheter", 5="NRK Klassisk", 6="NRK Jazz", 7="NRK MP3", 8="P4 Radio Norge", 9="Radio Norge"]
+			Selection item=Sonos_RadioStation_Bath_Number visibility=[Sonos_Group1_Visibility=="Tv"]    mappings=[0="None", 1="NRK P1 Østlandssendingen", 2="NRK P2", 3="NRK P3", 4="NRK Alltid Nyheter", 5="NRK Klassisk", 6="NRK Jazz", 7="NRK MP3", 8="P4 Radio Norge", 9="Radio Norge"]
+			Selection item=Sonos_RadioStation_Livi_Number visibility=[Sonos_Group1_Visibility=="Upstairs" mappings=[0="None", 1="NRK P1 Østlandssendingen", 2="NRK P2", 3="NRK P3", 4="NRK Alltid Nyheter", 5="NRK Klassisk", 6="NRK Jazz", 7="NRK MP3", 8="P4 Radio Norge", 9="Radio Norge"]
+
+			Selection item=Sonos_Playlist_Kitc_Number visibility=[Sonos_Group1_Visibility=="Kitchen"]     mappings=[0="None", 1="Peiskos", 2="Rolig jazz", 3="Rolig Musikk", 4="All Work And No Play", 5="Schlagere"]
+			Selection item=Sonos_Playlist_Bedr_Number visibility=[Sonos_Group1_Visibility=="Dining Room"]  mappings=[0="None", 1="Peiskos", 2="Rolig jazz", 3="Rolig Musikk", 4="All Work And No Play", 5="Schlagere"]
+			Selection item=Sonos_Playlist_Bath_Number visibility=[Sonos_Group1_Visibility=="Tv"]    mappings=[0="None", 1="Peiskos", 2="Rolig jazz", 3="Rolig Musikk", 4="All Work And No Play", 5="Schlagere"]
+			Selection item=Sonos_Playlist_Livi_Number visibility=[Sonos_Group1_Visibility=="Upstairs"] mappings=[0="None", 1="Peiskos", 2="Rolig jazz", 3="Rolig Musikk", 4="All Work And No Play", 5="Schlagere"]
+*/
+			Text item=Kitchen_Sonos_CurrentArtist visibility=[Sonos_Group1_Visibility=="Kitchen"]
+			Text item=Tv_Sonos_CurrentArtist visibility=[Sonos_Group1_Visibility=="Dining Room"]
+			Text item=Dining_Room_Sonos_CurrentArtist visibility=[Sonos_Group1_Visibility=="Tv"]
+			Text item=Upstairs_Sonos_CurrentArtist visibility=[Sonos_Group1_Visibility=="Upstairs"]
+
+			Text item=Kitchen_Sonos_CurrentAlbum visibility=[Sonos_Group1_Visibility=="Kitchen"]
+			Text item=Tv_Sonos_CurrentAlbum visibility=[Sonos_Group1_Visibility=="Dining Room"]
+			Text item=Dining_Room_Sonos_CurrentAlbum visibility=[Sonos_Group1_Visibility=="Tv"]
+			Text item=Upstairs_Sonos_CurrentAlbum visibility=[Sonos_Group1_Visibility=="Upstairs"]
+
+			Text item=Kitchen_Sonos_CurrentTitle visibility=[Sonos_Group1_Visibility=="Kitchen"]
+			Text item=Tv_Sonos_CurrentTitle visibility=[Sonos_Group1_Visibility=="Dining Room"]
+			Text item=Dining_Room_Sonos_CurrentTitle visibility=[Sonos_Group1_Visibility=="Tv"]
+			Text item=Upstairs_Sonos_CurrentTitle visibility=[Sonos_Group1_Visibility=="Upstairs"]
+		}
+	}
+
+	Frame visibility=[Sonos_Group2_Visibility!="Hide"]{
+		Text label="Group 2"
+		icon="sonos_control" {
+			Default item=Kitchen_Sonos_Control 
+			Default item=Tv_Sonos_Control
+			Default item=Dining_Room_Sonos_Control
+			Default item=Upstairs_Sonos_Control
+
+			Slider item=Kitchen_Sonos_Volume visibility=[SonosGroupID_Kitchen=="2"]
+			Slider item=Tv_Sonos_Volume visibility=[SonosGroupID_DiningRoom=="2"]
+			Slider item=Dining_Room_Sonos_Volume visibility=[SonosGroupID_Tv=="2"]
+			Slider item=Upstairs_Sonos_Volume visibility=[SonosGroupID_Upstairs=="2"]
+
+			Switch item=Kitchen_Sonos_Mute visibility=[Sonos_Group1_Visibility=="Kitchen"] 
+			Switch item=Tv_Sonos_Mute visibility=[Sonos_Group1_Visibility=="Dining Room"]
+			Switch item=Dining_Room_Sonos_Mute visibility=[Sonos_Group1_Visibility=="Tv"] 
+			Switch item=Upstairs_Sonos_Mute visibility=[Sonos_Group1_Visibility=="Upstairs"]
+
+			Switch item=Kitchen_Sonos_Shuffle visibility=[Sonos_Group2_Visibility=="Kitchen"] 
+			Switch item=Tv_Sonos_Shuffle visibility=[Sonos_Group2_Visibility=="Dining Room"]
+			Switch item=Dining_Room_Sonos_Shuffle visibility=[Sonos_Group2_Visibility=="Tv"] 
+			Switch item=Upstairs_Sonos_Shuffle visibility=[Sonos_Group2_Visibility=="Upstairs"]
+
+			Switch item=Kitchen_Sonos_Repeat visibility=[Sonos_Group2_Visibility=="Kitchen"]     mappings=[ALL="All", ONE="One", OFF="Off"]
+			Switch item=Tv_Sonos_Repeat visibility=[Sonos_Group2_Visibility=="Dining Room"]  mappings=[ALL="All", ONE="One", OFF="Off"]
+			Switch item=Dining_Room_Sonos_Repeat visibility=[Sonos_Group2_Visibility=="Tv"]    mappings=[ALL="All", ONE="One", OFF="Off"]
+			Switch item=Upstairs_Sonos_Repeat visibility=[Sonos_Group2_Visibility=="Upstairs"] mappings=[ALL="All", ONE="One", OFF="Off"]
+
+			Selection item=Sonos_RadioStation_Kitc_Number visibility=[Sonos_Group2_Visibility=="Kitchen"]     mappings=[0="None", 1="NRK P1 Østlandssendingen", 2="NRK P2", 3="NRK P3", 4="NRK Alltid Nyheter", 5="NRK Klassisk", 6="NRK Jazz", 7="NRK MP3", 8="P4 Radio Norge", 9="Radio Norge"]
+			Selection item=Sonos_RadioStation_Bedr_Number visibility=[Sonos_Group2_Visibility=="Dining Room"]  mappings=[0="None", 1="NRK P1 Østlandssendingen", 2="NRK P2", 3="NRK P3", 4="NRK Alltid Nyheter", 5="NRK Klassisk", 6="NRK Jazz", 7="NRK MP3", 8="P4 Radio Norge", 9="Radio Norge"]
+			Selection item=Sonos_RadioStation_Bath_Number visibility=[Sonos_Group2_Visibility=="Tv"]    mappings=[0="None", 1="NRK P1 Østlandssendingen", 2="NRK P2", 3="NRK P3", 4="NRK Alltid Nyheter", 5="NRK Klassisk", 6="NRK Jazz", 7="NRK MP3", 8="P4 Radio Norge", 9="Radio Norge"]
+			Selection item=Sonos_RadioStation_Livi_Number visibility=[Sonos_Group2_Visibility=="Upstairs"] mappings=[0="None", 1="NRK P1 Østlandssendingen", 2="NRK P2", 3="NRK P3", 4="NRK Alltid Nyheter", 5="NRK Klassisk", 6="NRK Jazz", 7="NRK MP3", 8="P4 Radio Norge", 9="Radio Norge"]
+
+			Selection item=Sonos_Playlist_Kitc_Number visibility=[Sonos_Group2_Visibility=="Kitchen"]     mappings=[0="None", 1="Peiskos", 2="Rolig jazz", 3="Rolig Musikk", 4="All Work And No Play", 5="Schlagere"]
+			Selection item=Sonos_Playlist_Bedr_Number visibility=[Sonos_Group2_Visibility=="Dining Room"]  mappings=[0="None", 1="Peiskos", 2="Rolig jazz", 3="Rolig Musikk", 4="All Work And No Play", 5="Schlagere"]
+			Selection item=Sonos_Playlist_Bath_Number visibility=[Sonos_Group2_Visibility=="Tv"]    mappings=[0="None", 1="Peiskos", 2="Rolig jazz", 3="Rolig Musikk", 4="All Work And No Play", 5="Schlagere"]
+			Selection item=Sonos_Playlist_Livi_Number visibility=[Sonos_Group2_Visibility=="Upstairs"] mappings=[0="None", 1="Peiskos", 2="Rolig jazz", 3="Rolig Musikk", 4="All Work And No Play", 5="Schlagere"]
+
+			Text item=Kitchen_Sonos_CurrentArtist visibility=[Sonos_Group2_Visibility=="Kitchen"]
+			Text item=Tv_Sonos_CurrentArtist visibility=[Sonos_Group2_Visibility=="Dining Room"]
+			Text item=Dining_Room_Sonos_CurrentArtist visibility=[Sonos_Group2_Visibility=="Tv"]
+			Text item=Upstairs_Sonos_CurrentArtist visibility=[Sonos_Group2_Visibility=="Upstairs"]
+
+			Text item=Kitchen_Sonos_CurrentAlbum visibility=[Sonos_Group2_Visibility=="Kitchen"]
+			Text item=Tv_Sonos_CurrentAlbum visibility=[Sonos_Group2_Visibility=="Dining Room"]
+			Text item=Dining_Room_Sonos_CurrentAlbum visibility=[Sonos_Group2_Visibility=="Tv"]
+			Text item=Upstairs_Sonos_CurrentAlbum visibility=[Sonos_Group2_Visibility=="Upstairs"]
+
+			Text item=Kitchen_Sonos_CurrentTitle visibility=[Sonos_Group2_Visibility=="Kitchen"]
+			Text item=Tv_Sonos_CurrentTitle visibility=[Sonos_Group2_Visibility=="Dining Room"]
+			Text item=Dining_Room_Sonos_CurrentTitle visibility=[Sonos_Group2_Visibility=="Tv"]
+			Text item=Upstairs_Sonos_CurrentTitle visibility=[Sonos_Group2_Visibility=="Upstairs"]
+		}
+	}
+
+	Frame visibility=[Sonos_Group3_Visibility!="Hide"]{
+		Text label="Group 3"
+		icon="sonos_control" {
+			Default item=Kitchen_Sonos_Control 
+			Default item=Tv_Sonos_Control
+			Default item=Dining_Room_Sonos_Control
+			Default item=Upstairs_Sonos_Control
+			
+			Slider item=Kitchen_Sonos_Volume visibility=[SonosGroupID_Kitchen=="3"]
+			Slider item=Tv_Sonos_Volume visibility=[SonosGroupID_DiningRoom=="3"]
+			Slider item=Dining_Room_Sonos_Volume visibility=[SonosGroupID_Tv=="3"]
+			Slider item=Upstairs_Sonos_Volume visibility=[SonosGroupID_Upstairs=="3"]
+
+			Switch item=Kitchen_Sonos_Mute visibility=[Sonos_Group1_Visibility=="Kitchen"] 
+			Switch item=Tv_Sonos_Mute visibility=[Sonos_Group1_Visibility=="Dining Room"]
+			Switch item=Dining_Room_Sonos_Mute visibility=[Sonos_Group1_Visibility=="Tv"] 
+			Switch item=Upstairs_Sonos_Mute visibility=[Sonos_Group1_Visibility=="Upstairs"]
+
+			Switch item=Kitchen_Sonos_Shuffle visibility=[Sonos_Group3_Visibility=="Kitchen"] 
+			Switch item=Tv_Sonos_Shuffle visibility=[Sonos_Group3_Visibility=="Dining Room"]
+			Switch item=Dining_Room_Sonos_Shuffle visibility=[Sonos_Group3_Visibility=="Tv"] 
+			Switch item=Upstairs_Sonos_Shuffle visibility=[Sonos_Group3_Visibility=="Upstairs"]
+
+			Switch item=Kitchen_Sonos_Repeat visibility=[Sonos_Group3_Visibility=="Kitchen"]     mappings=[ALL="All", ONE="One", OFF="Off"]
+			Switch item=Tv_Sonos_Repeat visibility=[Sonos_Group3_Visibility=="Dining Room"]  mappings=[ALL="All", ONE="One", OFF="Off"]
+			Switch item=Dining_Room_Sonos_Repeat visibility=[Sonos_Group3_Visibility=="Tv"]    mappings=[ALL="All", ONE="One", OFF="Off"]
+			Switch item=Upstairs_Sonos_Repeat visibility=[Sonos_Group3_Visibility=="Upstairs"] mappings=[ALL="All", ONE="One", OFF="Off"]
+
+			Selection item=Sonos_RadioStation_Kitc_Number visibility=[Sonos_Group3_Visibility=="Kitchen"]     mappings=[0="None", 1="NRK P1 Østlandssendingen", 2="NRK P2", 3="NRK P3", 4="NRK Alltid Nyheter", 5="NRK Klassisk", 6="NRK Jazz", 7="NRK MP3", 8="P4 Radio Norge", 9="Radio Norge"]
+			Selection item=Sonos_RadioStation_Bedr_Number visibility=[Sonos_Group3_Visibility=="Dining Room"]  mappings=[0="None", 1="NRK P1 Østlandssendingen", 2="NRK P2", 3="NRK P3", 4="NRK Alltid Nyheter", 5="NRK Klassisk", 6="NRK Jazz", 7="NRK MP3", 8="P4 Radio Norge", 9="Radio Norge"]
+			Selection item=Sonos_RadioStation_Bath_Number visibility=[Sonos_Group3_Visibility=="Tv"]    mappings=[0="None", 1="NRK P1 Østlandssendingen", 2="NRK P2", 3="NRK P3", 4="NRK Alltid Nyheter", 5="NRK Klassisk", 6="NRK Jazz", 7="NRK MP3", 8="P4 Radio Norge", 9="Radio Norge"]
+			Selection item=Sonos_RadioStation_Livi_Number visibility=[Sonos_Group3_Visibility=="Upstairs"] mappings=[0="None", 1="NRK P1 Østlandssendingen", 2="NRK P2", 3="NRK P3", 4="NRK Alltid Nyheter", 5="NRK Klassisk", 6="NRK Jazz", 7="NRK MP3", 8="P4 Radio Norge", 9="Radio Norge"]
+
+			Selection item=Sonos_Playlist_Kitc_Number visibility=[Sonos_Group3_Visibility=="Kitchen"]     mappings=[0="None", 1="Peiskos", 2="Rolig jazz", 3="Rolig Musikk", 4="All Work And No Play", 5="Schlagere"]
+			Selection item=Sonos_Playlist_Bedr_Number visibility=[Sonos_Group3_Visibility=="Dining Room"]  mappings=[0="None", 1="Peiskos", 2="Rolig jazz", 3="Rolig Musikk", 4="All Work And No Play", 5="Schlagere"]
+			Selection item=Sonos_Playlist_Bath_Number visibility=[Sonos_Group3_Visibility=="Tv"]    mappings=[0="None", 1="Peiskos", 2="Rolig jazz", 3="Rolig Musikk", 4="All Work And No Play", 5="Schlagere"]
+			Selection item=Sonos_Playlist_Livi_Number visibility=[Sonos_Group3_Visibility=="Upstairs"] mappings=[0="None", 1="Peiskos", 2="Rolig jazz", 3="Rolig Musikk", 4="All Work And No Play", 5="Schlagere"]
+
+			Text item=Kitchen_Sonos_CurrentArtist visibility=[Sonos_Group3_Visibility=="Kitchen"]
+			Text item=Tv_Sonos_CurrentArtist visibility=[Sonos_Group3_Visibility=="Dining Room"]
+			Text item=Dining_Room_Sonos_CurrentArtist visibility=[Sonos_Group3_Visibility=="Tv"]
+			Text item=Upstairs_Sonos_CurrentArtist visibility=[Sonos_Group3_Visibility=="Upstairs"]
+
+			Text item=Kitchen_Sonos_CurrentAlbum visibility=[Sonos_Group3_Visibility=="Kitchen"]
+			Text item=Tv_Sonos_CurrentAlbum visibility=[Sonos_Group3_Visibility=="Dining Room"]
+			Text item=Dining_Room_Sonos_CurrentAlbum visibility=[Sonos_Group3_Visibility=="Tv"]
+			Text item=Upstairs_Sonos_CurrentAlbum visibility=[Sonos_Group3_Visibility=="Upstairs"]
+
+			Text item=Kitchen_Sonos_CurrentTitle visibility=[Sonos_Group3_Visibility=="Kitchen"]
+			Text item=Tv_Sonos_CurrentTitle visibility=[Sonos_Group3_Visibility=="Dining Room"]
+			Text item=Dining_Room_Sonos_CurrentTitle visibility=[Sonos_Group3_Visibility=="Tv"]
+			Text item=Upstairs_Sonos_CurrentTitle visibility=[Sonos_Group3_Visibility=="Upstairs"]
+		}
+	}
+
+	Frame visibility=[SonosGroupID_Kitchen=="0"]{
+		Text label="Kitchen"
+		icon="sonos_control" {
+			Default item=Kitchen_Sonos_Control 
+			Slider item=Kitchen_Sonos_Volume
+			Switch item=Kitchen_Sonos_Mute 
+			Switch item=Kitchen_Sonos_Shuffle 
+			Switch item=Kitchen_Sonos_Repeat mappings=[ALL="All", ONE="One", OFF="Off"]
+			Selection item=Sonos_RadioStation_Kitc_Number mappings=[0="None", 1="NRK P1 Østlandssendingen", 2="NRK P2", 3="NRK P3", 4="NRK Alltid Nyheter", 5="NRK Klassisk", 6="NRK Jazz", 7="NRK MP3", 8="P4 Radio Norge", 9="Radio Norge"]
+			Selection item=Sonos_Playlist_Kitc_Number mappings=[0="None", 1="Peiskos", 2="Rolig jazz", 3="Rolig Musikk", 4="All Work And No Play", 5="Schlagere"]
+			Text item=Kitchen_Sonos_CurrentArtist
+			Text item=Kitchen_Sonos_CurrentAlbum
+			Text item=Kitchen_Sonos_CurrentTitle
+
+		}
+	}
+
+	Frame visibility=[SonosGroupID_DiningRoom=="0"]{
+		Text label="Dining Room"
+		icon="sonos_control" {
+			Default item=Tv_Sonos_Control 
+			Slider item=Tv_Sonos_Volume
+			Switch item=Tv_Sonos_Mute 
+			Switch item=Tv_Sonos_Shuffle 
+			Switch item=Tv_Sonos_Repeat mappings=[ALL="All", ONE="One", OFF="Off"]
+			Selection item=Sonos_RadioStation_Bedr_Number mappings=[0="None", 1="NRK P1 Østlandssendingen", 2="NRK P2", 3="NRK P3", 4="NRK Alltid Nyheter", 5="NRK Klassisk", 6="NRK Jazz", 7="NRK MP3", 8="P4 Radio Norge", 9="Radio Norge"]
+			Selection item=Sonos_Playlist_Bedr_Number mappings=[0="None", 1="Peiskos", 2="Rolig jazz", 3="Rolig Musikk", 4="All Work And No Play", 5="Schlagere"]
+			Text item=Tv_Sonos_CurrentArtist
+			Text item=Tv_Sonos_CurrentAlbum
+			Text item=Tv_Sonos_CurrentTitle
+
+		}
+	}
+
+	Frame visibility=[SonosGroupID_Tv=="0"]{
+		Text label="TV Room"
+		icon="sonos_control" {
+			Default item=Dining_Room_Sonos_Control 
+			Slider item=Dining_Room_Sonos_Volume
+			Switch item=Dining_Room_Sonos_Mute 
+			Switch item=Dining_Room_Sonos_Shuffle 
+			Switch item=Dining_Room_Sonos_Repeat mappings=[ALL="All", ONE="One", OFF="Off"]
+			Selection item=Sonos_RadioStation_Bath_Number mappings=[0="None", 1="NRK P1 Østlandssendingen", 2="NRK P2", 3="NRK P3", 4="NRK Alltid Nyheter", 5="NRK Klassisk", 6="NRK Jazz", 7="NRK MP3", 8="P4 Radio Norge", 9="Radio Norge"]
+			Selection item=Sonos_Playlist_Bath_Number mappings=[0="None", 1="Peiskos", 2="Rolig jazz", 3="Rolig Musikk", 4="All Work And No Play", 5="Schlagere"]
+			Text item=Dining_Room_Sonos_CurrentArtist
+			Text item=Dining_Room_Sonos_CurrentAlbum
+			Text item=Dining_Room_Sonos_CurrentTitle
+
+		}
+	}
+
+	Frame visibility=[SonosGroupID_Upstairs=="0"]{
+		Text label="Upstairs"
+		icon="sonos_control" {
+			Default item=Upstairs_Sonos_Control 
+			Slider item=Upstairs_Sonos_Volume
+			Switch item=Upstairs_Sonos_Mute 
+			Switch item=Upstairs_Sonos_Shuffle 
+			Switch item=Upstairs_Sonos_Repeat mappings=[ALL="All", ONE="One", OFF="Off"]
+			Selection item=Sonos_RadioStation_Livi_Number mappings=[0="None", 1="NRK P1 Østlandssendingen", 2="NRK P2", 3="NRK P3", 4="NRK Alltid Nyheter", 5="NRK Klassisk", 6="NRK Jazz", 7="NRK MP3", 8="P4 Radio Norge", 9="Radio Norge"]
+			Selection item=Sonos_Playlist_Livi_Number mappings=[0="None", 1="Peiskos", 2="Rolig jazz", 3="Rolig Musikk", 4="All Work And No Play", 5="Schlagere"]
+			Text item=Upstairs_Sonos_CurrentArtist
+			Text item=Upstairs_Sonos_CurrentAlbum
+			Text item=Upstairs_Sonos_CurrentTitle
+
+		}
+	}
+
+	Selection item=SonosGroupID_Tv icon="sonos_coordinator" mappings=[0=Single, 1="Group 1", 2="Group 2", 3="Group 3"]
+	Selection item=SonosGroupID_DiningRoom icon="sonos_coordinator" mappings=[0=Single, 1="Group 1", 2="Group 2", 3="Group 3"]
+	Selection item=SonosGroupID_Kitchen icon="sonos_coordinator" mappings=[0=Single, 1="Group 1", 2="Group 2", 3="Group 3"]
+	Selection item=SonosGroupID_Upstairs icon="sonos_coordinator" mappings=[0=Single, 1="Group 1", 2="Group 2", 3="Group 3"]		
+
+}
