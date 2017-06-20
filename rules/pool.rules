@@ -16,6 +16,19 @@ then
         pushover("Pool Pump - on - chlorine - morning");
 end
 
+rule "pump off - peak"
+when
+	Time cron "0 00 12 1/1 * ? *"
+then
+	Pool_Pump.sendCommand(0)
+end
+
+rule "pump on - peak"
+when    
+        Time cron "0 00 15 1/1 * ? *"
+then
+        Pool_Pump.sendCommand(25)
+end
 
 rule "Pump Off"
 when
