@@ -1,0 +1,21 @@
+Thing weatherunderground:weather:Home "Mississauga Weather" [ apikey="4ea5acba3013dbf5", location="pws:IMISSISS14", language="EN" ] {
+    Channels:
+        Type temperature : current#temperature [ SourceUnit="C" ]
+        Type windSpeed : current#windSpeed [ SourceUnit="kmh" ]
+        Type windGust : current#windGust [ SourceUnit="kmh" ]
+        Type pressure : current#pressure [ SourceUnit="hPa" ]
+        Type dewPoint : current#dewPoint [ SourceUnit="C" ]
+        Type heatIndex : current#heatIndex [ SourceUnit="C" ]
+        Type windChill : current#windChill [ SourceUnit="C" ]
+        Type feelingTemperature : current#feelingTemperature [ SourceUnit="C" ]
+        Type visibility : current#visibility [ SourceUnit="km" ]
+        Type rainDay : current#precipitationDay [ SourceUnit="mm" ]
+        Type rainHour : current#precipitationHour [ SourceUnit="mm" ]
+        Type minTemperature : forecastToday#minTemperature [ SourceUnit="C" ]
+        Type maxTemperature : forecastToday#maxTemperature [ SourceUnit="C" ]
+        Type rainDay : forecastToday#precipitationDay [ SourceUnit="mm" ]
+        Type snow : forecastToday#snow [ SourceUnit="cm" ]
+        Type maxWindSpeed : forecastToday#maxWindSpeed [ SourceUnit="kmh" ]
+        Type averageWindSpeed : forecastToday#averageWindSpeed [ SourceUnit="kmh" ]
+	Type uvIndex : current#UVIndex
+}

@@ -9,8 +9,10 @@ DateTime CurrentDate            "Date [%1$tA, %1$td.%1$tm.%1$tY]"   <calendar>  
 
 Dimmer Pool_Pump "Pool Pump" <pump> ["Lighting"] {mqtt=">[broker:kolcun/outdoor/pool/pump:command:0:Speed1],>[broker:kolcun/outdoor/pool/pump:command:25:Speed2],>[broker:kolcun/outdoor/pool/pump:command:50:Speed3],>[broker:kolcun/outdoor/pool/pump:command:100:Speed4],<[broker:kolcun/outdoor/pool/pump/status:state:MAP(poolpump.map)]"}
 
+Rollershutter Awning "Awning" {mqtt=">[broker:kolcun/outdoor/awning:command:UP:in], >[broker:kolcun/outdoor/awning:command:DOWN:out], >[broker:kolcun/outdoor/awning:command:STOP:stop], <[broker:kolcun/outdoor/awning/state:state:MAP(awning.map)]"}
 
 
+Switch Awning2 "Awning" ["Lighting"] 
 
 /*
 Group Sonos

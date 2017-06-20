@@ -1,4 +1,20 @@
 
+rule "Pool Pump - off at night"
+when
+    Time cron "0 0 21 1/1 * ? *"
+then
+    Pool_Pump.sendCommand(0)
+	pushover("Pool Pump - off for evening");
+end
+
+
+rule "Pool Pump - on in morning"
+when
+    Time cron "0 30 6 1/1 * ? *"
+then
+    Pool_Pump.sendCommand(25)
+        pushover("Pool Pump - on - chlorine - morning");
+end
 
 
 rule "Pump Off"

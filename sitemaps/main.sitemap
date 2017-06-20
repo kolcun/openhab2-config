@@ -4,13 +4,34 @@ sitemap main label="My home automation" {
 	}
 	Frame label="Pool"{
 		Switch item=Pool_Pump label="Pump Speed" mappings=[0="Off", 25="Chlorine", 50="Heater", 100="Full Speed"]
-}
+	}
 	Frame label="Insteon Test"{
 		Slider item=Bookshelf_Light
 		Switch item=Landscape_Light
 		Switch item=Pool_Light
 		Switch item=Master_Fan mappings=[0="Off", 40="Slow", 80="Med", 100="Fast"]
-}
+	}
+	Frame label="Awning"{
+		Switch item=Awning
+	}
+	Frame label="Weather"{
+		Text item=Conditions
+		Text item=ForecastCondition
+		Text item=Temperature
+		Text item=Humidity
+		Text item=Pressure
+		Text item=RainD
+		Text item=RainH
+		Text item=DewPoint
+		Text item=HeatIndex
+		Text item=WindChill
+		Text item=Visibility
+		Text item=UV
+
+
+
+
+	}
 /*
    Frame label="Sonos"{
    Frame label="Sonos - Upstairs new" {

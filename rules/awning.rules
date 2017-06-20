@@ -1,0 +1,24 @@
+//Close Awning daily at 8pm
+rule "close awning"
+when
+    Time cron "0 0 20 1/1 * ? *"
+then
+    Awning.sendCommand(UP)
+end
+
+
+rule "homekit sync - out"
+when
+	Item Awning2 changed to ON
+then
+	Awning.sendCommand(DOWN)
+end
+
+rule "homekit sync - in"
+when
+	Item Awning2 changed to OFF
+then
+	Awning.sendCommand(UP)
+end
+
+
