@@ -25,9 +25,11 @@ end
 
 rule "pump on - peak"
 when    
-        Time cron "0 00 15 1/1 * ? *"
+        Time cron "0 48 14 1/1 * ? *"
 then
-        Pool_Pump.sendCommand(25)
+	if(Pool_Pump.state == 0){
+        	Pool_Pump.sendCommand(25)
+	}
 end
 
 rule "Pump Off"
