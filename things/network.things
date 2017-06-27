@@ -1,0 +1,1 @@
+network:device:mikeiphone [ hostname="192.168.0.135", port=0, retry=6, timeout=5000, refresh_interval=60000, use_system_ping=false ]

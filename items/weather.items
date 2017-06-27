@@ -28,15 +28,15 @@ Number Visibility "Visibility [%.1f km]" {channel="weatherunderground:weather:Ho
 Number UV "UV Index [%.1f]" {channel="weatherunderground:weather:Home:current#UVIndex"}
 
 //DateTime ForecastTime "Forecast time [%1$tH:%1$tM]" <clock>  {channel="weatherunderground:weather:Home:forecastToday#forecastTime"}
-//String ForecastCondition "Forecast conditions [%s]"  {channel="weatherunderground:weather:Home:forecastToday#conditions"}
+String ForecastCondition "Forecast conditions [%s]"  {channel="weatherunderground:weather:Home:forecastToday#conditions"}
 //Image ForecastIcon "Forecast icon"  {channel="weatherunderground:weather:Home:forecastToday#icon"}
-/*
+
 Number ForecastTempMin "Forecast min temp [%.1f °C]" <temperature>  {channel="weatherunderground:weather:Home:forecastToday#minTemperature"}
 Number ForecastTempMax "Forecast max temp [%.1f °C]" <temperature>  {channel="weatherunderground:weather:Home:forecastToday#maxTemperature"}
 Number ForecastHumidity "Forecast Humidity [%d %%]" <humidity>  {channel="weatherunderground:weather:Home:forecastToday#relativeHumidity"}
 Number ForecastProbaPrecip "Proba precip [%d %%]" <rain>  {channel="weatherunderground:weather:Home:forecastToday#probaPrecipitation"}
 Number ForecastRain "Rain [%.1f mm]" <rain> {channel="weatherunderground:weather:Home:forecastToday#precipitationDay"}
-Number ForecastSnow "Snow [%.2f cm]" <rain> {channel="weatherunderground:weather:Home:forecastToday#snow"}
+/*Number ForecastSnow "Snow [%.2f cm]" <rain> {channel="weatherunderground:weather:Home:forecastToday#snow"}
 String ForecastMaxWindDirection "Max wind direction [%s]" <wind>  {channel="weatherunderground:weather:Home:forecastToday#maxWindDirection"}
 Number ForecastMaxWindDirection2 "Max wind direction [%.0f °]" <wind>  {channel="weatherunderground:weather:Home:forecastToday#maxWindDirectionDegrees"}
 Number ForecastMaxWindSpeed "Max wind speed [%.1f km/h]" <wind>  {channel="weatherunderground:weather:Home:forecastToday#maxWindSpeed"}

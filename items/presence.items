@@ -1,0 +1,2 @@
+Switch Presence_Mobile_Mike "Mike's Mobile" <network> { channel="network:device:mikeiphone:online" }
+Number MobileMikeResponseTime { channel="network:device:mikeiphone:time" }

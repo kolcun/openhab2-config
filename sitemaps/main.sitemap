@@ -1,6 +1,7 @@
 sitemap main label="My home automation" {
 	Frame label="Date" {
 		Text item=CurrentDate
+		Switch item=Presence_Mobile_Mike
 	}
 	Frame label="Pool"{
 		Switch item=Pool_Pump label="Pump Speed" mappings=[0="Off", 25="Chlorine", 50="Heater", 100="Full Speed"]
@@ -27,8 +28,11 @@ sitemap main label="My home automation" {
 		Text item=WindChill
 		Text item=Visibility
 		Text item=UV
-
-
+		Text item=ForecastTempMin
+		Text item=ForecastTempMax
+		Text item=ForecastHumidity
+		Text item=ForecastProbaPrecip
+		Text item=ForecastRain
 
 
 	}
