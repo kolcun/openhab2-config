@@ -11,6 +11,24 @@ sitemap main label="My home automation" {
 		Switch item=Landscape_Light
 		Switch item=Pool_Light
 		Switch item=Master_Fan mappings=[0="Off", 40="Slow", 80="Med", 100="Fast"]
+		Slider item=Master_Light
+		Slider item=Bathroom_Foyer
+		Slider item=Powder_Room
+		Slider item=Powder_Room_Sconce
+		Slider item=Laundry_Room_Hallway
+		Switch item=Laundry_Room
+		Slider item=Master_Light_Mike
+		Slider item=Master_Light_Diane
+		Slider item=Famiy_Room
+		Slider item=Family_Room_Fireplace
+		Slider item=Family_Room_Accent
+		Slider item=Living_Room_Accent
+		Switch item=Exterior_Lights
+		Slider item=Upstairs_Lights
+		Switch item=Basement_Foyer
+		Slider item=Main_Hallway
+		Switch item=Pool_Heater	
+			
 	}
 	Frame label="Awning"{
 		Switch item=Awning
