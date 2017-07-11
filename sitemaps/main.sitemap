@@ -3,36 +3,49 @@ sitemap main label="My home automation" {
 		Text item=CurrentDate
 		Switch item=Presence_Mobile_Mike
 	}
-	Frame label="Pool"{
-		Switch item=Pool_Pump label="Pump Speed" mappings=[0="Off", 25="Chlorine", 50="Heater", 100="Full Speed"]
+
+	Frame label="Pool Heating"{
+		Switch item=Pool_Heat_Timer mappings=[off="Off", 1h="1 Hour", 2h="2 Hours", 4h="4 Hours"]
 	}
-	Frame label="Insteon Test"{
-		Slider item=Bookshelf_Light
-		Switch item=Landscape_Light
+
+	Frame label="Pool"{
+		Switch item=Pool_Pump label="Pump Speed" mappings=[0="Off", 25="Skim", 50="Heat", 100="Max"]
+		Switch item=Pool_Heater
 		Switch item=Pool_Light
+	}
+	
+	Frame label="Outside"{
+		Switch item=Exterior_Lights
+		Switch item=Landscape_Light
+                Switch item=Awning
+	}
+
+	Frame label="Main Floor"{
+                Slider item=Bathroom_Foyer
+                Slider item=Powder_Room
+                Slider item=Powder_Room_Sconce
+                Slider item=Famiy_Room
+                Slider item=Family_Room_Fireplace
+                Slider item=Family_Room_Accent
+                Slider item=Living_Room_Accent
+                Slider item=Main_Hallway
+        }
+
+	Frame label="Upstairs"{
+		Slider item=Bookshelf_Light
 		Switch item=Master_Fan mappings=[0="Off", 40="Slow", 80="Med", 100="Fast"]
 		Slider item=Master_Light
-		Slider item=Bathroom_Foyer
-		Slider item=Powder_Room
-		Slider item=Powder_Room_Sconce
-		Slider item=Laundry_Room_Hallway
-		Switch item=Laundry_Room
 		Slider item=Master_Light_Mike
 		Slider item=Master_Light_Diane
-		Slider item=Famiy_Room
-		Slider item=Family_Room_Fireplace
-		Slider item=Family_Room_Accent
-		Slider item=Living_Room_Accent
-		Switch item=Exterior_Lights
 		Slider item=Upstairs_Lights
-		Switch item=Basement_Foyer
-		Slider item=Main_Hallway
-		Switch item=Pool_Heater	
 			
 	}
-	Frame label="Awning"{
-		Switch item=Awning
-	}
+        Frame label="Basement"{
+                Slider item=Laundry_Room_Hallway
+                Switch item=Laundry_Room
+                Switch item=Basement_Foyer
+        }
+
 	Frame label="Weather"{
 		Text item=Conditions
 		Text item=ForecastCondition
