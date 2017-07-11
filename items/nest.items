@@ -1,0 +1,13 @@
+String home_away "Home/Away [%s]" <present> { nest="=[structures(Home).away]" }
+DateTime Family_Room_last_connection "Last Connection [%1$tm/%1$td/%1$tY %1$tH:%1$tM:%1$tS]" <calendar> {nest="<[thermostats(Family Room).last_connection]"}
+String Family_Room_hvac_mode "HVAC Mode" <climate> { nest="=[thermostats(Family Room).hvac_mode]" }
+String Family_Room_temperature_scale "Temperature Scale [%s]" { nest="<[thermostats(Family Room).temperature_scale]" }
+Number Family_Room_ambient_temperature_f "Ambient Temperature [%.1f °F]" <temperature> { nest="<[thermostats(Family Room).ambient_temperature_f]" }
+Number Family_Room_ambient_temperature_c "Ambient Temperature [%.1f °C]" <temperature> { nest="<[thermostats(Family Room).ambient_temperature_c]" }
+Number Family_Room_humidity "Humidity [%d %%]" <humidity> { nest="<[thermostats(Family Room).humidity]" }
+Number Family_Room_target_temperature_c "Target Temperature [%.1f °C]" <temperature> { nest="=[thermostats(Family Room).target_temperature_c]" }
+Number Family_Room_target_temperature_low_c "Minimum Temperature [%.1f °C]" <temperature> { nest="=[thermostats(Family Room).target_temperature_low_c]" }
+Number Family_Room_target_temperature_high_c "Maximum Temperature [%.1f °C]" <temperature> { nest="=[thermostats(Family Room).target_temperature_high_c]" }
+Number Family_Room_away_temperature_low_c "Minimum Away Temp. [%.1f °C]" <temperature> { nest="<[thermostats(Family Room).away_temperature_low_c]" }
+Number Family_Room_away_temperature_high_c "Maximum Away Temp. [%.1f °C]" <temperature> { nest="<[thermostats(Family Room).away_temperature_high_c]" }
+
