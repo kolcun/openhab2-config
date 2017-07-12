@@ -1,0 +1,61 @@
+import org.openhab.model.script.actions.*
+import org.eclipse.smarthome.model.script.actions.Timer
+
+var Timer heatTimerOneHour = null
+var Number initialPumpState = null
+
+rule "CaptureHeaterStateChangedToOff"
+when
+Item Pool_Heater changed to OFF
+then
+	if(heatTimerOneHour != null){
+        	heatTimerOneHour.cancel()
+	}
+        heatTimerOneHour = null
+        Pool_Heat_Timer.sendCommand("off")
+end
+
+rule "HeaterTimer"
+when
+Item Pool_Heat_Timer changed
+then
+
+
+if(Pool_Heat_Timer.state == "off"){
+      Pool_Heater.sendCommand(OFF);
+      if(initialPumpState != null){
+              Thread::sleep(60000)
+              Pool_Pump.sendCommand(initialPumpState)
+      }
+}else if (Pool_Heat_Timer.state == "1h") {
+	pushover("Heating Pool for One Hour")
+	logInfo("PoolHeatTimer", "Heating Pool for One Hour");
+        initialPumpState = Pool_Pump.state
+        Pool_Pump.sendCommand(50)
+        Thread::sleep(20000)
+        Pool_Heater.sendCommand(ON)
+
+        if(heatTimerOneHour != null) {
+                logInfo("PoolHeatTimer","One Hour Heater timer cancelled") 
+                heatTimerOneHour.cancel()
+        }
+
+
+        heatTimerOneHour = createTimer(now.plusHours(1)) [| 
+                logInfo("PoolHeatTimer", "One Hour heater timer expired")
+                heatTimerOneHour.cancel()
+                heatTimerOneHour = null
+                Pool_Heater.sendCommand(OFF)
+                Thread::sleep(60000)
+                Pool_Pump.sendCommand(initialPumpState)
+                Pool_Heat_Timer.sendCommand("off")
+                initialPumpState = null;
+                pushover("One Hour pool heater timer expired, turning off")
+        ]
+}else if(Pool_Heat_Timer.state == "2h"){
+
+}else if(Pool_Heat_Timer.state == "4h"){
+
+}
+end
+
