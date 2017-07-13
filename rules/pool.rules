@@ -1,4 +1,13 @@
 
+rule "Pool Heater - off at night"
+when
+    Time cron "0 0 23 1/1 * ? *"
+then
+	if(Pool_Heater.state == ON){
+		pushover("Heater is on, turning off for the night")
+		Pool_Heater.sendCommand(OFF)
+	}
+end
 
 rule "Pool Pump - off at night"
 when
