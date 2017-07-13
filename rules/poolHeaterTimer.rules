@@ -1,3 +1,4 @@
+import org.eclipse.xtext.xbase.lib.*
 import org.openhab.model.script.actions.*
 import org.eclipse.smarthome.model.script.actions.Timer
 
@@ -10,8 +11,8 @@ Item Pool_Heater changed to OFF
 then
 	if(heatTimer != null){
         	heatTimer.cancel()
+		heatTimer = null
 	}
-        heatTimer = null
         Pool_Heat_Timer.sendCommand("off")
 end
 
@@ -20,27 +21,33 @@ when
 Item Pool_Heat_Timer changed
 then
 
+val Functions$Function1<Timer, Boolean> cancelIfRequired = [t |
+        if(t != null){
+                logInfo("PoolHeatTimer","One Hour Heater timer cancelled")
+                t.cancel()
+        }
+        true
+]
+
 if(Pool_Heat_Timer.state == "off"){
       Pool_Heater.sendCommand(OFF);
       if(initialPumpState != null){
-              Thread::sleep(60000)
-              Pool_Pump.sendCommand(initialPumpState)
+		Thread::sleep(60000)
+		logInfo("PoolHeatTimer", "sleeping 60s before changing pump speed")
+		Pool_Pump.sendCommand(initialPumpState)
+		initialPumpState = null
       }
 }else if (Pool_Heat_Timer.state == "1h") {
-        if(heatTimer != null) {
-                logInfo("PoolHeatTimer","One Hour Heater timer cancelled")
-                heatTimer.cancel()
-        }
-
+	cancelIfRequired.apply(heatTimer);
 	pushover("Heating Pool for One Hour")
 	logInfo("PoolHeatTimer", "Heating Pool for One Hour");
         initialPumpState = Pool_Pump.state
-        Pool_Pump.sendCommand(50)
-        Thread::sleep(20000)
-        Pool_Heater.sendCommand(ON)
+        //Pool_Pump.sendCommand(50)
+        //Thread::sleep(20000)
+        //Pool_Heater.sendCommand(ON)
 
         heatTimer = createTimer(now.plusHours(1)) [| 
-                logInfo("PoolHeatTimer", "One Hour heater timer expired")
+                logInfo("PoolHeatTimer", "HPool eater timer expired")
                 heatTimer.cancel()
                 heatTimer = null
                 Pool_Heater.sendCommand(OFF)
@@ -48,12 +55,16 @@ if(Pool_Heat_Timer.state == "off"){
                 Pool_Pump.sendCommand(initialPumpState)
                 Pool_Heat_Timer.sendCommand("off")
                 initialPumpState = null;
-                pushover("One Hour pool heater timer expired, turning off")
+                pushover("Pool Heater timer expired, turning off")
         ]
 }else if(Pool_Heat_Timer.state == "2h"){
-
+	if(heatTimer != null){
+	logInfo("2timer", "not null")
+	}else{
+	logInfo("2timer", "is null")
+	}
 }else if(Pool_Heat_Timer.state == "4h"){
 
 }
-end
 
+end
