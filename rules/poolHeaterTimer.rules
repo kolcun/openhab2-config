@@ -32,8 +32,8 @@ val Functions$Function1<Timer, Boolean> cancelIfRequired = [t |
 if(Pool_Heat_Timer.state == "off"){
       Pool_Heater.sendCommand(OFF);
       if(initialPumpState != null){
-		Thread::sleep(60000)
 		logInfo("PoolHeatTimer", "sleeping 60s before changing pump speed")
+		Thread::sleep(60000)
 		Pool_Pump.sendCommand(initialPumpState)
 		initialPumpState = null
       }
@@ -50,11 +50,7 @@ if(Pool_Heat_Timer.state == "off"){
                 logInfo("PoolHeatTimer", "Pool Heater timer expired")
                 heatTimer.cancel()
                 heatTimer = null
-//                Pool_Heater.sendCommand(OFF)
-//                Thread::sleep(60000)
-//                Pool_Pump.sendCommand(initialPumpState)
                 Pool_Heat_Timer.sendCommand("off")
-//                initialPumpState = null;
                 pushover("Pool Heater timer expired, turning off")
         ]
 }else if(Pool_Heat_Timer.state == "2h"){
@@ -70,11 +66,7 @@ if(Pool_Heat_Timer.state == "off"){
                 logInfo("PoolHeatTimer", "Pool Heater timer expired")
                 heatTimer.cancel()
                 heatTimer = null
-//                Pool_Heater.sendCommand(OFF)
-//               Thread::sleep(60000)
-//                Pool_Pump.sendCommand(initialPumpState)
                 Pool_Heat_Timer.sendCommand("off")
-//                initialPumpState = null;
                 pushover("Pool Heater timer expired, turning off")
         ]
 }else if(Pool_Heat_Timer.state == "4h"){
@@ -90,11 +82,7 @@ if(Pool_Heat_Timer.state == "off"){
                 logInfo("PoolHeatTimer", "Pool Heater timer expired")
                 heatTimer.cancel()
                 heatTimer = null
-//                Pool_Heater.sendCommand(OFF)
-//                Thread::sleep(60000)
-//                Pool_Pump.sendCommand(initialPumpState)
                 Pool_Heat_Timer.sendCommand("off")
-//                initialPumpState = null
                 pushover("Pool Heater timer expired, turning off")
         ]
 }
