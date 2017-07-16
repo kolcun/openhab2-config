@@ -13,8 +13,10 @@ rule "Pool Pump - off at night"
 when
     Time cron "0 0 21 1/1 * ? *"
 then
-    Pool_Pump.sendCommand(0)
-	pushover("Pool Pump - off for evening")
+    	if(Pool_Pump.state != 0){
+		Pool_Pump.sendCommand(0)
+		pushover("Pool Pump - off for evening")
+	}
 end
 
 
@@ -28,14 +30,14 @@ end
 
 rule "pump off - peak"
 when
-	Time cron "0 00 12 1/1 * ? *"
+	Time cron "0 00 12 1/1 * MON-FRI *"
 then
 	Pool_Pump.sendCommand(0)
 end
 
 rule "pump on - peak"
 when    
-        Time cron "0 48 14 1/1 * ? *"
+        Time cron "0 48 14 1/1 * MON-FRI *"
 then
 	if(Pool_Pump.state == 0){
         	Pool_Pump.sendCommand(25)
