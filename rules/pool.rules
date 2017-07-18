@@ -1,4 +1,4 @@
-
+// Use Cronmaker.com
 rule "Pool Heater - off at night"
 when
     Time cron "0 0 23 1/1 * ? *"
@@ -30,14 +30,14 @@ end
 
 rule "pump off - peak"
 when
-	Time cron "0 00 12 1/1 * MON-FRI *"
+	Time cron "0 54 12 ? * MON-FRI *"
 then
 	Pool_Pump.sendCommand(0)
 end
 
 rule "pump on - peak"
 when    
-        Time cron "0 48 14 1/1 * MON-FRI *"
+        Time cron "0 0 15 ? * MON-FRI *"
 then
 	if(Pool_Pump.state == 0){
         	Pool_Pump.sendCommand(25)
