@@ -5,7 +5,7 @@ Dimmer Bookshelf_Light "Bookshelf Lights" <light> ["Lighting"] {http=">[*:POST:h
 Switch Pool_Light "Pool Light" <light> ["Lighting"] {mqtt="<[broker:kolcun/outdoor/pool/light/status:command:MAP(onoff.map)]", http=">[*:POST:http://192.168.0.117:8080/SET;none?select_item=Pool_Light&select_state=%2$s]"}
 
 Switch Landscape_Light "Landscape Lights" <light> ["Lighting"] {http=">[*:POST:http://192.168.0.117:8080/SET;none?select_item=Landscape_Lights&select_state=%2$s]"}
-Dimmer Master_Fan "Master Fan" <fan> ["Lighting"] {http=">[*:POST:http://192.168.0.117:8080/SET;none?select_item=Master_Fan&select_state=%2$s]"}
+Dimmer Master_Fan "Master Fan" <fan>  {http=">[*:POST:http://192.168.0.117:8080/SET;none?select_item=Master_Fan&select_state=%2$s]"}
 
 Dimmer Master_Light "Master Light" <light> {http=">[*:POST:http://192.168.0.117:8080/SET;none?select_item=Master_Light&select_state=%2$s]"}
 

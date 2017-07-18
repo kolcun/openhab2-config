@@ -14,6 +14,9 @@ Rollershutter Awning "Awning" {mqtt=">[broker:kolcun/outdoor/awning:command:UP:i
 
 Switch Awning2 "Awning" ["Lighting"] 
 
+Switch Master_Fan2 "Master Fan" ["Lighting"]
+
+
 /*
 Group Sonos
 
