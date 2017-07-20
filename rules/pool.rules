@@ -30,7 +30,7 @@ end
 
 rule "pump off - peak"
 when
-	Time cron "0 54 12 ? * MON-FRI *"
+	Time cron "0 00 12 ? * MON-FRI *"
 then
 	Pool_Pump.sendCommand(0)
 end
