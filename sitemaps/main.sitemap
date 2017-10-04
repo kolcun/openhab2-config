@@ -64,8 +64,16 @@ sitemap main label="My home automation" {
 		Text item=ForecastHumidity
 		Text item=ForecastProbaPrecip
 		Text item=ForecastRain
-
-
+	}
+	Frame label="Astro"{
+		Text item=SunriseTime
+		Text item=SunsetTime
+		Text item=Azimuth
+		Text item=Elevation
+		Text item=MoonPhase
+		Text item=TotalRadiation
+		Text item=DiffuseRadiation
+		Switch item=NightState
 	}
 /*
    Frame label="Sonos"{

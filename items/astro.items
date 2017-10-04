@@ -1,0 +1,9 @@
+DateTime SunriseTime       "Sunrise [%1$tH:%1$tM]" <sun> (Astro) { channel="astro:sun:home:rise#start" }
+DateTime SunsetTime        "Sunset [%1$tH:%1$tM]"  <sun> (Astro) { channel="astro:sun:home:set#start" }
+Number   Azimuth            "Azimuth"              <sun> (Astro)  { channel="astro:sun:home:position#azimuth" }
+Number   Elevation          "Elevation"            <sun> (Astro)  { channel="astro:sun:home:position#elevation" }
+String   MoonPhase          "MoonPhase"            <moon> (Astro)  { channel="astro:moon:home:phase#name" }
+Number   TotalRadiation    "Radiation"             <sun> (Astro) { channel="astro:sun:home:radiation#total" }
+Number   DiffuseRadiation  "Diffuse Radiation"     <sun> (Astro) { channel="astro:sun:home:radiation#diffuse" }
+Switch   NightState    "Night"
+
