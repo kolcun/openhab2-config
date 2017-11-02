@@ -1,38 +1,38 @@
-Dimmer Bookshelf_Light "Bookshelf Lights" <light> ["Lighting"] {http=">[*:POST:http://192.168.0.117:8080/SET;none?select_item=Bookshelf&select_state=%2$s]"}
+Dimmer Bookshelf_Light "Bookshelf Lights" <light> ["Lighting"] {http=">[*:POST:http://192.168.24.117:8080/SET;none?select_item=Bookshelf&select_state=%2$s]"}
 
-//Switch Pool_Light "Pool Light" <light> ["Lighting"] {mqtt="<[broker:kolcun/outdoor/pool/light/status:command:MAP(onoff.map)], >[broker:kolcun/outdoor/pool/light:status:on:on], >[broker:kolcun/outdoor/pool/light:status:off:off]", http=">[*:POST:http://192.168.0.117:8080/SET;none?select_item=Pool_Light&select_state=%2$s]"}
+//Switch Pool_Light "Pool Light" <light> ["Lighting"] {mqtt="<[broker:kolcun/outdoor/pool/light/status:command:MAP(onoff.map)], >[broker:kolcun/outdoor/pool/light:status:on:on], >[broker:kolcun/outdoor/pool/light:status:off:off]", http=">[*:POST:http://192.168.24.117:8080/SET;none?select_item=Pool_Light&select_state=%2$s]"}
 
-Switch Pool_Light "Pool Light" <light> ["Lighting"] {mqtt="<[broker:kolcun/outdoor/pool/light/status:command:MAP(onoff.map)]", http=">[*:POST:http://192.168.0.117:8080/SET;none?select_item=Pool_Light&select_state=%2$s]"}
+Switch Pool_Light "Pool Light" <light> ["Lighting"] {mqtt="<[broker:kolcun/outdoor/pool/light/status:command:MAP(onoff.map)]", http=">[*:POST:http://192.168.24.117:8080/SET;none?select_item=Pool_Light&select_state=%2$s]"}
 
-Switch Landscape_Light "Landscape Lights" <light> ["Lighting"] {http=">[*:POST:http://192.168.0.117:8080/SET;none?select_item=Landscape_Lights&select_state=%2$s]"}
-Dimmer Master_Fan "Master Fan" <fan>  {http=">[*:POST:http://192.168.0.117:8080/SET;none?select_item=Master_Fan&select_state=%2$s]"}
+Switch Landscape_Light "Landscape Lights" <light> ["Lighting"] {http=">[*:POST:http://192.168.24.117:8080/SET;none?select_item=Landscape_Lights&select_state=%2$s]"}
+Dimmer Master_Fan "Master Fan" <fan>  {http=">[*:POST:http://192.168.24.117:8080/SET;none?select_item=Master_Fan&select_state=%2$s]"}
 
-Dimmer Master_Light "Master Light" <light> ["Lighting"] {http=">[*:POST:http://192.168.0.117:8080/SET;none?select_item=Master_Light&select_state=%2$s]"}
+Dimmer Master_Light "Master Light" <light> ["Lighting"] {http=">[*:POST:http://192.168.24.117:8080/SET;none?select_item=Master_Light&select_state=%2$s]"}
 
-Dimmer Bathroom_Foyer "Bathroom Foyer" <light> {http=">[*:POST:http://192.168.0.117:8080/SET;none?select_item=Bathroom_Foyer&select_state=%2$s]"}
+Dimmer Bathroom_Foyer "Bathroom Foyer" <light> {http=">[*:POST:http://192.168.24.117:8080/SET;none?select_item=Bathroom_Foyer&select_state=%2$s]"}
 
-Dimmer Powder_Room "Powder Room" <light> {http=">[*:POST:http://192.168.0.117:8080/SET;none?select_item=Powder_Room&select_state=%2$s]"}
-Dimmer Powder_Room_Sconce "Power Room Sconce" <light> {http=">[*:POST:http://192.168.0.117:8080/SET;none?select_item=Powder_Room_Sconce&select_state=%2$s]"}
+Dimmer Powder_Room "Powder Room" <light> {http=">[*:POST:http://192.168.24.117:8080/SET;none?select_item=Powder_Room&select_state=%2$s]"}
+Dimmer Powder_Room_Sconce "Power Room Sconce" <light> {http=">[*:POST:http://192.168.24.117:8080/SET;none?select_item=Powder_Room_Sconce&select_state=%2$s]"}
 
-Dimmer Laundry_Room_Hallway "Laundry Room Hallway" <light> {http=">[*:POST:http://192.168.0.117:8080/SET;none?select_item=Laundry_Room_Hallway&select_state=%2$s]"}
-Switch Laundry_Room "Laundry Room" <light> {http=">[*:POST:http://192.168.0.117:8080/SET;none?select_item=Laundry_Room_Lights&select_state=%2$s]"}
+Dimmer Laundry_Room_Hallway "Laundry Room Hallway" <light> {http=">[*:POST:http://192.168.24.117:8080/SET;none?select_item=Laundry_Room_Hallway&select_state=%2$s]"}
+Switch Laundry_Room "Laundry Room" <light> {http=">[*:POST:http://192.168.24.117:8080/SET;none?select_item=Laundry_Room_Lights&select_state=%2$s]"}
 
-Dimmer Master_Light_Mike "Mike Night Table" <light> ["Lighting"] {http=">[*:POST:http://192.168.0.117:8080/SET;none?select_item=Master_Light_Mike&select_state=%2$s]"}
-Dimmer Master_Light_Diane "Diane Night Table" <light> {http=">[*:POST:http://192.168.0.117:8080/SET;none?select_item=Master_Light_Diane&select_state=%2$s]"}
+Dimmer Master_Light_Mike "Mike Night Table" <light> ["Lighting"] {http=">[*:POST:http://192.168.24.117:8080/SET;none?select_item=Master_Light_Mike&select_state=%2$s]"}
+Dimmer Master_Light_Diane "Diane Night Table" <light> {http=">[*:POST:http://192.168.24.117:8080/SET;none?select_item=Master_Light_Diane&select_state=%2$s]"}
 
-Dimmer Famiy_Room "Family Room" <light> {http=">[*:POST:http://192.168.0.117:8080/SET;none?select_item=Family_Room_Main_Pot_Lights&select_state=%2$s]"}
-Dimmer Family_Room_Fireplace "Family Room Fireplace" <light> {http=">[*:POST:http://192.168.0.117:8080/SET;none?select_item=Family_Room_Fireplace_Pot_Lights&select_state=%2$s]"}
-Dimmer Family_Room_Accent "Family Room Accent" <light> {http=">[*:POST:http://192.168.0.117:8080/SET;none?select_item=Family_Room_Window_Pot_Lights&select_state=%2$s]"}
+Dimmer Famiy_Room "Family Room" <light> {http=">[*:POST:http://192.168.24.117:8080/SET;none?select_item=Family_Room_Main_Pot_Lights&select_state=%2$s]"}
+Dimmer Family_Room_Fireplace "Family Room Fireplace" <light> {http=">[*:POST:http://192.168.24.117:8080/SET;none?select_item=Family_Room_Fireplace_Pot_Lights&select_state=%2$s]"}
+Dimmer Family_Room_Accent "Family Room Accent" <light> {http=">[*:POST:http://192.168.24.117:8080/SET;none?select_item=Family_Room_Window_Pot_Lights&select_state=%2$s]"}
 
-Dimmer Living_Room_Accent "Living Room Accent" <light> {http=">[*:POST:http://192.168.0.117:8080/SET;none?select_item=Living_Room_Pot_Lights&select_state=%2$s]"}
+Dimmer Living_Room_Accent "Living Room Accent" <light> {http=">[*:POST:http://192.168.24.117:8080/SET;none?select_item=Living_Room_Pot_Lights&select_state=%2$s]"}
 
-Switch Exterior_Lights "Exterior Lights" <light> {http=">[*:POST:http://192.168.0.117:8080/SET;none?select_item=Front_Door_Keypad_Ext_Light&select_state=%2$s]"}
+Switch Exterior_Lights "Exterior Lights" <light> {http=">[*:POST:http://192.168.24.117:8080/SET;none?select_item=Front_Door_Keypad_Ext_Light&select_state=%2$s]"}
 
-Dimmer Upstairs_Lights "Upstairs Lights" <light> {http=">[*:POST:http://192.168.0.117:8080/SET;none?select_item=Upstairs_Landing_Keypad_Light&select_state=%2$s]"}
+Dimmer Upstairs_Lights "Upstairs Lights" <light> {http=">[*:POST:http://192.168.24.117:8080/SET;none?select_item=Upstairs_Landing_Keypad_Light&select_state=%2$s]"}
 
-Switch Basement_Foyer "Basement Foyer" <light> {http=">[*:POST:http://192.168.0.117:8080/SET;none?select_item=Basement_Stairs_Top&select_state=%2$s]"}
+Switch Basement_Foyer "Basement Foyer" <light> {http=">[*:POST:http://192.168.24.117:8080/SET;none?select_item=Basement_Stairs_Top&select_state=%2$s]"}
 
-Dimmer Main_Hallway "Main Hallway" <light> {http=">[*:POST:http://192.168.0.117:8080/SET;none?select_item=Front_Hall_Hall_Side&select_state=%2$s]"}
+Dimmer Main_Hallway "Main Hallway" <light> {http=">[*:POST:http://192.168.24.117:8080/SET;none?select_item=Front_Hall_Hall_Side&select_state=%2$s]"}
 
-Switch Pool_Heater "Pool Heater" <fire> {http=">[*:POST:http://192.168.0.117:8080/SET;none?select_item=Pool_Gas_Heater&select_state=%2$s]"}
+Switch Pool_Heater "Pool Heater" <fire> {http=">[*:POST:http://192.168.24.117:8080/SET;none?select_item=Pool_Gas_Heater&select_state=%2$s]"}
 
