@@ -1,0 +1,11 @@
+sitemap halloween label="Halloween" {
+	Frame label="Halloween Props" {
+		Text item=CurrentDate
+		Switch item=Halloween_Spider mappings=[ON="Jump"]
+		Switch item=Halloween_Ghoul mappings=[ON="Scare"]
+		Switch item=Halloween_Spooky_Man mappings=[ON="Be Spooky"]
+
+		
+		
+	}
+}
