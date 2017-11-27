@@ -41,6 +41,7 @@ sitemap main label="My home automation" {
 		Slider item=Master_Light_Mike
 		Slider item=Master_Light_Diane
 		Slider item=Upstairs_Lights
+		//Default item=TESTBookshelf
 			
 	}
         Frame label="Basement"{
