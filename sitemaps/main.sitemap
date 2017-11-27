@@ -18,6 +18,9 @@ sitemap main label="My home automation" {
 		Switch item=Exterior_Lights
 		Switch item=Landscape_Light
                 Switch item=Awning
+		Switch item=OutdoorPortable
+		Default item=DoorSensorBatteryLevel
+		Default item=DoorSensor
 	}
 
 	Frame label="Main Floor"{

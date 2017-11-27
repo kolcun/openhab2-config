@@ -1,0 +1,6 @@
+Switch OutdoorPortable {channel="zwave:device:9292c72c:node2:switch_binary"}
+
+Number DoorSensorBatteryLevel {channel="zwave:device:9292c72c:node3:battery-level"}
+Contact DoorSensor {channel="zwave:device:9292c72c:node3:sensor_door"}
+
+

@@ -1,3 +1,7 @@
+Dimmer Pool_Pump "Pool Pump" <pump> ["Lighting"] {mqtt=">[broker:kolcun/outdoor/pool/pump:command:0:Speed1],>[broker:kolcun/outdoor/pool/pump:command:25:Speed2],>[broker:kolcun/outdoor/pool/pump:command:50:Speed3],>[broker:kolcun/outdoor/pool/pump:command:100:Speed4],<[broker:kolcun/outdoor/pool/pump/status:state:MAP(poolpump.map)]"}
+
+
+
 //Heater Timers
 
 String Pool_Heat_Timer "Pool Heat Timer"

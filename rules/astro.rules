@@ -18,8 +18,12 @@ when
     Item Elevation changed
 then
     if(Elevation.state > 0){
-        if(NightState.state != OFF) postUpdate(NightState, OFF)
+        if(NightState.state != OFF){
+		postUpdate(NightState, OFF)
+	}
     } else {
-        if(NightState.state != ON) postUpdate(NightState, ON)
+        if(NightState.state != ON){ 
+		postUpdate(NightState, ON)
+	}
     }
 end
