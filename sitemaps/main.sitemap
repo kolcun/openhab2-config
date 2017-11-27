@@ -17,10 +17,10 @@ sitemap main label="My home automation" {
 	Frame label="Outside"{
 		Switch item=Exterior_Lights
 		Switch item=Landscape_Light
-                Switch item=Awning
+		Switch item=Awning
 		Switch item=OutdoorPortable
-		Default item=DoorSensorBatteryLevel
-		Default item=DoorSensor
+		Text item=FrontDoorSensorBatteryLevel
+		Default item=FrontDoorSensor
 	}
 
 	Frame label="Main Floor"{
