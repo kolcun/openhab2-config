@@ -1,3 +1,7 @@
+Strategies {
+	default = everyUpdate
+}
+
 Items {
-	* : strategy = restoreOnStartup
+	* : strategy = everyChange, restoreOnStartup
 }
