@@ -1,3 +1,5 @@
+/*
+
 // Use Cronmaker.com
 rule "Pool Heater - off at night"
 when
@@ -71,4 +73,6 @@ when
 then
 	pushover("Pool Pump - Heater Speed")
 end
+
+*/
 
