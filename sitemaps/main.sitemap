@@ -19,6 +19,7 @@ sitemap main label="My home automation" {
 		Switch item=Landscape_Light
 		Switch item=Awning
 		Switch item=OutdoorPortable
+		Default item=FrontDoorSensorBatteryLevel
 		Text item=FrontDoorSensorBatteryLevel
 		Default item=FrontDoorSensor
 	}
