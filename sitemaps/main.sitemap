@@ -1,4 +1,12 @@
 sitemap main label="My home automation" {
+	Frame label="Group Testing"{
+		Switch item=Upstairs
+		Group item=Upstairs
+		Switch item=MasterBedroom
+		Group item=MasterBedroom
+		Group item=House
+	}
+
 	Frame label="Date" {
 		Text item=CurrentDate
 		Switch item=Presence_Mobile_Mike
@@ -19,11 +27,10 @@ sitemap main label="My home automation" {
 		Switch item=Landscape_Light
 		Switch item=Awning
 		Switch item=OutdoorPortable
-		Text item=FrontDoorSensorBatteryLevel
-		Text item=FrontDoorSensor
 	}
 
 	Frame label="Main Floor"{
+		Text item=FrontDoorSensor
                 Slider item=Bathroom_Foyer
                 Slider item=Powder_Room
                 Slider item=Powder_Room_Sconce

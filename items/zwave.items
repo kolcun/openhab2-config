@@ -1,6 +1,6 @@
-Switch OutdoorPortable {channel="zwave:device:9292c72c:node2:switch_binary"}
+Switch OutdoorPortable (Outside) {channel="zwave:device:9292c72c:node2:switch_binary"}
 
-Number FrontDoorSensorBatteryLevel "Front door battery [%d%%]" {channel="zwave:device:9292c72c:node3:battery-level"}
-Contact FrontDoorSensor "Front door is [%s]" {channel="zwave:device:9292c72c:node3:sensor_door"}
+Number FrontDoorSensorBatteryLevel "Front door battery [%d%%]" (Batteries) {channel="zwave:device:9292c72c:node3:battery-level"}
+Contact FrontDoorSensor "Front door is [%s]" (Sensors) {channel="zwave:device:9292c72c:node3:sensor_door"}
 
 
