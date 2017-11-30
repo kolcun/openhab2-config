@@ -23,7 +23,7 @@ sitemap main label="My home automation" {
 	}
 	
 	Frame label="Outside"{
-		Switch item=Exterior_Lights
+		Switch item=Outside_Lights
 		Switch item=Landscape_Light
 		Switch item=Awning
 		Switch item=OutdoorPortable
@@ -42,13 +42,12 @@ sitemap main label="My home automation" {
         }
 
 	Frame label="Upstairs"{
-		Slider item=Bookshelf_Light
-		Switch item=Master_Fan mappings=[0="Off", 40="Slow", 80="Med", 100="Fast"]
+		Slider item=Bookshelf
+		Switch item=Master_Fan mappings=[ 0="OFF",  1="LOW", 2="MEDIUM", 3="HIGH"] //mappings=[0="Off", 40="Slow", 80="Med", 100="Fast"]
 		Slider item=Master_Light
-		Slider item=Master_Light_Mike
-		Slider item=Master_Light_Diane
-		Slider item=Upstairs_Lights
-		//Default item=TESTBookshelf
+		Slider item=Master_Mike
+		Slider item=Master_Diane
+		Slider item=Upstairs_Hallway
 			
 	}
         Frame label="Basement"{
