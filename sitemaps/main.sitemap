@@ -12,11 +12,11 @@ sitemap main label="My home automation" {
 		Switch item=Presence_Mobile_Mike
 	}
 
-	Frame label="Pool Heating"{
+	Frame label="Pool Heating" visibility=[Pool_Pump==ON]{
 		Switch item=Pool_Heat_Timer mappings=[off="Off", 1h="1 Hour", 2h="2 Hours", 4h="4 Hours"]
 	}
 
-	Frame label="Pool"{
+	Frame label="Pool" visibility=[Pool_Pump==ON]{
 		Switch item=Pool_Pump label="Pump Speed" mappings=[0="Off", 25="Skim", 50="Heat", 100="Max"]
 		Switch item=Pool_Heater
 		Switch item=Pool_Light
@@ -43,7 +43,7 @@ sitemap main label="My home automation" {
 
 	Frame label="Upstairs"{
 		Slider item=Bookshelf
-		Switch item=Master_Fan mappings=[ 0="OFF",  1="LOW", 2="MEDIUM", 3="HIGH"] //mappings=[0="Off", 40="Slow", 80="Med", 100="Fast"]
+		Switch item=Master_Fan mappings=[ 0="OFF",  1="Slow", 2="MEDIUM", 3="Fast"] //mappings=[0="Off", 40="Slow", 80="Med", 100="Fast"]
 		Slider item=Master_Light
 		Slider item=Master_Mike
 		Slider item=Master_Diane
