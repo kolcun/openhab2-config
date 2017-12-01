@@ -1,0 +1,97 @@
+rule "Sunrise Event"
+when
+    Item Sunrise_Event received update ON
+then
+    pushover("Sunrise - Civil")
+end
+
+rule "Sunset Event"
+when
+    Item Sunset_Event  received update ON
+then
+    pushover("Sunset - Civil")
+end
+
+rule "Outside lights - off"
+when
+    Time cron "0 0 23 1/1 * ? *" or//11pm
+    Time cron "0 59 23 1/1 * ? *" or//11:59pm
+    Time cron "0 0 2 1/1 * ? *"//2am
+then
+	if(Outside_Lights.state == ON){
+		Outside_Lights.sendCommand(OFF)
+	}
+end
+
+
+rule "11:59pm Off"
+when
+    Time cron "0 59 23 1/1 * ? *" or//1159pm
+then
+    if(Main_Hallway.state == ON){
+        Main_Hallway.sendCommand(OFF)
+    }
+end
+
+rule "11pm Off"
+when
+    Time cron "0 0 23 1/1 * ? *" or//11pm
+then
+	if(Living_Room_Accent.state == ON){
+		Living_Room_Accent.sendCommand(OFF)
+	}
+    if(Bathroom_Foyer.state == ON){
+        Bathroom_Foyer.sendCommand(OFF)
+    }
+    if(Family_Room_Accent.state == ON){
+        Family_Room_Accent.sendCommand(OFF)
+    }
+end
+
+rule "10:30 off"
+when 
+    Time cron cron "0 20 10 1/1 * ? *" or//10:30pm
+then
+    if(Landscape_Light.state == ON){
+        Landscape_Light.sendCommand(OFF)
+    }
+    if(Bookshelf.state == ON){
+        Bookshelf.sendCommand(OFF)
+    }
+end
+
+rule "7:30am Off"
+when
+    Time cron "0 30 7 1/1 * ? *" or//7:30pm
+then
+    if(Master_Fan.state == ON){
+        Master_Fan.sendCommand(0)
+    }
+end
+
+rule "bathroom Foyer - Summer"
+when
+    Time cron "0 00 21 1/1 * ? *" or//9pm
+then
+    if(Bathroom_Foyer.state == OFF){
+        Bathroom_Foyer.sendCommand(20)
+    }
+end
+
+rule "bathroom Foyer - Winter"
+when
+    Time cron "0 30 16 1/1 * ? *" or//4:30pm
+then
+    if(Bathroom_Foyer.state == OFF){
+        Bathroom_Foyer.sendCommand(20)
+    }
+end
+
+rule "Landscape light On"
+when
+    Time cron "0 30 17 1/1 * ? *" or//5:30pm
+then
+    if(Landscape_Light == OFF){
+        Landscape_Light.sendCommand(ON)
+    }
+end
