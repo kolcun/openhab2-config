@@ -49,13 +49,13 @@ end
 
 rule "10:30 off"
 when 
-    Time cron "0 22 17 1/1 * ? *"//9pm
+    Time cron "0 0 21 1/1 * ? *"//9pm
 then
-    if(DianeGarageSensor.state == OPEN)
+    if(DianeGarageSensor.state == OPEN){
         pushover("9pm close Diane garage")
         DianeGarage.sendCommand(ON)
     }
-    if(MikeGarageSensor.state == OPEN)
+    if(MikeGarageSensor.state == OPEN){
         pushover("9pm close Diane garage")
         MikeGarage.sendCommand(ON)
     }
