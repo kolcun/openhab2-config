@@ -2,32 +2,48 @@ rule "Mike Garage Closed"
 when 
 	Item MikeGarageSensor changed to CLOSED
 then
-	pushover("Mike Garage Closed")
     frontdoorH.sendCommand(OFF)
+    MikeGarage.postUpdate(OFF)
+    Thread::sleep(250)
+    frontdoorH.sendCommand(OFF)
+    MikeGarage.postUpdate(OFF)
+    pushover("Mike Garage Closed")
 end
 
 rule "Mike Garage Open"
 when 
 	Item MikeGarageSensor changed to OPEN
 then
-	pushover("Mike Garage Opened")
     frontdoorH.sendCommand(ON)
+    MikeGarage.postUpdate(OFF)
+    Thread::sleep(250)
+    frontdoorH.sendCommand(ON)
+    MikeGarage.postUpdate(OFF)
+    pushover("Mike Garage Opened")
 end
 
 rule "Diane Garage Closed"
 when 
 	Item DianeGarageSensor changed to CLOSED
 then
-	pushover("Diane Garage Closed")
     frontdoorG.sendCommand(OFF)
+    DianeGarage.postUpdate(OFF)
+    Thread::sleep(250)
+    frontdoorG.sendCommand(OFF)
+    DianeGarage.postUpdate(OFF)
+    pushover("Diane Garage Closed")
 end
 
 rule "Diane Garage Open"
 when 
 	Item DianeGarageSensor changed to OPEN
 then
-	pushover("Diane Garage Opened")
     frontdoorG.sendCommand(ON)
+    DianeGarage.postUpdate(OFF)
+    Thread::sleep(250)
+    frontdoorG.sendCommand(ON)
+    DianeGarage.postUpdate(OFF)
+    pushover("Diane Garage Opened")
 end
 
 
