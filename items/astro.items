@@ -7,3 +7,5 @@ Number   TotalRadiation    "Radiation"             <sun> (Astro) { channel="astr
 Number   DiffuseRadiation  "Diffuse Radiation"     <sun> (Astro) { channel="astro:sun:home:radiation#diffuse" }
 Switch   NightState    "Night"
 
+Switch Sunrise_Event   {astro="planet=sun, type=civilDawn, property=start"}
+Switch Sunset_Event    {astro="planet=sun, type=civilDusk, property=start"}
