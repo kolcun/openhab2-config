@@ -1,6 +1,17 @@
+rule "Mike Garage Closed"
+when 
+	Item MikeGarageSensor changed to CLOSED
+then
+	pushover("Mike Garage Closed")
+    frontdoorG.sendCommand(OFF):
+end
+
 rule "Mike Garage Open"
 when 
 	Item MikeGarageSensor changed to OPEN
 then
-	//pushover("Front Door Open")
+	pushover("Mike Garage Opened")
+    frontdoorG.sendCommand(ON)
 end
+
+
