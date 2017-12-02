@@ -23,10 +23,22 @@ then
 	}
 end
 
+rule "pool heater - off"
+when
+    Time cron "0 30 21 1/1 * ? *" or//9:30pm
+    Time cron "0 30 22 1/1 * ? *" or//10:30pm
+    Time cron "0 45 23 1/1 * ? *"//11:45am
+    Time cron "0 0 1 1/1 * ? *"//1am
+then
+	if(Pool_Heater.state == ON){
+		Pool_Heater.sendCommand(OFF)
+        pushover("Turning off Pool heater for evening")
+	}
+end
 
 rule "11:59pm Off"
 when
-    Time cron "0 59 23 1/1 * ? *"//1159pm
+    Time cron "0 59 23 1/1 * ? *"//11:59pm
 then
     //if(Main_Hallway.state == ON){
         Main_Hallway.sendCommand(OFF)
@@ -50,7 +62,7 @@ end
 
 rule "10:30 off"
 when 
-    Time cron "0 20 10 1/1 * ? *"//10:30pm
+    Time cron "0 30 22 1/1 * ? *"//10:30pm
 then
     //if(Landscape_Light.state == ON){
         Landscape_Light.sendCommand(OFF)
@@ -62,7 +74,7 @@ end
 
 rule "7:30am Off"
 when
-    Time cron "0 30 7 1/1 * ? *"//7:30pm
+    Time cron "0 30 7 1/1 * ? *"//7:30am
 then
     //if(Master_Fan.state == ON){
         Master_Fan.sendCommand(0)
@@ -130,3 +142,11 @@ then
     //logError("testing", Landscape_Light.state)
 end
 */
+
+rule "pool heater notify"
+when
+    Item Pool_Heater changed to ON
+then
+    pushover("Pool heater turned on")
+end
+
