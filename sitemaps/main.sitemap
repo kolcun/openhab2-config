@@ -39,7 +39,21 @@ sitemap main label="My home automation" {
                 Slider item=Family_Room_Accent
                 Slider item=Living_Room_Accent
                 Slider item=Main_Hallway
+		//Slider item=Living_Room_Switch
+		//Slider item=Living_Room_Lamp_Left
+		//Slider item=Living_Room_Lamp_Right
+		Slider item=LivingRoomLamps
         }
+	Frame label="Front Door Keypad"{
+		Default item=Outside_Lights
+		Default item=frontdoorB
+		Default item=frontdoorC
+		Default item=frontdoorD
+		Default item=frontdoorE
+		Default item=frontdoorF
+		Default item=frontdoorG
+		Default item=frontdoorH
+	}
 
 	Frame label="Upstairs"{
 		Slider item=Bookshelf

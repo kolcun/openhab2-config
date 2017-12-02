@@ -42,14 +42,24 @@ Switch Laundry_Room "Laundry Room" <light> (LaundryRoom) {insteonplm="28.79.86:F
 // INSTEON_SWITCHLINC, 29.07.7C, Living_Room_Floor_Light_Switch, All_Lights
 Dimmer Living_Room_Accent "Living Room Accent" <light> (LivingRoom) {insteonplm="28.ED.6E:F00.00.01#dimmer"}
 Dimmer Living_Room_Switch "Living Room Switch" <light> (LivingRoom) {insteonplm="29.07.7C:F00.00.01#dimmer"}
-Dimmer Living_Room_Lamp_Left "Living Room Lamp left" <light> (LivingRoom) {insteonplm="23.49.F9:F00.00.0B#dimmer"}
-Dimmer Living_Room_Lamp_Right "Living Room Lamp Right" <light> (LivingRoom) {insteonplm="21.FA.00:F00.00.0B#dimmer"}
+Dimmer Living_Room_Lamp_Left "Living Room Lamp left" <light> (LivingRoomLamps) {insteonplm="23.49.F9:F00.00.0B#dimmer"}
+Dimmer Living_Room_Lamp_Right "Living Room Lamp Right" <light> (LivingRoomLamps) {insteonplm="21.FA.00:F00.00.0B#dimmer"}
+//Dimmer Living_Room_Lamps "Living Room Lamps" <light> (LivingRoom)
 
 //TODO needs update to change to switch - it's not a dimmer
 //keypad - 8 button - on/off (2487S 6 button, with 8 button change kit used 2401WH8 8-Button Change Kit )
 // Switch Exterior_Lights "Exterior Lights" <light> (Outside) {http=">[*:POST:http://192.168.24.117:8080/SET;none?select_item=Front_Door_Keypad_Ext_Light&select_state=%2$s]"}
 Switch Outside_Lights "Outside Lights" <light> (Outside) {insteonplm="25.6A.AE:F00.00.16#loaddimmer"}
 // ADD REST OF KEYPAD
+Switch frontdoorB   "front door keypad button B"   {insteonplm="25.6A.AE:F00.00.14#keypadbuttonB,group=0xf1"}
+Switch frontdoorC   "front door keypad button C"   {insteonplm="25.6A.AE:F00.00.14#keypadbuttonC,group=0xf2"}
+Switch frontdoorD   "front door keypad button D"   {insteonplm="25.6A.AE:F00.00.14#keypadbuttonD,group=0xf1"}
+Switch frontdoorE   "front door keypad button E"   {insteonplm="25.6A.AE:F00.00.14#keypadbuttonE,group=0xf2"}
+Switch frontdoorF   "front door keypad button F"   {insteonplm="25.6A.AE:F00.00.14#keypadbuttonF,group=0xf1"}
+Switch frontdoorG   "front door keypad button G"   {insteonplm="25.6A.AE:F00.00.14#keypadbuttonG,group=0xf2"}
+Switch frontdoorH   "front door keypad button H"   {insteonplm="25.6A.AE:F00.00.14#keypadbuttonH,group=0xf1"}
+
+
 
 // Dimmer Main_Hallway "Main Hallway" <light> (GroundFloor) {http=">[*:POST:http://192.168.24.117:8080/SET;none?select_item=Front_Hall_Hall_Side&select_state=%2$s]"}
 //LOAD switch - in hallway

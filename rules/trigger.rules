@@ -95,3 +95,38 @@ then
         Landscape_Light.sendCommand(ON)
     //}
 end
+
+rule "sync living room lamps"
+when
+	Item Living_Room_Switch changed
+then
+	Living_Room_Lamp_Left.postUpdate(Living_Room_Switch.state as DecimalType)
+	Living_Room_Lamp_Right.postUpdate(Living_Room_Switch.state as DecimalType)
+	// this doesn't work - posting an update to the group doesn't change either the group state, or the items in the group state - odd
+	//LivingRoomLamps.postUpdate(Living_Room_Switch.state as DecimalType)
+	//tho sending the command as below works
+	//LivingRoomLamps.sendCommand(75)
+end
+/*
+rule "sync living room lamps2"
+when
+	Item LivingRoomLamps changed
+then
+	Living_Room_Switch.sendCommand(LivingRoomLamps.state as DecimalType)
+end
+*/
+/*
+rule "Living room lamps"
+when
+    Item Living_Room_Lamps received update
+then
+	var x = Living_Room_Lamps.state as DecimalType
+    Living_Room_Lamp_Left.sendCommand(x)
+    Living_Room_Lamp_Right.sendCommand(x)
+	if(Living_Room_Lamps.state > 0){
+	  logInfo("test", "state is not 0")
+	  //logInfo("test", x)
+	}
+    //logError("testing", Landscape_Light.state)
+end
+*/
