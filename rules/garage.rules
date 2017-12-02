@@ -14,4 +14,20 @@ then
     frontdoorH.sendCommand(ON)
 end
 
+rule "Diane Garage Closed"
+when 
+	Item DianeGarageSensor changed to CLOSED
+then
+	pushover("Diane Garage Closed")
+    frontdoorG.sendCommand(OFF)
+end
+
+rule "Diane Garage Open"
+when 
+	Item DianeGarageSensor changed to OPEN
+then
+	pushover("Diane Garage Opened")
+    frontdoorG.sendCommand(ON)
+end
+
 
