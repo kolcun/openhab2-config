@@ -1,0 +1,6 @@
+rule "Mike Garage Open"
+when 
+	Item MikeGarageSensor changed to OPEN
+then
+	//pushover("Front Door Open")
+end

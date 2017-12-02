@@ -7,6 +7,13 @@ sitemap main label="My home automation" {
 		Group item=House
 	}
 
+	Frame label="Garage Doors"{
+		Text item=MikeGarageSensor
+		Default item=MikeGarage
+		Text item=DianeGarageSensor
+		Default item=DianeGarage
+	}
+
 	Frame label="Date" {
 		Text item=CurrentDate
 		Switch item=Presence_Mobile_Mike
