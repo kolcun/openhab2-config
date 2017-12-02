@@ -53,10 +53,10 @@ when
 then
     if(DianeGarageSensor.state == OPEN)
         pushover("9pm close Diane garage");
-        DianeGarage.sendCommand(ON);
+        DianeGarage.sendCommand(ON)
     }
     if(MikeGarageSensor.state == OPEN)
         pushover("9pm close Diane garage");
-        MikeGarage.sendCommand(ON);
+        MikeGarage.sendCommand(ON)
     }
 end
