@@ -52,11 +52,11 @@ when
     Time cron "0 22 17 1/1 * ? *"//9pm
 then
     if(DianeGarageSensor.state == OPEN)
-        pushover("9pm close Diane garage");
+        pushover("9pm close Diane garage")
         DianeGarage.sendCommand(ON)
     }
     if(MikeGarageSensor.state == OPEN)
-        pushover("9pm close Diane garage");
+        pushover("9pm close Diane garage")
         MikeGarage.sendCommand(ON)
     }
 end
