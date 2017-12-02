@@ -28,19 +28,19 @@ Dimmer Family_Room_Fireplace "Family Room Fireplace" <light> (FamilyRoom) {inste
 Dimmer Family_Room_Accent "Family Room Accent" <light> (FamilyRoom) {insteonplm="24.09.E8:F00.00.01#dimmer"}
 
 // Dimmer Bathroom_Foyer "Bathroom Foyer" <light> (GroundFloor) {http=">[*:POST:http://192.168.24.117:8080/SET;none?select_item=Bathroom_Foyer&select_state=%2$s]"}
-Dimmer Bathroom_Foyer "Bathroom Foyer" <light> (GroundFloor) {insteonplm="38.90.6B:F00.00.01#dimmer"}
+Dimmer Bathroom_Foyer "Bathroom Foyer" <light> (GroundFloor) ["Lighting"] {insteonplm="38.90.6B:F00.00.01#dimmer"}
 
 // Dimmer Laundry_Room_Hallway "Laundry Room Hallway" <light> (LaundryRoom) {http=">[*:POST:http://192.168.24.117:8080/SET;none?select_item=Laundry_Room_Hallway&select_state=%2$s]"}
 // Switch Laundry_Room "Laundry Room" <light> (LaundryRoom) {http=">[*:POST:http://192.168.24.117:8080/SET;none?select_item=Laundry_Room_Lights&select_state=%2$s]"}
-Dimmer Laundry_Room_Hallway "Laundry Room Hallway" <light> (LaundryRoom) {insteonplm="3C.E1.94:F00.00.01#dimmer"}
-Switch Laundry_Room "Laundry Room" <light> (LaundryRoom) {insteonplm="28.79.86:F00.00.02#switch"}
+Dimmer Laundry_Room_Hallway "Laundry Room Hallway" <light> (LaundryRoom) ["Lighting"] {insteonplm="3C.E1.94:F00.00.01#dimmer"}
+Switch Laundry_Room "Laundry Room" <light> (LaundryRoom) ["Lighting"] {insteonplm="28.79.86:F00.00.02#switch"}
 
 // Dimmer Living_Room_Accent "Living Room Accent" <light> (LivingRoom) {http=">[*:POST:http://192.168.24.117:8080/SET;none?select_item=Living_Room_Pot_Lights&select_state=%2$s]"}
 // INSTEON_SWITCHLINC, 28.ED.6E, Living_Room_Pot_Lights, All_Lights
 // INSTEON_LAMPLINC, 23.49.F9, Living_Room_Floor_Light_Left, All_Lights
 // INSTEON_LAMPLINC, 21.FA.00, Living_Room_Floor_Light_Right, All_Lights
 // INSTEON_SWITCHLINC, 29.07.7C, Living_Room_Floor_Light_Switch, All_Lights
-Dimmer Living_Room_Accent "Living Room Accent" <light> (LivingRoom) {insteonplm="28.ED.6E:F00.00.01#dimmer"}
+Dimmer Living_Room_Accent "Living Room Pot lights" <light> (LivingRoom) ["Lighting"] {insteonplm="28.ED.6E:F00.00.01#dimmer"}
 Dimmer Living_Room_Switch "Living Room Switch" <light> (LivingRoom) {insteonplm="29.07.7C:F00.00.01#dimmer"}
 Dimmer Living_Room_Lamp_Left "Living Room Lamp left" <light> (LivingRoomLamps) {insteonplm="23.49.F9:F00.00.0B#dimmer"}
 Dimmer Living_Room_Lamp_Right "Living Room Lamp Right" <light> (LivingRoomLamps) {insteonplm="21.FA.00:F00.00.0B#dimmer"}
@@ -96,8 +96,8 @@ Number Master_Fan "Master Fan" <fan> (MasterBedroom) {insteonplm="21.69.CD:F00.0
 Switch Master_Fan2 "Master Fan" ["Lighting"]
 
 
-Switch MikeGarage "Mike Garage" <garagedoor> (Outside) {insteonplm="25.2B.F1:0x00001A#switch", autoupdate="false"}
+Switch MikeGarage "Mike Garage" <garagedoor> (Outside) ["Switchable"] ["{insteonplm="25.2B.F1:0x00001A#switch", autoupdate="false"}
 Contact MikeGarageSensor "Mike Garage sensor [MAP(contact.map):%s]" (Sensors) {insteonplm="25.2B.F1:0x00001A#contact"}
 
-Switch DianeGarage "Diane Garage" <garagedoor> (Outside) {insteonplm="28.BE.FD:0x00001A#switch", autoupdate="false"}
+Switch DianeGarage "Diane Garage" <garagedoor> (Outside) ["Switchable"] {insteonplm="28.BE.FD:0x00001A#switch", autoupdate="false"}
 Contact DianeGarageSensor "Diane Garage sensor [MAP(contact.map):%s]" (Sensors) {insteonplm="28.BE.FD:0x00001A#contact"}
