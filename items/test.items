@@ -3,6 +3,10 @@
 DateTime CurrentDate            "Date [%1$tA, %1$td.%1$tm.%1$tY]"   <calendar>  { channel="ntp:ntp:local:dateTime" }
 
 
+Switch TestSwitchDiane
+Switch TestSwitchMike
+
+
 //Dimmer TESTBookshelf {insteonplm="2B.B7.96:F00.00.01#dimmer"}
 
 

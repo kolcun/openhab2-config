@@ -1,3 +1,108 @@
+rule "Garage Sensor - Mike"
+when
+	Item MikeGarageSensor changed to OPEN
+then
+	pushover("Mike Garage Sensor - OPEN");
+	logInfo("Garage","Mike - OPEN");
+end
+
+rule "Garage Sensor - Mike closed"
+when
+        Item MikeGarageSensor changed to CLOSED
+then
+        pushover("Mike Garage Sensor - CLOSED");
+        logInfo("Garage","Mike - CLOSED");
+end
+
+rule "Garage Sensor - Diane"
+when
+        Item DianeGarageSensor changed to OPEN
+then
+        pushover("Diane Garage Sensor - OPEN");
+        logInfo("Garage","Diane - OPEN");
+end
+
+rule "Garage Sensor - Diane closed"
+when
+        Item DianeGarageSensor changed to CLOSED
+then
+        pushover("Diane Garage Sensor - CLOSED");
+        logInfo("Garage","Diane - CLOSED");
+end
+
+
+rule "test-switch-diane-on"
+when 
+        Item TestSwitchDiane changed to ON
+then
+        pushover("Switch-diane-on linked to C")
+        frontdoorC.sendCommand(ON)
+	logInfo("Garage", "Diane test switch ON")
+end
+
+rule "test-switch-diane-off"
+when 
+        Item TestSwitchDiane changed to OFF
+then
+        pushover("Switch-diane-off linked to C")
+        frontdoorC.sendCommand(OFF)
+	logInfo("Garage", "Diane test switch OFF")
+end
+
+rule "test-switch-mike-on"
+when 
+        Item TestSwitchMike changed to ON
+then
+        pushover("Switch-mike-on linked to D")
+        frontdoorD.sendCommand(ON)
+	logInfo("Garage", "Mike test switch ON")
+end
+
+rule "test-switch-mike-off"
+when 
+        Item TestSwitchMike changed to OFF
+then
+        pushover("Switch-mike-off linked to D")
+        frontdoorD.sendCommand(OFF)
+	logInfo("Garage", "Mike test switch OFF")
+end
+
+
+rule "frontdoorc-on"
+when
+        Item frontdoorC changed to ON
+then
+        pushover("C - on")
+	logInfo("Garage","Keypad C - on")
+end
+
+rule "frontdoorc-off"
+when
+        Item frontdoorC changed to OFF
+then
+        pushover("C - off")
+	logInfo("Garage","Keypad C - off")
+end
+
+rule "frontdoord-on"
+when
+        Item frontdoorD changed to ON
+then
+        pushover("D - on")
+	logInfo("Garage","Keypad D - on")
+end
+
+rule "frontdoord-off"
+when
+        Item frontdoorD changed to OFF
+then
+        pushover("D - off")
+	logInfo("Garage","Keypad D - off")
+end
+
+
+/*
+
 rule "Mike Garage Closed"
 when 
 	Item MikeGarageSensor changed to CLOSED
@@ -60,3 +165,4 @@ then
         MikeGarage.sendCommand(ON)
     }
 end
+*/

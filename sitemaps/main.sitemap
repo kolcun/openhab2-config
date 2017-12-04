@@ -8,10 +8,27 @@ sitemap main label="My home automation" {
 	}
 
 	Frame label="Garage Doors"{
+		Default item=TestSwitchDiane
+		Default item=TestSwitchMike
 		Text item=MikeGarageSensor
 		Default item=MikeGarage
 		Text item=DianeGarageSensor
 		Default item=DianeGarage
+	}
+	Frame label="Master Bedroom Keypad"{
+		Slider item=Master_Bedroom
+		Default item=MasterBedroomA
+		Default item=MasterBedroomB
+		Default item=MasterBedroomC
+		Default item=MasterBedroomD
+	}
+
+	Frame label="Upstairs Hallway Keypad"{
+		Slider item=Upstairs_Hallway
+		Default item=UpstairsHallwayA
+		Default item=UpstairsHallwayB
+		Default item=UpstairsHallwayC
+		Default item=UpstairsHallwayD
 	}
 
 	Frame label="Date" {
@@ -75,6 +92,7 @@ sitemap main label="My home automation" {
                 Slider item=Laundry_Room_Hallway
                 Switch item=Laundry_Room
                 Switch item=Basement_Foyer
+		Switch item=Basement_Foyer_Fast
         }
 
 	Frame label="Weather"{

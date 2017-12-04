@@ -6,11 +6,14 @@ var Timer bathroomTimer = null
 
 rule "set timer for powder room"
 when
-    Item Powder_Room changed to ON or
-    Item Powder_Room_Sconce changed to ON
+    Item Powder_Room changed from 0 or
+    Item Powder_Room_Sconce changed from 0
 then
-    bathroomTimer = createTimer(now.plusMinutes(1)) [| 
+	logInfo("PowderRoomTimer", "Staring powder room timer")
+	pushover("starting bathroom timer")
+    bathroomTimer = createTimer(now.plusMinutes(20)) [| 
                 logInfo("PowderRoomTimer", "Powder Room timer expired")
+		pushover("bathroom timer expired")
                 bathroomTimer.cancel()
                 bathroomTimer = null
                 Powder_Room.sendCommand(OFF)
