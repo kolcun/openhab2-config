@@ -1,0 +1,22 @@
+import org.eclipse.xtext.xbase.lib.*
+import org.openhab.model.script.actions.*
+import org.eclipse.smarthome.model.script.actions.Timer
+
+var Timer laundryTimer = null
+
+rule "set timer for laundry room"
+when
+    Item Laundry_Room changed from OFF or
+    Item Laundry_Room_Hallway changed from 0
+then
+	logInfo("LaundryRoomTimer", "Starting timer")
+	pushover("laundry room timer started")
+    laundryTimer = createTimer(now.plusMinutes(30)) [| 
+                logInfo("LaundryRoomTimer", "Laundry Room timer expired")
+		pushover("laundry room timer expired")
+                laundryTimer.cancel()
+                laundryTimer = null
+                Laundry_Room.sendCommand(OFF)
+                Laundry_Room_Hallway.sendCommand(OFF)
+        ]
+end

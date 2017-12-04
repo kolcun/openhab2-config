@@ -1,0 +1,13 @@
+rule "Garland - off"
+when
+    Time cron "0 30 22 1/1 * ? *"//10:30pm
+then
+        OutdoorPortable.sendCommand(OFF)
+end
+
+rule "Garland - on"
+when
+    Time cron "0 0 7 1/1 * ? *"//7am
+then
+        OutdoorPortable.sendCommand(ON)
+end
