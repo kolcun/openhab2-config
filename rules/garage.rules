@@ -78,6 +78,7 @@ when
 then
         pushover("C - on")
 	logInfo("Garage","Keypad C - on")
+	TestSwitchDiane.postUpdate(ON)
 end
 
 rule "frontdoorc-off"
@@ -86,6 +87,7 @@ when
 then
         pushover("C - off")
 	logInfo("Garage","Keypad C - off")
+	TestSwitchDiane.postUpdate(OFF)
 end
 
 rule "frontdoord-on"
@@ -94,6 +96,7 @@ when
 then
         pushover("D - on")
 	logInfo("Garage","Keypad D - on")
+	testSwitchMike.postUpdate(ON)
 end
 
 rule "frontdoord-off"
@@ -102,6 +105,7 @@ when
 then
         pushover("D - off")
 	logInfo("Garage","Keypad D - off")
+	testSwitchMike.postUpdate(OFF)
 end
 
 
