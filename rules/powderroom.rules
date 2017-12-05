@@ -5,14 +5,33 @@ when
     Item Powder_Room changed from 0 or
     Item Powder_Room_Sconce changed from 0
 then
+	if(DebugSwitch.state == ON){
+		pushover("starting bathroom timer")
+	}
 	logInfo("PowderRoomTimer", "Staring powder room timer")
-	pushover("starting bathroom timer")
     bathroomTimer = createTimer(now.plusMinutes(20)) [| 
                 logInfo("PowderRoomTimer", "Powder Room timer expired")
-		pushover("bathroom timer expired")
+		if(DebugSwitch.state == ON){
+			pushover("bathroom timer expired")
+		}
                 bathroomTimer.cancel()
                 bathroomTimer = null
-                Powder_Room.sendCommand(OFF)
-                Powder_Room_Sconce.sendCommand(OFF)
+		if(Powder_Room.state > 0){
+                	Powder_Room.sendCommand(OFF)
+		}
+		if(Powder_Room_Sconce.state > 0){
+                	Powder_Room_Sconce.sendCommand(OFF)
+		}
         ]
+end
+
+rule "cancel powder room timer if running"
+when
+        Item Powder_Room changed to o or
+        Item Powder_Room_Sconce changed to 0
+then
+        if(bathroomTimer !== null){
+                bathroomTimer.cancel()
+                bathroomTimer = null
+        }
 end

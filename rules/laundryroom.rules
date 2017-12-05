@@ -2,7 +2,7 @@ var Timer laundryTimer = null
 
 rule "set timer for laundry room"
 when
-    Item Laundry_Room changed from OFF or
+    Item Laundry_Room changed to ON or
     Item Laundry_Room_Hallway changed from 0
 then
 	if(DebugSwitch.state == ON){
@@ -16,7 +16,22 @@ then
                 }
 		laundryTimer.cancel()
                 laundryTimer = null
-                Laundry_Room.sendCommand(OFF)
-                Laundry_Room_Hallway.sendCommand(OFF)
+		if(Laundry_Room.state == ON){
+                	Laundry_Room.sendCommand(OFF)
+		}
+		if(Laundry_Room_Hallway.state > 0){
+			Laundry_Room_Hallway.sendCommand(OFF)
+		}
         ]
+end
+
+rule "cancel laundry timer if running"
+when
+	Item Laundry_Room changed to OFF or
+	Item Laundry_Room_Hallway changed to 0
+then
+	if(laundryTimer !== null){
+		laundryTimer.cancel()
+		laundryTimer = null
+	}
 end
