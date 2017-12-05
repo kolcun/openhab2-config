@@ -124,6 +124,9 @@ sitemap main label="My home automation" {
 		Text item=DiffuseRadiation
 		Switch item=NightState
 	}
+	Frame label="System"{
+		Switch item=DebugSwitch
+	}
 /*
    Frame label="Sonos"{
    Frame label="Sonos - Upstairs new" {

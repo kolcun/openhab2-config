@@ -1,7 +1,3 @@
-import org.eclipse.xtext.xbase.lib.*
-import org.openhab.model.script.actions.*
-import org.eclipse.smarthome.model.script.actions.Timer
-
 var Timer heatTimer = null
 var Number initialPumpState = null
 
