@@ -9,6 +9,9 @@ then
 	pushover("laundry room timer started")
 	}
 	logInfo("LaundryRoomTimer", "Starting timer")
+	if(laundryTimer !== null){
+		laundryTimer.cancel()
+	}
     laundryTimer = createTimer(now.plusMinutes(20)) [| 
                 logInfo("LaundryRoomTimer", "Laundry Room timer expired")
 		if(DebugSwitch.state == ON){

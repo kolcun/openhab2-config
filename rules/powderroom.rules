@@ -9,6 +9,9 @@ then
 		pushover("starting bathroom timer")
 	}
 	logInfo("PowderRoomTimer", "Staring powder room timer")
+	if(bathroomTimer !== null){
+		bathroomTimer.cancel()
+	}
     bathroomTimer = createTimer(now.plusMinutes(20)) [| 
                 logInfo("PowderRoomTimer", "Powder Room timer expired")
 		if(DebugSwitch.state == ON){
