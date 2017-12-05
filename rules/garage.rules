@@ -4,6 +4,7 @@ when
 then
 	pushover("Mike Garage Sensor - OPEN");
 	logInfo("Garage","Mike - OPEN");
+	frontdoorD.sendCommand(ON)
 end
 
 rule "Garage Sensor - Mike closed"
@@ -12,6 +13,7 @@ when
 then
         pushover("Mike Garage Sensor - CLOSED");
         logInfo("Garage","Mike - CLOSED");
+	frontdoorD.sendCommand(OFF)
 end
 
 rule "Garage Sensor - Diane"
@@ -20,6 +22,7 @@ when
 then
         pushover("Diane Garage Sensor - OPEN");
         logInfo("Garage","Diane - OPEN");
+	frontdoorC.sendCommand(ON)
 end
 
 rule "Garage Sensor - Diane closed"
@@ -28,6 +31,7 @@ when
 then
         pushover("Diane Garage Sensor - CLOSED");
         logInfo("Garage","Diane - CLOSED");
+	frontdoorC.sendCommand(OFF)
 end
 
 
