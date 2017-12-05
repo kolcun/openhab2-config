@@ -32,7 +32,7 @@ when
 then
 	if(Pool_Heater.state == ON){
 		Pool_Heater.sendCommand(OFF)
-        pushover("Turning off Pool heater for evening")
+        	pushover("Turning off Pool heater for evening")
 	}
 end
 
@@ -40,72 +40,72 @@ rule "11:59pm Off"
 when
     Time cron "0 59 23 1/1 * ? *"//11:59pm
 then
-    //if(Main_Hallway.state == ON){
+    if(Main_Hallway.state > 0){
         Main_Hallway.sendCommand(OFF)
-    //}
+    }
 end
 
 rule "11pm Off"
 when
     Time cron "0 0 23 1/1 * ? *"//11pm
 then
-	//if(Living_Room_Accent.state == ON){
+	if(Living_Room_Accent.state > 0){
 		Living_Room_Accent.sendCommand(OFF)
-	//}
-    //if(Bathroom_Foyer.state == ON){
+	}
+    if(Bathroom_Foyer.state > 0){
         Bathroom_Foyer.sendCommand(OFF)
-    //}
-    //if(Family_Room_Accent.state == ON){
+    }
+    if(Family_Room_Accent.state > 0){
         Family_Room_Accent.sendCommand(OFF)
-    //}
+    }
 end
 
 rule "10:30 off"
 when 
     Time cron "0 30 22 1/1 * ? *"//10:30pm
 then
-    //if(Landscape_Light.state == ON){
+    if(Landscape_Light.state == ON){
         Landscape_Light.sendCommand(OFF)
-    //}
-    //if(Bookshelf.state == ON){
+    }
+    if(Bookshelf.state > 0){
         Bookshelf.sendCommand(OFF)
-    //}
+    }
 end
 
 rule "7:30am Off"
 when
     Time cron "0 30 7 1/1 * ? *"//7:30am
 then
-    //if(Master_Fan.state == ON){
+    if(Master_Fan.state > 0){
         Master_Fan.sendCommand(0)
-    //}
+    }
 end
 
 rule "bathroom Foyer - Summer"
 when
     Time cron "0 00 21 1/1 * ? *"//9pm
 then
-    //if(Bathroom_Foyer.state == OFF){
+    if(Bathroom_Foyer.state == 0){
         Bathroom_Foyer.sendCommand(20)
-    //}
+    }
 end
 
 rule "bathroom Foyer - Winter"
 when
     Time cron "0 30 16 1/1 * ? *"//4:30pm
 then
-    //if(Bathroom_Foyer.state == OFF){
+    if(Bathroom_Foyer.state == 0){
         Bathroom_Foyer.sendCommand(20)
-    //}
+    }
 end
 
 rule "Landscape light On"
 when
     Time cron "0 30 17 1/1 * ? *"//5:30pm
 then
-    //if(Landscape_Light == OFF){
+    if(Landscape_Light == OFF){
         Landscape_Light.sendCommand(ON)
-    //}
+    }
 end
 
 rule "sync living room lamps"
