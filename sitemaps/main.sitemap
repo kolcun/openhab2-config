@@ -122,6 +122,10 @@ sitemap main label="My home automation" {
 		Text item=MoonPhase
 		Text item=TotalRadiation
 		Text item=DiffuseRadiation
+		Text item=DaylightStart
+		Text item=DaylightEnd
+		Text item=CivilDawn
+		Text item=CivilDusk
 		Switch item=NightState
 	}
 	Frame label="System"{
