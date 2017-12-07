@@ -30,7 +30,7 @@ end
 
 rule "sunrise"
 when
-    Channel 'astro:sun:local:daylight#event' triggered START
+    Channel 'astro:sun:home:daylight#event' triggered START
 then
     logInfo("astroRules", "Sunrise Occurred")
     pushover("Sunrise");
@@ -39,7 +39,7 @@ end
 
 rule "sunset"
 when
-    Channel 'astro:sun:local:daylight#event' triggered END
+    Channel 'astro:sun:home:daylight#event' triggered END
 then
     logInfo("astroRules", "Sunset Occurred")
     pushover("Sunset")
