@@ -6,7 +6,7 @@ String   MoonPhase          "MoonPhase"            <moon> (Astro)  { channel="as
 Number   TotalRadiation    "Radiation"             <sun> (Astro) { channel="astro:sun:home:radiation#total" }
 Number   DiffuseRadiation  "Diffuse Radiation"     <sun> (Astro) { channel="astro:sun:home:radiation#diffuse" }
 Switch   NightState    "Night"
-DateTime    DaylightStart   "Rise [%1$tH:%1$tM]"    <sunrise>  Astro)   channel="astro:sun:home:daylight#start"}
+DateTime    DaylightStart   "Rise [%1$tH:%1$tM]"    <sunrise>  (Astro)   channel="astro:sun:home:daylight#start"}
 DateTime    DaylightEnd "Set [%1$tH:%1$tM]" <sunset> (Astro)    {channel="astro:sun:home:daylight#end"}
 DateTime    CivilDawn   "Ciil Dawn [%1$tH:%1$tM]" <sunrise> (Astro) { channel="astro:sun:home:civilDawn#start" }
 DateTime    CivilDusk   "Ciil Dusk [%1$tH:%1$tM]" <sunset> (Astro)    { channel="astro:sun:home:civilDusk#start" }
