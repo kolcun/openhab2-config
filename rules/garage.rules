@@ -113,7 +113,7 @@ then
 end
 
 
-rule "sync as needed"
+rule "Mike Garage - sync as needed"
 when
         Time cron "0 0/10 * 1/1 * ? *" // every 10 minutes
 then
@@ -132,6 +132,29 @@ then
                         frontdoorH.sendCommand(ON)
                         if(DebugSwitch.state == ON){
                                 pushover("Mike Door Open, but keypad off: turning on")
+                        }
+                }
+        }
+end
+rule "Diane Garage - sync as needed"
+when
+        Time cron "0 0/10 * 1/1 * ? *" // every 10 minutes
+then
+        if(DianeGarageSensor == CLOSED){
+                // kaypad lights on? turn off
+                if(frontdoorG == ON){
+                        frontdoorG.sendCommand(OFF)
+                        if(DebugSwitch.state == ON){
+                                pushover("Diane Door Closed, but keypad on: turning off")
+                        }
+                }
+        }
+        if(DianeGarageSensor == OPEN){
+                // keypad lights off? turn on
+                if(frontdoorG == OFF){
+                        frontdoorG.sendCommand(ON)
+                        if(DebugSwitch.state == ON){
+                                pushover("Diane Door Open, but keypad off: turning on")
                         }
                 }
         }
