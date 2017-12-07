@@ -27,7 +27,7 @@ then
 	}
     }
 end
-
+/*
 rule "sunrise"
 when
     Channel 'astro:sun:home:daylight#event' triggered START
@@ -45,3 +45,4 @@ then
     pushover("Sunset")
 //     sendCommand(dayLight,OFF)
 end
+*/
