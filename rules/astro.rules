@@ -27,22 +27,29 @@ then
 	}
     }
 end
-/*
+
 rule "sunrise"
 when
-    Channel 'astro:sun:home:daylight#event' triggered START
+    Channel 'astro:sun:home:daylight#event' triggered START
 then
-    logInfo("astroRules", "Sunrise Occurred")
-    pushover("Sunrise");
-//     sendCommand(dayLight,ON)
+    logInfo("astroRules", "Sunrise Occurred")
+    pushover("Daylight triggered start");
 end
-*/
+
+rule "Civil Dawn"
+when
+    Channel 'astro:sun:home:civilDawn#event' triggered START
+then
+    logInfo("astroRules", "Sunrise Occurred")
+    pushover("Civil Dawn triggered Start");
+end
+
 rule "sunset"
 when
     Channel 'astro:sun:home:daylight#event' triggered END
 then
     logInfo("astroRules", "Sunset Occurred")
-    pushover("Daylight triggered END")
+    pushover("Daylight triggered end")
     OutsideLights.sendCommand(ON)
 end
 
