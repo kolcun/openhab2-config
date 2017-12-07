@@ -18,10 +18,16 @@ then
                 bathroomTimer.cancel()
                 bathroomTimer = null
 		if(Powder_Room.state > 0){
+			if(DebugSwitch.state == ON){
+				pushover("Powder room off")
+			}
                 	Powder_Room.sendCommand(OFF)
 		}
 		if(Powder_Room_Sconce.state > 0){
                 	Powder_Room_Sconce.sendCommand(OFF)
+			if(DebugSwitch.state == ON){
+				pushover("Powder room sconce off")
+			}
 		}
         ]
 end
