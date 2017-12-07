@@ -4,7 +4,7 @@ when
 then
 	pushover("Mike Garage Sensor - OPEN");
 	logInfo("Garage","Mike - OPEN");
-	frontdoorD.sendCommand(ON)
+	// frontdoorD.sendCommand(ON)
 	frontdoofH.sendCommand(ON)
 end
 
@@ -14,7 +14,7 @@ when
 then
         pushover("Mike Garage Sensor - CLOSED");
         logInfo("Garage","Mike - CLOSED");
-	frontdoorD.sendCommand(OFF)
+	// frontdoorD.sendCommand(OFF)
 	frontdoorH.sendCommand(OFF)
 end
 
@@ -24,7 +24,7 @@ when
 then
         pushover("Diane Garage Sensor - OPEN");
         logInfo("Garage","Diane - OPEN");
-	frontdoorC.sendCommand(ON)
+	// frontdoorC.sendCommand(ON)
 	frontdoorG.sendCommand(ON)
 end
 
@@ -34,7 +34,7 @@ when
 then
         pushover("Diane Garage Sensor - CLOSED");
         logInfo("Garage","Diane - CLOSED");
-	frontdoorC.sendCommand(OFF)
+	// frontdoorC.sendCommand(OFF)
 	frontdoorG.sendCommand(OFF)
 end
 
@@ -53,7 +53,7 @@ when
         Item TestSwitchDiane changed to OFF
 then
         pushover("Switch-diane-off linked to C")
-        frontdoorC.sendCommand(OFF)
+        // frontdoorC.sendCommand(OFF)
 	logInfo("Garage", "Diane test switch OFF")
 end
 
@@ -62,7 +62,7 @@ when
         Item TestSwitchMike changed to ON
 then
         pushover("Switch-mike-on linked to D")
-        frontdoorD.sendCommand(ON)
+        // frontdoorD.sendCommand(ON)
 	logInfo("Garage", "Mike test switch ON")
 end
 
@@ -71,7 +71,7 @@ when
         Item TestSwitchMike changed to OFF
 then
         pushover("Switch-mike-off linked to D")
-        frontdoorD.sendCommand(OFF)
+        // frontdoorD.sendCommand(OFF)
 	logInfo("Garage", "Mike test switch OFF")
 end
 
