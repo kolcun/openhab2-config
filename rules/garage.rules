@@ -113,6 +113,28 @@ then
 end
 
 
+rule "sync as needed"
+when
+        Time cron "0 0/10 * 1/1 * ? *" // every 10 minutes
+then
+        if(MikeGarageSensor == CLOSED){
+                // kaypad lights on? turn off
+                if(frontdoorH == ON){
+                        frontdoorH.sendCommand(OFF)
+                        if(DebugSwitch.state == ON){
+                                pushover("Mike Door Closed, but keypad on: turning off")
+                        }
+                }
+        }
+        if(MikeGarageSensor == OPEN){
+                // keypad lights off? turn on
+                if(frontdoorH == OFF){
+                        frontdoorH.sendCommand(ON)
+                        if(DebugSwitch.state == ON){
+                                pushover("Mike Door Open, but keypad off: turning on")
+                        }
+                }
+        }
 /*
 
 rule "Mike Garage Closed"
