@@ -27,3 +27,21 @@ then
 	}
     }
 end
+
+rule "sunrise"
+when
+    Channel 'astro:sun:local:daylight#event' triggered START
+then
+    logInfo("astroRules", "Sunrise Occurred")
+    pushover("Sunrise");
+//     sendCommand(dayLight,ON)
+end
+
+rule "sunset"
+when
+    Channel 'astro:sun:local:daylight#event' triggered END
+then
+    logInfo("astroRules", "Sunset Occurred")
+    pushover("Sunset")
+//     sendCommand(dayLight,OFF)
+end

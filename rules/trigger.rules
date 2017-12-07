@@ -1,17 +1,3 @@
-rule "Sunrise Event"
-when
-    Item Sunrise_Event received update ON
-then
-    pushover("Sunrise - Civil")
-end
-
-rule "Sunset Event"
-when
-    Item Sunset_Event  received update ON
-then
-    pushover("Sunset - Civil")
-end
-
 rule "Outside lights - off"
 when
     Time cron "0 0 23 1/1 * ? *" or//11pm
