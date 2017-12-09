@@ -33,7 +33,9 @@ when
     Channel 'astro:sun:home:daylight#event' triggered START
 then
     logInfo("astroRules", "Sunrise Occurred")
-    pushover("Daylight triggered start");
+    if(DebugSwitch.state == ON){
+        pushover("Daylight triggered start");
+    }
 end
 
 rule "Civil Dawn"
@@ -41,7 +43,9 @@ when
     Channel 'astro:sun:home:civilDawn#event' triggered START
 then
     logInfo("astroRules", "Sunrise Occurred")
-    pushover("Civil Dawn triggered Start");
+    if(DebugSwitch.state == ON){
+        pushover("Civil Dawn triggered Start");
+    }
 end
 
 rule "sunset"
@@ -49,7 +53,9 @@ when
     Channel 'astro:sun:home:daylight#event' triggered END
 then
     logInfo("astroRules", "Sunset Occurred")
-    pushover("Daylight triggered end")
+    if(DebugSwitch.state == ON){
+        pushover("Daylight triggered end")
+    }
     Outside_Lights.sendCommand(ON)
 end
 
@@ -58,6 +64,13 @@ when
     Channel 'astro:sun:home:civilDusk#event' triggered START
 then
     logInfo("astroRules", "Sunset Occurred")
-    pushover("Civil Dusk triggered Start")
+    if(DebugSwitch.state == ON){
+        pushover("Civil Dusk triggered Start")
+    }
     Outside_Lights.sendCommand(ON)
+    Family_Room_Accent.sendCommand(20)
+    Living_Room_Accent.sendCommand(20)
+    Main_Hallway.sendCommand(20)
+    Bookshelf.sendcommand(20)
+    Upstairs_Hallway.sendCommand(20)
 end
