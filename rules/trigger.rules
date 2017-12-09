@@ -145,3 +145,13 @@ then
     }
     LaundryRoom.sendCommand(ON)
 end
+
+rule "Basement Foyer fast off (laundry)"
+when 
+    Item Basement_Foyer_Fast received command OFF
+then
+    if(DebugSwitch.state == ON){
+        pushover("Basement Foyer - fast on")
+    }
+    LaundryRoom.sendCommand(OFF)
+end
