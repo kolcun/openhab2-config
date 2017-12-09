@@ -152,7 +152,7 @@ when
     Item Basement_Foyer_Fast received command OFF
 then
     if(DebugSwitch.state == ON){
-        pushover("Basement Foyer - fast on")
+        pushover("Basement Foyer - fast off")
     }
     Basement_Foyer.postUpdate(OFF)
     LaundryRoom.sendCommand(OFF)
