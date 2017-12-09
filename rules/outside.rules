@@ -7,18 +7,18 @@ then
 	if(DebugSwitch.state == ON){
 	    pushover("Outside lights 15 min timer started")
 	}
+    Outside_Lights.postUpdate(ON)
 	logInfo("OutsideLightsTimer", "Starting timer")
 	outsideLightsTimer?.cancel()
-    outsideLightsTimer = createTimer(now.plusMinutes(1)) [| 
+    outsideLightsTimer = createTimer(now.plusMinutes(15)) [| 
             logInfo("OutsideLightsTimer", "Outside Lights timer expired")
 		    if(DebugSwitch.state == ON){
 			    pushover("Outside Lights timer expired")
             }
 		    outsideLightsTimer.cancel()
             outsideLightsTimer = null
-		    if(Outside_Lights.state == ON){
-                	Outside_Lights.sendCommand(OFF)
-		    }
+            Outside_Lights.sendCommand(OFF)
+            Outside_Lights_Fast.postUpdate(OFF)
         ]
 end
 
