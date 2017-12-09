@@ -1,0 +1,24 @@
+var Timer outsideLightsTimer = null
+
+rule "Outside lights 15 min timer"
+when
+    Item Outside_Lights_Fast changed to ON
+then
+	if(DebugSwitch.state == ON){
+	    pushover("Outside lights 15 min timer started")
+	}
+	logInfo("OutsideLightsTimer", "Starting timer")
+	outsideLightsTimer?.cancel()
+    outsideLightsTimer = createTimer(now.plusMinutes(1)) [| 
+            logInfo("OutsideLightsTimer", "Outside Lights timer expired")
+		    if(DebugSwitch.state == ON){
+			    pushover("Outside Lights timer expired")
+            }
+		    outsideLightsTimer.cancel()
+            outsideLightsTimer = null
+		    if(Outside_Lights.state == ON){
+                	Outside_Lights.sendCommand(OFF)
+		    }
+        ]
+end
+
