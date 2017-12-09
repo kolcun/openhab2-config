@@ -8,6 +8,7 @@ then
 	    pushover("Outside lights 15 min timer started")
 	}
     Outside_Lights.postUpdate(ON)
+    frontdoorB.sendCommand(ON)
 	logInfo("OutsideLightsTimer", "Starting timer")
 	outsideLightsTimer?.cancel()
     outsideLightsTimer = createTimer(now.plusMinutes(15)) [| 
@@ -17,6 +18,7 @@ then
             }
 		    outsideLightsTimer.cancel()
             outsideLightsTimer = null
+            frontdoorB.sendCommand(OFF)
             Outside_Lights.sendCommand(OFF)
             Outside_Lights_Fast.postUpdate(OFF)
         ]
