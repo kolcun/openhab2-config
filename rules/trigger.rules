@@ -143,6 +143,7 @@ then
     if(DebugSwitch.state == ON){
         pushover("Basement Foyer - fast on")
     }
+    Basement_Foyer.postUpdate(ON)
     LaundryRoom.sendCommand(ON)
 end
 
@@ -153,5 +154,6 @@ then
     if(DebugSwitch.state == ON){
         pushover("Basement Foyer - fast on")
     }
+    Basement_Foyer.postUpdate(OFF)
     LaundryRoom.sendCommand(OFF)
 end
