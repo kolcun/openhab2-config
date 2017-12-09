@@ -89,7 +89,7 @@ rule "Landscape light On"
 when
     Time cron "0 30 17 1/1 * ? *"//5:30pm
 then
-    if(Landscape_Light == OFF){
+    if(Landscape_Light.state == OFF){
         Landscape_Light.sendCommand(ON)
     }
 end
