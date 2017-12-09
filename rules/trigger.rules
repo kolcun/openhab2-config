@@ -136,3 +136,12 @@ then
     pushover("Pool heater turned on")
 end
 
+rule "Basement Foyer fast on (laundry)"
+when 
+    Item Basement_Foyer_Fast received command ON
+then
+    if(DebugSwitch.state == ON){
+        pushover("Basement Foyer - fast on")
+    }
+    LaundryRoom.sendCommand(ON)
+end
