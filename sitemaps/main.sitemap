@@ -48,7 +48,7 @@ sitemap main label="My home automation" {
 	
 	Frame label="Outside"{
 		Switch item=Outside_Lights
-		Switch item=Outside_Lights_Fast
+		//Switch item=Outside_Lights_Fast
 		Switch item=Landscape_Light
 		Switch item=Awning
 		Switch item=OutdoorPortable
