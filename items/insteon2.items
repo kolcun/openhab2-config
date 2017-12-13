@@ -7,7 +7,7 @@ Switch Landscape_Light "Landscape Lights" <light> (Outside) ["Lighting"] {insteo
 // Dimmer Master_Light_Mike "Mike Night Table" <light> (MasterBedroom) ["Lighting"] {http=">[*:POST:http://192.168.24.117:8080/SET;none?select_item=Master_Light_Mike&select_state=%2$s]"}
 // Dimmer Master_Light_Diane "Diane Night Table" <light> (MasterBedroom) {http=">[*:POST:http://192.168.24.117:8080/SET;none?select_item=Master_Light_Diane&select_state=%2$s]"}
 Dimmer Master_Mike "Mike Night Table" <light> (MasterBedroom) ["Lighting"] {insteonplm="24.0E.48:0x000068#dimmer"}
-Dimmer Master_Diane "Diane Night Table" <light> (MasterBedroom) {insteonplm="24.0F.3C:0x000068#dimmer"}
+Dimmer Master_Diane "Diane Night Table" <light> (MasterBedroom) ["Lighting"] {insteonplm="24.0F.3C:0x000068#dimmer"}
 
 // Switch Pool_Light "Pool Light" <light> ["Lighting"] {mqtt="<[broker:kolcun/outdoor/pool/light/status:command:MAP(onoff.map)], >[broker:kolcun/outdoor/pool/light:status:on:on], >[broker:kolcun/outdoor/pool/light:status:off:off]", http=">[*:POST:http://192.168.24.117:8080/SET;none?select_item=Pool_Light&select_state=%2$s]"}
 // Switch Pool_Light "Pool Light" <light> (Outside) ["Lighting"] {mqtt="<[broker:kolcun/outdoor/pool/light/status:command:MAP(onoff.map)]", http=">[*:POST:http://192.168.24.117:8080/SET;none?select_item=Pool_Light&select_state=%2$s]"}
@@ -17,15 +17,15 @@ Switch Pool_Heater "Pool Heater" <fire> (Outside) {insteonplm="32.81.93:F00.00.0
 
 // Dimmer Powder_Room "Powder Room" <light> (PowderRoom) {http=">[*:POST:http://192.168.24.117:8080/SET;none?select_item=Powder_Room&select_state=%2$s]"}
 // Dimmer Powder_Room_Sconce "Power Room Sconce" <light> (PowderRoom) {http=">[*:POST:http://192.168.24.117:8080/SET;none?select_item=Powder_Room_Sconce&select_state=%2$s]"}
-Dimmer Powder_Room "Powder Room" <light> (PowderRoom) {insteonplm="3C.E2.D8:F00.00.01#dimmer"}
-Dimmer Powder_Room_Sconce "Power Room Sconce" <light> (PowderRoom) {insteonplm="3C.F9.83:F00.00.01#dimmer"}
+Dimmer Powder_Room "Powder Room" <light> (PowderRoom) ["Lighting"] {insteonplm="3C.E2.D8:F00.00.01#dimmer"}
+Dimmer Powder_Room_Sconce "Power Room Sconce" <light> (PowderRoom) ["Lighting"] {insteonplm="3C.F9.83:F00.00.01#dimmer"}
 
 // Dimmer Famiy_Room "Family Room" <light> (FamilyRoom) {http=">[*:POST:http://192.168.24.117:8080/SET;none?select_item=Family_Room_Main_Pot_Lights&select_state=%2$s]"}
 // Dimmer Family_Room_Fireplace "Family Room Fireplace" <light> (FamilyRoom) {http=">[*:POST:http://192.168.24.117:8080/SET;none?select_item=Family_Room_Fireplace_Pot_Lights&select_state=%2$s]"}
 // Dimmer Family_Room_Accent "Family Room Accent" <light> (FamilyRoom) {http=">[*:POST:http://192.168.24.117:8080/SET;none?select_item=Family_Room_Window_Pot_Lights&select_state=%2$s]"}
-Dimmer Famiy_Room "Family Room" <light> (FamilyRoom) {insteonplm="24.9C.9F:F00.00.01#dimmer"}
-Dimmer Family_Room_Fireplace "Family Room Fireplace" <light> (FamilyRoom) {insteonplm="24.72.38:F00.00.01#dimmer"}
-Dimmer Family_Room_Accent "Family Room Accent" <light> (FamilyRoom) {insteonplm="24.09.E8:F00.00.01#dimmer"}
+Dimmer Famiy_Room "Family Room" <light> (FamilyRoom) ["Lighting"] {insteonplm="24.9C.9F:F00.00.01#dimmer"}
+Dimmer Family_Room_Fireplace "Family Room Fireplace" <light> (FamilyRoom) ["Lighting"] {insteonplm="24.72.38:F00.00.01#dimmer"}
+Dimmer Family_Room_Accent "Family Room Accent" <light> (FamilyRoom) ["Lighting"] {insteonplm="24.09.E8:F00.00.01#dimmer"}
 
 // Dimmer Bathroom_Foyer "Bathroom Foyer" <light> (GroundFloor) {http=">[*:POST:http://192.168.24.117:8080/SET;none?select_item=Bathroom_Foyer&select_state=%2$s]"}
 Dimmer Bathroom_Foyer "Bathroom Foyer" <light> (GroundFloor) ["Lighting"] {insteonplm="38.90.6B:F00.00.01#dimmer"}

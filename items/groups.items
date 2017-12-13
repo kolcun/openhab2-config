@@ -13,13 +13,13 @@ Group FamilyRoom	(GroundFloor)
 Group PowderRoom	(GroundFloor)
 
 //Group MasterBedroom	(Upstairs)
-Group:Switch:OR(ON,OFF)	MasterBedroom	"Master Bedroom [%d]"  (Upstairs)
+Group:Switch:OR(ON,OFF)	MasterBedroom	"Master Bedroom [%d]" (Upstairs) ["Lighting"]
 
 Group LaundryRoom	(Basement)
 
 Group Sensors		(House)
 Group Batteries		(House)
 
-Group:Dimmer:MAX LivingRoomLamps "Living Room Lamps" ["Lighting"]
+Group:Dimmer:MAX LivingRoomLamps "Living Room Lamps" (Upstairs) ["Lighting"]
 
 Switch DebugSwitch

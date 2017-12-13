@@ -19,6 +19,12 @@ then
     }
     logInfo("Scene","Starting Work Scene Active")
     StartingWork.postUpdate(OFF)
+    LivingRoom.sendCommand(OFF)
+    FamilyRoom.sendCommand(OFF)
+    PowderRoom.sendCommand(OFF)
+    LaundryRoom.sendCommand(OFF)
+    Upstairs.sendCommand(OFF)
+    
 end
 
 rule "Bedtime Rule"
@@ -30,4 +36,11 @@ then
     }
     logInfo("Scene","Starting Bedtime Scene Active")
     Bedtime.postUpdate(OFF)
+    LivingRoom.sendCommand(OFF)
+    FamilyRoom.sendCommand(OFF)
+    PowderRoom.sendCommand(OFF)
+    LaundryRoom.sendCommand(OFF)
+    Master_Mike.sendCommand(50)
+    Master_Diane.sendCommand(50)
+    Upstairs_Hallway.sendCommand(20)
 end
