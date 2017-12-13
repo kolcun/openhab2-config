@@ -71,6 +71,6 @@ then
     Family_Room_Accent.sendCommand(20)
     Living_Room_Accent.sendCommand(20)
     Main_Hallway.sendCommand(20)
-    Bookshelf.sendcommand(20)
+    Bookshelf.sendCommand(20)
     Upstairs_Hallway.sendCommand(20)
 end

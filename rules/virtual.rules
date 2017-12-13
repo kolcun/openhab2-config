@@ -20,3 +20,14 @@ then
     logInfo("Scene","Starting Work Scene Active")
     StartingWork.postUpdate(OFF)
 end
+
+rule "Bedtime Rule"
+when 
+    Item Bedtime received command ON
+then
+    if(DebugSwitch.state == ON){
+        pushover("Starting Bedtime Scene Active")
+    }
+    logInfo("Scene","Starting Bedtime Scene Active")
+    Bedtime.postUpdate(OFF)
+end
