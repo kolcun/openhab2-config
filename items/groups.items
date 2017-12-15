@@ -21,5 +21,3 @@ Group Sensors		(House)
 Group Batteries		(House)
 
 Group:Dimmer:MAX LivingRoomLamps "Living Room Lamps" (LivingRoom) ["Lighting"]
-
-Switch DebugSwitch
