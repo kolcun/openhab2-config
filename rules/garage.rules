@@ -117,15 +117,12 @@ rule "Mike Garage - sync as needed"
 when
         Time cron "0 0/10 * 1/1 * ? *" // every 10 minutes
 then
-	if(DebugSwitch.state == ON){
-		pushover("mike garage sync check running")
-	}
         if(MikeGarageSensor == CLOSED){
                 // kaypad lights on? turn off
 		if(DebugSwitch.state == ON){
                         pushover("mike garage is closed")
                 }
-                if(frontdoorH == ON){
+                if(frontdoorH.state == ON){
                         frontdoorH.sendCommand(OFF)
                         if(DebugSwitch.state == ON){
                                 pushover("Mike Door Closed, but keypad on: turning off")
@@ -137,7 +134,7 @@ then
 		if(DebugSwitch.state == ON){
                         pushover("mike garage is open")
                 }
-                if(frontdoorH == OFF){
+                if(frontdoorH.state == OFF){
                         frontdoorH.sendCommand(ON)
                         if(DebugSwitch.state == ON){
                                 pushover("Mike Door Open, but keypad off: turning on")
@@ -151,7 +148,7 @@ when
 then
         if(DianeGarageSensor == CLOSED){
                 // kaypad lights on? turn off
-                if(frontdoorG == ON){
+                if(frontdoorG.state == ON){
                         frontdoorG.sendCommand(OFF)
                         if(DebugSwitch.state == ON){
                                 pushover("Diane Door Closed, but keypad on: turning off")
@@ -160,7 +157,7 @@ then
         }
         if(DianeGarageSensor == OPEN){
                 // keypad lights off? turn on
-                if(frontdoorG == OFF){
+                if(frontdoorG.state == OFF){
                         frontdoorG.sendCommand(ON)
                         if(DebugSwitch.state == ON){
                                 pushover("Diane Door Open, but keypad off: turning on")
