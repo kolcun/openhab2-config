@@ -117,8 +117,14 @@ rule "Mike Garage - sync as needed"
 when
         Time cron "0 0/10 * 1/1 * ? *" // every 10 minutes
 then
+	if(DebugSwitch.state == ON){
+		pushover("mike garage sync check running")
+	}
         if(MikeGarageSensor == CLOSED){
                 // kaypad lights on? turn off
+		if(DebugSwitch.state == ON){
+                        pushover("mike garage is closed")
+                }
                 if(frontdoorH == ON){
                         frontdoorH.sendCommand(OFF)
                         if(DebugSwitch.state == ON){
@@ -128,6 +134,9 @@ then
         }
         if(MikeGarageSensor == OPEN){
                 // keypad lights off? turn on
+		if(DebugSwitch.state == ON){
+                        pushover("mike garage is open")
+                }
                 if(frontdoorH == OFF){
                         frontdoorH.sendCommand(ON)
                         if(DebugSwitch.state == ON){
