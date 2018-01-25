@@ -1,6 +1,8 @@
 Switch OutdoorPortable "Christmas Garland" ["Lighting"] {channel="zwave:device:9292c72c:node2:switch_binary"}
 
-Number FrontDoorSensorBatteryLevel "Front door battery [%d%%]" (Batteries) {channel="zwave:device:9292c72c:node3:battery-level"}
-Contact FrontDoorSensor "Front door is [%s]" (Sensors) {channel="zwave:device:9292c72c:node3:sensor_door"}
+Number FrontDoorSensorBatteryLevel "Front door battery [%d%%]" (Batteries) {channel="zwave:device:9292c72c:node5:battery-level"}
+Contact FrontDoorSensor "Front door is [%s]" (Sensors) {channel="zwave:device:9292c72c:node5:sensor_door"}
+
+Dimmer PowderRoomFoyer "Powder Room Foyer" <light> (PowderRoom) ["Lighting"] {channel="zwave:device:9292c72c:node4:switch_dimmer"}
 
 
