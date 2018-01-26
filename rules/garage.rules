@@ -117,7 +117,7 @@ rule "Mike Garage - sync as needed"
 when
         Time cron "0 0/10 * 1/1 * ? *" // every 10 minutes
 then
-        if(MikeGarageSensor == CLOSED){
+        if(MikeGarageSensor.state == CLOSED){
                 // kaypad lights on? turn off
 		if(DebugSwitch.state == ON){
                         pushover("mike garage is closed")
@@ -129,7 +129,7 @@ then
                         }
                 }
         }
-        if(MikeGarageSensor == OPEN){
+        if(MikeGarageSensor.state == OPEN){
                 // keypad lights off? turn on
 		if(DebugSwitch.state == ON){
                         pushover("mike garage is open")
@@ -146,7 +146,7 @@ rule "Diane Garage - sync as needed"
 when
         Time cron "0 0/10 * 1/1 * ? *" // every 10 minutes
 then
-        if(DianeGarageSensor == CLOSED){
+        if(DianeGarageSensor.state == CLOSED){
                 // kaypad lights on? turn off
                 if(frontdoorG.state == ON){
                         frontdoorG.sendCommand(OFF)
@@ -155,7 +155,7 @@ then
                         }
                 }
         }
-        if(DianeGarageSensor == OPEN){
+        if(DianeGarageSensor.state == OPEN){
                 // keypad lights off? turn on
                 if(frontdoorG.state == OFF){
                         frontdoorG.sendCommand(ON)
@@ -165,58 +165,8 @@ then
                 }
         }
 end
-/*
 
-rule "Mike Garage Closed"
-when 
-	Item MikeGarageSensor changed to CLOSED
-then
-    frontdoorH.sendCommand(OFF)
-    MikeGarage.postUpdate(OFF)
-    Thread::sleep(250)
-    frontdoorH.sendCommand(OFF)
-    MikeGarage.postUpdate(OFF)
-    pushover("Mike Garage Closed")
-end
-
-rule "Mike Garage Open"
-when 
-	Item MikeGarageSensor changed to OPEN
-then
-    frontdoorH.sendCommand(ON)
-    MikeGarage.postUpdate(OFF)
-    Thread::sleep(250)
-    frontdoorH.sendCommand(ON)
-    MikeGarage.postUpdate(OFF)
-    pushover("Mike Garage Opened")
-end
-
-rule "Diane Garage Closed"
-when 
-	Item DianeGarageSensor changed to CLOSED
-then
-    frontdoorG.sendCommand(OFF)
-    DianeGarage.postUpdate(OFF)
-    Thread::sleep(250)
-    frontdoorG.sendCommand(OFF)
-    DianeGarage.postUpdate(OFF)
-    pushover("Diane Garage Closed")
-end
-
-rule "Diane Garage Open"
-when 
-	Item DianeGarageSensor changed to OPEN
-then
-    frontdoorG.sendCommand(ON)
-    DianeGarage.postUpdate(OFF)
-    Thread::sleep(250)
-    frontdoorG.sendCommand(ON)
-    DianeGarage.postUpdate(OFF)
-    pushover("Diane Garage Opened")
-end
-
-
-rule "10:30 off"
+rule "9pm close garages"
 when 
     Time cron "0 0 21 1/1 * ? *"//9pm
 then
@@ -225,8 +175,7 @@ then
         DianeGarage.sendCommand(ON)
     }
     if(MikeGarageSensor.state == OPEN){
-        pushover("9pm close Diane garage")
+        pushover("9pm close Mike garage")
         MikeGarage.sendCommand(ON)
     }
 end
-*/
