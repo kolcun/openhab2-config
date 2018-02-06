@@ -38,8 +38,8 @@ then
 	if(Living_Room_Accent.state > 0){
 		Living_Room_Accent.sendCommand(OFF)
 	}
-    if(Bathroom_Foyer.state > 0){
-        Bathroom_Foyer.sendCommand(OFF)
+    if(PowderRoomFoyer.state > 0){
+        PowderRoomFoyer.sendCommand(OFF)
     }
     if(Family_Room_Accent.state > 0){
         Family_Room_Accent.sendCommand(OFF)
@@ -71,8 +71,8 @@ rule "bathroom Foyer - Summer"
 when
     Time cron "0 00 21 1/1 * ? *"//9pm
 then
-    if(Bathroom_Foyer.state == 0){
-        Bathroom_Foyer.sendCommand(20)
+    if(PowderRoomFoyer.state == 0){
+        PowderRoomFoyer.sendCommand(20)
     }
 end
 
@@ -80,14 +80,14 @@ rule "bathroom Foyer - Winter"
 when
     Time cron "0 30 16 1/1 * ? *"//4:30pm
 then
-    if(Bathroom_Foyer.state == 0){
-        Bathroom_Foyer.sendCommand(20)
+    if(PowderRoomFoyer.state == 0){
+        PowderRoomFoyer.sendCommand(20)
     }
 end
 
 rule "Landscape light On"
 when
-    Time cron "0 30 17 1/1 * ? *"//5:30pm
+    Time cron "0 59 17 1/1 * ? *"//5:59pm
 then
     if(Landscape_Light.state == OFF){
         Landscape_Light.sendCommand(ON)

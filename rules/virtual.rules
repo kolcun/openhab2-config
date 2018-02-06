@@ -7,7 +7,7 @@ then
     }
     logInfo("Scene","School Day Morning Scene Active")
     SchoolMorning.postUpdate(OFF)
-    Bathroom_Foyer.sendCommand(50)
+    PowderRoomFoyer.sendCommand(50)
     Upstairs_Hallway.sendCommand(20)
     Main_Hallway.sendCommand(40)
     Master_Light.sendCommand(40)    
