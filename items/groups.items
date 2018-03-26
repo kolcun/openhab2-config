@@ -8,8 +8,8 @@ Group Outside		(House)
 
 Group Garage		(Outside)
 
-Group:Switch:OR(ON,OFF) LivingRoom	(GroundFloor) ["Switchable"]
-Group:Switch:OR(ON,OFF) FamilyRoom	(GroundFloor) ["Switchable"]
+Group:Switch:OR(ON,OFF) LivingRoom	"Living Room" (GroundFloor) ["Switchable"]
+Group:Switch:OR(ON,OFF) FamilyRoom	"Family Room" (GroundFloor) ["Switchable"]
 Group PowderRoom	(GroundFloor)
 
 //Group MasterBedroom	(Upstairs)
