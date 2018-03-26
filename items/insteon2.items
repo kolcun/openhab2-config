@@ -52,13 +52,13 @@ Dimmer Living_Room_Lamp_Right "Living Room Lamp Right" <light> (LivingRoomLamps)
 Switch Outside_Lights "Outside Lights" <light> (Outside) {insteonplm="25.6A.AE:F00.00.16#loaddimmer"}
 
 // ADD REST OF KEYPAD
-Switch frontdoorB   "front door keypad button B"   {insteonplm="25.6A.AE:F00.00.14#keypadbuttonB,group=0xf1"}
-Switch frontdoorC   "front door keypad button C"   {insteonplm="25.6A.AE:F00.00.14#keypadbuttonC,group=0xf2"}
-Switch frontdoorD   "front door keypad button D"   {insteonplm="25.6A.AE:F00.00.14#keypadbuttonD,group=0xf3"}
-Switch frontdoorE   "front door keypad button E"   {insteonplm="25.6A.AE:F00.00.14#keypadbuttonE,group=0xf4"}
-Switch frontdoorF   "front door keypad button F"   {insteonplm="25.6A.AE:F00.00.14#keypadbuttonF,group=0xf5"}
-Switch frontdoorG   "front door keypad button G"   {insteonplm="25.6A.AE:F00.00.14#keypadbuttonG,group=0xf6"}
-Switch frontdoorH   "front door keypad button H"   {insteonplm="25.6A.AE:F00.00.14#keypadbuttonH,group=0xf7"}
+Switch frontdoorB   "front door keypad button B"   {insteonplm="25.6A.AE:F00.00.16#keypadbuttonB,group=0xf1"}
+Switch frontdoorC   "front door keypad button C"   {insteonplm="25.6A.AE:F00.00.16#keypadbuttonC,group=0xf2"}
+Switch frontdoorD   "front door keypad button D"   {insteonplm="25.6A.AE:F00.00.16#keypadbuttonD,group=0xf3"}
+Switch frontdoorE   "front door keypad button E"   {insteonplm="25.6A.AE:F00.00.16#keypadbuttonE,group=0xf4"}
+Switch frontdoorF   "front door keypad button F"   {insteonplm="25.6A.AE:F00.00.16#keypadbuttonF,group=0xf5"}
+Switch frontdoorG   "front door keypad button G"   {insteonplm="25.6A.AE:F00.00.16#keypadbuttonG,group=0xf6"}
+Switch frontdoorH   "front door keypad button H"   {insteonplm="25.6A.AE:F00.00.16#keypadbuttonH,group=0xf7"}
 
 
 
