@@ -100,7 +100,7 @@ when
 then
         pushover("D - on")
 	logInfo("Garage","Keypad D - on")
-	testSwitchMike.postUpdate(ON)
+	TestSwitchMike.postUpdate(ON)
 end
 
 rule "frontdoord-off"
@@ -109,7 +109,7 @@ when
 then
         pushover("D - off")
 	logInfo("Garage","Keypad D - off")
-	testSwitchMike.postUpdate(OFF)
+	TestSwitchMike.postUpdate(OFF)
 end
 
 

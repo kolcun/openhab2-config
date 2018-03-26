@@ -44,3 +44,19 @@ then
     Master_Diane.sendCommand(50)
     Upstairs_Hallway.sendCommand(20)
 end
+
+rule "Playroom lights on"
+when
+    Item Playroom received command ON
+then
+    LivingRoomLamps.sendCommand(ON)
+    Living_Room_Accent.sendCommand(15)
+end
+
+rule "Playroom lights off"
+when
+    Item Playroom received command OFF
+then
+    LivingRoomLamps.sendCommand(OFF)
+    Living_Room_Accent.sendCommand(OFF)
+end
