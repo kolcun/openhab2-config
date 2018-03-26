@@ -2,4 +2,7 @@ Switch StartingWork "Starting Work Scene" ["Switchable"]
 Switch SchoolMorning "School Day Morning Scene" ["Switchable"]
 Switch Bedtime "Bedtime Scene" ["Switchable"]
 
+
+Switch Playroom "Playroom lights" ["Lighting"]
+
 Switch DebugSwitch
