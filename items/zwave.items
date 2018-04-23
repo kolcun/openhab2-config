@@ -1,8 +1,47 @@
-Switch OutdoorPortable "Christmas Garland" ["Lighting"] {channel="zwave:device:9292c72c:node2:switch_binary"}
+Switch OutdoorPortable "Outdoor Portable" ["Lighting"] {channel="zwave:device:9292c72c:node2:switch_binary"}
 
 Number FrontDoorSensorBatteryLevel "Front door battery [%d%%]" (Batteries) {channel="zwave:device:9292c72c:node5:battery-level"}
 Contact FrontDoorSensor "Front door is [%s]" (Sensors) {channel="zwave:device:9292c72c:node5:sensor_door"}
 
 Dimmer PowderRoomFoyer "Powder Room Foyer" <light> (GroundFloor) ["Lighting"] {channel="zwave:device:9292c72c:node4:switch_dimmer"}
 
+Dimmer HomeSeerTest "Home Seer Test" <light> {channel="zwave:device:9292c72c:node6:switch_dimmer"}
 
+
+/*
+The scene state is a composite of the paddle ‘direction’ and the ‘action’.
+See below:
+
+[Paddle Direction] . [Action]
+
+[Paddle Direction]
+1.n = Top
+2.n = Bottom
+
+[Action]
+n.0 = 1 Click
+n.1 = Release
+n.2 = Hold
+n.3 = 2 Clicks
+n.4 = 3 Clicks
+n.5 = 4 Clicks
+n.6 = 5 Clicks
+
+e.g.
+1.3 = Top, 2 Clicks
+2.0 = Bottom, 1 Click
+*/
+Number HSScene "HS Scene [%.1f]" {channel="zwave:device:9292c72c:node6:scene_number"}
+Number HSMode "HS Mode" {channel="zwave:device:9292c72c:node6:config_decimal_param13"}
+Number HSNormalLedColor "HS Normal LED Color" {channel="zwave:device:9292c72c:node6:config_decimal_param14"}
+Number HSMode1Color "HS Mode 1 Color" {channel="zwave:device:9292c72c:node6:config_decimal_param21"}
+Number HSMode2Color "HS Mode 2 Color" {channel="zwave:device:9292c72c:node6:config_decimal_param22"}
+Number HSMode3Color "HS Mode 3 Color" {channel="zwave:device:9292c72c:node6:config_decimal_param23"}
+Number HSMode4Color "HS Mode 4 Color" {channel="zwave:device:9292c72c:node6:config_decimal_param24"}
+Number HSMode5Color "HS Mode 5 Color" {channel="zwave:device:9292c72c:node6:config_decimal_param25"}
+Number HSMode6Color "HS Mode 6 Color" {channel="zwave:device:9292c72c:node6:config_decimal_param26"}
+Number HSMode7Color "HS Mode 7 Color" {channel="zwave:device:9292c72c:node6:config_decimal_param27"}
+Number HSLedBlinkFreq "HS LED Blink Freq" {channel="zwave:device:9292c72c:node6:config_decimal_param30"}
+Number HSLedBlinkStatus "HS LED blink status" {channel="zwave:device:9292c72c:node6:config_decimal_param31"}
+
+Switch GarageLight "Garage Light" <light> (Outside) ["Lighting"] {channel="zwave:device:9292c72c:node7:switch_binary"}
