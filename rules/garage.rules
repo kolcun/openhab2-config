@@ -1,6 +1,6 @@
 rule "Garage Sensor - Mike"
 when
-	Item MikeGarageSensor changed to OPEN
+	Item MikeGarageSensor changed from CLOSED to OPEN
 then
 	pushover("Mike Garage Sensor - OPEN");
 	logInfo("Garage","Mike - OPEN");
@@ -10,7 +10,7 @@ end
 
 rule "Garage Sensor - Mike closed"
 when
-        Item MikeGarageSensor changed to CLOSED
+        Item MikeGarageSensor changed from OPEN to CLOSED
 then
         pushover("Mike Garage Sensor - CLOSED");
         logInfo("Garage","Mike - CLOSED");
@@ -20,7 +20,7 @@ end
 
 rule "Garage Sensor - Diane"
 when
-        Item DianeGarageSensor changed to OPEN
+        Item DianeGarageSensor changed from CLOSED to OPEN
 then
         pushover("Diane Garage Sensor - OPEN");
         logInfo("Garage","Diane - OPEN");
@@ -30,7 +30,7 @@ end
 
 rule "Garage Sensor - Diane closed"
 when
-        Item DianeGarageSensor changed to CLOSED
+        Item DianeGarageSensor changed from OPEN to CLOSED
 then
         pushover("Diane Garage Sensor - CLOSED");
         logInfo("Garage","Diane - CLOSED");
@@ -38,7 +38,7 @@ then
 	frontdoorG.sendCommand(OFF)
 end
 
-
+/*
 rule "test-switch-diane-on"
 when 
         Item TestSwitchDiane changed to ON
@@ -111,7 +111,7 @@ then
 	logInfo("Garage","Keypad D - off")
 	TestSwitchMike.postUpdate(OFF)
 end
-
+*/
 
 rule "Mike Garage - sync as needed"
 when
@@ -142,6 +142,7 @@ then
                 }
         }
 end
+
 rule "Diane Garage - sync as needed"
 when
         Time cron "0 0/10 * 1/1 * ? *" // every 10 minutes
