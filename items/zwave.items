@@ -31,6 +31,8 @@ e.g.
 1.3 = Top, 2 Clicks
 2.0 = Bottom, 1 Click
 */
+
+
 Number HSScene "HS Scene [%.1f]" {channel="zwave:device:9292c72c:node6:scene_number"}
 Number HSMode "HS Mode" {channel="zwave:device:9292c72c:node6:config_decimal_param13"}
 Number HSNormalLedColor "HS Normal LED Color" {channel="zwave:device:9292c72c:node6:config_decimal_param14"}
@@ -45,3 +47,4 @@ Number HSLedBlinkFreq "HS LED Blink Freq" {channel="zwave:device:9292c72c:node6:
 Number HSLedBlinkStatus "HS LED blink status" {channel="zwave:device:9292c72c:node6:config_decimal_param31"}
 
 Switch GarageLight "Garage Light" <light> (Outside) ["Lighting"] {channel="zwave:device:9292c72c:node7:switch_binary"}
+

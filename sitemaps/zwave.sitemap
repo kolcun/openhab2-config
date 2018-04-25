@@ -1,0 +1,19 @@
+sitemap zwave label="Z-wave test" {
+        Frame label="Testing"{
+                Default item=HomeSeerTest
+                Switch item=HomeSeerTest
+                Default item=HSScene
+                Default item=HSMode
+                Default item=HSNormalLedColor
+                Default item=HSMode1Color
+                Default item=HSMode2Color
+                Default item=HSMode3Color
+                Default item=HSMode4Color
+                Default item=HSMode5Color
+                Default item=HSMode6Color
+                Default item=HSMode7Color
+                Default item=HSLedBlinkFreq
+                Default item=HSLedBlinkStatus
+
+        }
+}
