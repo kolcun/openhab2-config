@@ -6,7 +6,7 @@ when
     Time cron "0 0 23 1/1 * ? *"
 then
 	if(Pool_Heater.state == ON){
-		pushover("Heater is on, turning off for the night")
+		sendPushoverMessage(pushoverBuilder("Heater is on, turning off for the night"))
 		Pool_Heater.sendCommand(OFF)
 	}
 end
@@ -17,7 +17,7 @@ when
 then
     	if(Pool_Pump.state != 0){
 		Pool_Pump.sendCommand(0)
-		pushover("Pool Pump - off for evening")
+		sendPushoverMessage(pushoverBuilder("Pool Pump - off for evening"))
 	}
 end
 
@@ -27,7 +27,7 @@ when
     Time cron "0 30 6 1/1 * ? *"
 then
     Pool_Pump.sendCommand(25)
-        pushover("Pool Pump - on - chlorine - morning")
+        sendPushoverMessage(pushoverBuilder("Pool Pump - on - chlorine - morning"))
 end
 
 rule "pump off - peak"
@@ -50,28 +50,28 @@ rule "Pump Off"
 when
 	Item Pool_Pump changed to 0
 then
-	pushover("Pool Pump is Off")
+	sendPushoverMessage(pushoverBuilder("Pool Pump is Off"))
 end
 
 rule "Pump Chlorine"
 when 
 	Item Pool_Pump changed to 25
 then
-	pushover("Pool Pump - Chlorine Speed")
+	sendPushoverMessage(pushoverBuilder("Pool Pump - Chlorine Speed"))
 end
 
 rule "Pump Max"
 when
 	Item Pool_Pump changed to 100
 then
-	pushover("Pool Pump - Max Speed")
+	sendPushoverMessage(pushoverBuilder("Pool Pump - Max Speed"))
 end
 
 rule "Pump Heater"
 when
 	Item Pool_Pump changed to 50
 then
-	pushover("Pool Pump - Heater Speed")
+	sendPushoverMessage(pushoverBuilder("Pool Pump - Heater Speed"))
 end
 
 */

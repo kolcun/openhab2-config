@@ -6,27 +6,27 @@ when
     Item Powder_Room_Sconce changed from 0
 then
 	if(DebugSwitch.state == ON){
-		pushover("starting bathroom timer")
+		sendPushoverMessage(pushoverBuilder("starting bathroom timer"))
 	}
 	logInfo("PowderRoomTimer", "Staring powder room timer")
 	bathroomTimer?.cancel()
     bathroomTimer = createTimer(now.plusMinutes(20)) [| 
                 logInfo("PowderRoomTimer", "Powder Room timer expired")
 		if(DebugSwitch.state == ON){
-			pushover("bathroom timer expired")
+			sendPushoverMessage(pushoverBuilder("bathroom timer expired"))
 		}
                 bathroomTimer.cancel()
                 bathroomTimer = null
 		if(Powder_Room.state > 0){
 			if(DebugSwitch.state == ON){
-				pushover("Powder room off")
+				sendPushoverMessage(pushoverBuilder("Powder room off"))
 			}
                 	Powder_Room.sendCommand(OFF)
 		}
 		if(Powder_Room_Sconce.state > 0){
                 	Powder_Room_Sconce.sendCommand(OFF)
 			if(DebugSwitch.state == ON){
-				pushover("Powder room sconce off")
+				sendPushoverMessage(pushoverBuilder("Powder room sconce off"))
 			}
 		}
         ]

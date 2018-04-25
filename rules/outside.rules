@@ -6,7 +6,7 @@ when
     Item Outside_Lights_Fast changed to ON
 then
 	if(DebugSwitch.state == ON){
-	    pushover("Outside lights 15 min timer started")
+	    sendPushoverMessage(pushoverBuilder("Outside lights 15 min timer started"))
 	}
     Outside_Lights.postUpdate(ON)
     frontdoorB.sendCommand(ON)
@@ -15,7 +15,7 @@ then
     outsideLightsTimer = createTimer(now.plusMinutes(15)) [| 
             logInfo("OutsideLightsTimer", "Outside Lights timer expired")
 		    if(DebugSwitch.state == ON){
-			    pushover("Outside Lights timer expired")
+			    sendPushoverMessage(pushoverBuilder("Outside Lights timer expired"))
             }
 		    outsideLightsTimer.cancel()
             outsideLightsTimer = null

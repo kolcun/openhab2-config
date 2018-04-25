@@ -3,7 +3,7 @@ when
     Item SchoolMorning received command ON
 then
     if(DebugSwitch.state == ON){
-        pushover("School Day Morning Scene Active")
+        sendPushoverMessage(pushoverBuilder("School Day Morning Scene Active"))
     }
     logInfo("Scene","School Day Morning Scene Active")
     SchoolMorning.postUpdate(OFF)
@@ -19,7 +19,7 @@ when
     Item StartingWork received command ON
 then
     if(DebugSwitch.state == ON){
-        pushover("Starting Work Scene Active")
+        sendPushoverMessage(pushoverBuilder("Starting Work Scene Active"))
     }
     logInfo("Scene","Starting Work Scene Active")
     StartingWork.postUpdate(OFF)
@@ -34,7 +34,7 @@ when
     Item Bedtime received command ON
 then
     if(DebugSwitch.state == ON){
-        pushover("Starting Bedtime Scene Active")
+        sendPushoverMessage(pushoverBuilder("Starting Bedtime Scene Active"))
     }
     logInfo("Scene","Starting Bedtime Scene Active")
     Bedtime.postUpdate(OFF)

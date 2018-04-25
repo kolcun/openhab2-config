@@ -6,14 +6,14 @@ when
     Item Laundry_Room_Hallway changed from 0
 then
 	if(DebugSwitch.state == ON){
-	pushover("laundry room timer started")
+	sendPushoverMessage(pushoverBuilder("laundry room timer started"))
 	}
 	logInfo("LaundryRoomTimer", "Starting timer")
 	laundryTimer?.cancel()
     laundryTimer = createTimer(now.plusMinutes(20)) [| 
                 logInfo("LaundryRoomTimer", "Laundry Room timer expired")
 		if(DebugSwitch.state == ON){
-			pushover("laundry room timer expired")
+			sendPushoverMessage(pushoverBuilder("laundry room timer expired"))
                 }
 		laundryTimer.cancel()
                 laundryTimer = null

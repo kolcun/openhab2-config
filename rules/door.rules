@@ -2,5 +2,5 @@ rule "Front Door Open"
 when 
 	Item FrontDoorSensor changed to OPEN
 then
-	//pushover("Front Door Open")
+	//sendPushoverMessage(pushoverBuilder("Front Door Open"))
 end

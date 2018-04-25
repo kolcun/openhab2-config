@@ -2,8 +2,8 @@ rule "Garage Sensor - Mike"
 when
 	Item MikeGarageSensor changed from CLOSED to OPEN
 then
-	pushover("Mike Garage Sensor - OPEN");
-	logInfo("Garage","Mike - OPEN");
+	sendPushoverMessage(pushoverBuilder("Mike Garage Sensor - OPEN"))
+	logInfo("Garage","Mike - OPEN")
 	// frontdoorD.sendCommand(ON)
 	frontdoorH.sendCommand(ON)
 end
@@ -12,8 +12,8 @@ rule "Garage Sensor - Mike closed"
 when
         Item MikeGarageSensor changed from OPEN to CLOSED
 then
-        pushover("Mike Garage Sensor - CLOSED");
-        logInfo("Garage","Mike - CLOSED");
+        sendPushoverMessage(pushoverBuilder("Mike Garage Sensor - CLOSED"))
+        logInfo("Garage","Mike - CLOSED")
 	// frontdoorD.sendCommand(OFF)
 	frontdoorH.sendCommand(OFF)
 end
@@ -22,8 +22,8 @@ rule "Garage Sensor - Diane"
 when
         Item DianeGarageSensor changed from CLOSED to OPEN
 then
-        pushover("Diane Garage Sensor - OPEN");
-        logInfo("Garage","Diane - OPEN");
+        sendPushoverMessage(pushoverBuilder("Diane Garage Sensor - OPEN"))
+        logInfo("Garage","Diane - OPEN")
 	// frontdoorC.sendCommand(ON)
 	frontdoorG.sendCommand(ON)
 end
@@ -32,8 +32,8 @@ rule "Garage Sensor - Diane closed"
 when
         Item DianeGarageSensor changed from OPEN to CLOSED
 then
-        pushover("Diane Garage Sensor - CLOSED");
-        logInfo("Garage","Diane - CLOSED");
+        sendPushoverMessage(pushoverBuilder("Diane Garage Sensor - CLOSED"))
+        logInfo("Garage","Diane - CLOSED")
 	// frontdoorC.sendCommand(OFF)
 	frontdoorG.sendCommand(OFF)
 end
@@ -43,7 +43,7 @@ rule "test-switch-diane-on"
 when 
         Item TestSwitchDiane changed to ON
 then
-        pushover("Switch-diane-on linked to C")
+        sendPushoverMessage(pushoverBuilder("Switch-diane-on linked to C"))
         frontdoorC.sendCommand(ON)
 	logInfo("Garage", "Diane test switch ON")
 end
@@ -52,7 +52,7 @@ rule "test-switch-diane-off"
 when 
         Item TestSwitchDiane changed to OFF
 then
-        pushover("Switch-diane-off linked to C")
+        sendPushoverMessage(pushoverBuilder("Switch-diane-off linked to C"))
         // frontdoorC.sendCommand(OFF)
 	logInfo("Garage", "Diane test switch OFF")
 end
@@ -61,7 +61,7 @@ rule "test-switch-mike-on"
 when 
         Item TestSwitchMike changed to ON
 then
-        pushover("Switch-mike-on linked to D")
+        sendPushoverMessage(pushoverBuilder("Switch-mike-on linked to D"))
         // frontdoorD.sendCommand(ON)
 	logInfo("Garage", "Mike test switch ON")
 end
@@ -70,7 +70,7 @@ rule "test-switch-mike-off"
 when 
         Item TestSwitchMike changed to OFF
 then
-        pushover("Switch-mike-off linked to D")
+        sendPushoverMessage(pushoverBuilder("Switch-mike-off linked to D"))
         // frontdoorD.sendCommand(OFF)
 	logInfo("Garage", "Mike test switch OFF")
 end
@@ -80,7 +80,7 @@ rule "frontdoorc-on"
 when
         Item frontdoorC changed to ON
 then
-        pushover("C - on")
+        sendPushoverMessage(pushoverBuilder("C - on"))
 	logInfo("Garage","Keypad C - on")
 	TestSwitchDiane.postUpdate(ON)
 end
@@ -89,7 +89,7 @@ rule "frontdoorc-off"
 when
         Item frontdoorC changed to OFF
 then
-        pushover("C - off")
+        sendPushoverMessage(pushoverBuilder("C - off"))
 	logInfo("Garage","Keypad C - off")
 	TestSwitchDiane.postUpdate(OFF)
 end
@@ -98,7 +98,7 @@ rule "frontdoord-on"
 when
         Item frontdoorD changed to ON
 then
-        pushover("D - on")
+        sendPushoverMessage(pushoverBuilder("D - on"))
 	logInfo("Garage","Keypad D - on")
 	TestSwitchMike.postUpdate(ON)
 end
@@ -107,7 +107,7 @@ rule "frontdoord-off"
 when
         Item frontdoorD changed to OFF
 then
-        pushover("D - off")
+        sendPushoverMessage(pushoverBuilder("D - off"))
 	logInfo("Garage","Keypad D - off")
 	TestSwitchMike.postUpdate(OFF)
 end
@@ -120,24 +120,24 @@ then
         if(MikeGarageSensor.state == CLOSED){
                 // kaypad lights on? turn off
 		if(DebugSwitch.state == ON){
-                        pushover("mike garage is closed")
+                        sendPushoverMessage(pushoverBuilder("mike garage is closed"))
                 }
                 if(frontdoorH.state == ON){
                         frontdoorH.sendCommand(OFF)
                         if(DebugSwitch.state == ON){
-                                pushover("Mike Door Closed, but keypad on: turning off")
+                                sendPushoverMessage(pushoverBuilder("Mike Door Closed, but keypad on: turning off"))
                         }
                 }
         }
         if(MikeGarageSensor.state == OPEN){
                 // keypad lights off? turn on
 		if(DebugSwitch.state == ON){
-                        pushover("mike garage is open")
+                        sendPushoverMessage(pushoverBuilder("mike garage is open"))
                 }
                 if(frontdoorH.state == OFF){
                         frontdoorH.sendCommand(ON)
                         if(DebugSwitch.state == ON){
-                                pushover("Mike Door Open, but keypad off: turning on")
+                                sendPushoverMessage(pushoverBuilder("Mike Door Open, but keypad off: turning on"))
                         }
                 }
         }
@@ -152,7 +152,7 @@ then
                 if(frontdoorG.state == ON){
                         frontdoorG.sendCommand(OFF)
                         if(DebugSwitch.state == ON){
-                                pushover("Diane Door Closed, but keypad on: turning off")
+                                sendPushoverMessage(pushoverBuilder("Diane Door Closed, but keypad on: turning off"))
                         }
                 }
         }
@@ -161,7 +161,7 @@ then
                 if(frontdoorG.state == OFF){
                         frontdoorG.sendCommand(ON)
                         if(DebugSwitch.state == ON){
-                                pushover("Diane Door Open, but keypad off: turning on")
+                                sendPushoverMessage(pushoverBuilder("Diane Door Open, but keypad off: turning on"))
                         }
                 }
         }
@@ -172,11 +172,11 @@ when
     Time cron "0 0 21 1/1 * ? *"//9pm
 then
     if(DianeGarageSensor.state == OPEN){
-        pushover("9pm close Diane garage")
+        sendPushoverMessage(pushoverBuilder("9pm close Diane garage"))
         DianeGarage.sendCommand(ON)
     }
     if(MikeGarageSensor.state == OPEN){
-        pushover("9pm close Mike garage")
+        sendPushoverMessage(pushoverBuilder("9pm close Mike garage"))
         MikeGarage.sendCommand(ON)
     }
 end

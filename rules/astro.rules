@@ -34,7 +34,7 @@ when
 then
     logInfo("astroRules", "Sunrise Occurred")
     if(DebugSwitch.state == ON){
-        pushover("Daylight triggered start");
+        sendPushoverMessage(pushoverBuilder("Daylight triggered start"))
     }
 end
 
@@ -44,7 +44,7 @@ when
 then
     logInfo("astroRules", "Sunrise Occurred")
     if(DebugSwitch.state == ON){
-        pushover("Civil Dawn triggered Start");
+        sendPushoverMessage(pushoverBuilder("Civil Dawn triggered Start"))
     }
 end
 
@@ -54,7 +54,7 @@ when
 then
     logInfo("astroRules", "Sunset Occurred")
     if(DebugSwitch.state == ON){
-        pushover("Daylight triggered end")
+        sendPushoverMessage(pushoverBuilder("Daylight triggered end"))
     }
     Outside_Lights.sendCommand(ON)
 end
@@ -65,7 +65,7 @@ when
 then
     logInfo("astroRules", "Sunset Occurred")
     if(DebugSwitch.state == ON){
-        pushover("Civil Dusk triggered Start")
+        sendPushoverMessage(pushoverBuilder("Civil Dusk triggered Start"))
     }
     Outside_Lights.sendCommand(ON)
     Family_Room_Accent.sendCommand(20)

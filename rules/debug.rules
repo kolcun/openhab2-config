@@ -2,12 +2,12 @@ rule "DebugEnabled"
 when
         Item DebugSwitch changed from OFF to ON
 then
-	pushover("Debug enabled")
+	sendPushoverMessage(pushoverBuilder("Debug enabled"))
 end
 
 rule "DebugDisabled"
 when
 	Item DebugSwitch changed from ON to OFF
 then
-	pushover("Debug disabled")
+	sendPushoverMessage(pushoverBuilder("Debug disabled"))
 end

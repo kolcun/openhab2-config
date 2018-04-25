@@ -18,7 +18,7 @@ when
 then
 	if(Pool_Heater.state == ON){
 		Pool_Heater.sendCommand(OFF)
-        	pushover("Turning off Pool heater for evening")
+        	sendPushoverMessage(pushoverBuilder("Turning off Pool heater for evening"))
 	}
 end
 
@@ -133,7 +133,7 @@ rule "pool heater notify"
 when
     Item Pool_Heater changed to ON
 then
-    pushover("Pool heater turned on")
+    sendPushoverMessage(pushoverBuilder("Pool heater turned on"))
 end
 
 rule "Basement Foyer fast on (laundry)"
@@ -141,7 +141,7 @@ when
     Item Basement_Foyer_Fast received command ON
 then
     if(DebugSwitch.state == ON){
-        pushover("Basement Foyer - fast on")
+        sendPushoverMessage(pushoverBuilder("Basement Foyer - fast on"))
     }
     Basement_Foyer.postUpdate(ON)
     LaundryRoom.sendCommand(ON)
@@ -152,7 +152,7 @@ when
     Item Basement_Foyer_Fast received command OFF
 then
     if(DebugSwitch.state == ON){
-        pushover("Basement Foyer - fast off")
+        sendPushoverMessage(pushoverBuilder("Basement Foyer - fast off"))
     }
     Basement_Foyer.postUpdate(OFF)
     LaundryRoom.sendCommand(OFF)
