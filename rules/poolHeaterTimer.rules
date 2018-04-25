@@ -5,7 +5,7 @@ rule "CaptureHeaterStateChangedToOff"
 when
 Item Pool_Heater changed to OFF
 then
-	if(heatTimer != null){
+	if(heatTimer !== null){
         	heatTimer.cancel()
 		heatTimer = null
 	}
@@ -17,8 +17,8 @@ when
 Item Pool_Heat_Timer changed
 then
 
-val Functions$Function1<Timer, Boolean> cancelIfRequired = [t |
-        if(t != null){
+val Functions$Function1<Timer, Boolean> cancelIfRequired = [ t |
+        if(t !== null){
                 logInfo("PoolHeatTimer","One Hour Heater timer cancelled")
                 t.cancel()
         }
@@ -26,60 +26,60 @@ val Functions$Function1<Timer, Boolean> cancelIfRequired = [t |
 ]
 
 if(Pool_Heat_Timer.state == "off"){
-      Pool_Heater.sendCommand(OFF);
-      if(initialPumpState != null){
+      Pool_Heater.sendCommand(OFF)
+      if(initialPumpState !== null){
 		logInfo("PoolHeatTimer", "sleeping 60s before changing pump speed")
 		Thread::sleep(60000)
 		Pool_Pump.sendCommand(initialPumpState)
 		initialPumpState = null
       }
 }else if (Pool_Heat_Timer.state == "1h") {
-	cancelIfRequired.apply(heatTimer);
-	pushover("Heating Pool for One Hour")
-	logInfo("PoolHeatTimer", "Heating Pool for One Hour");
+	cancelIfRequired.apply(heatTimer)
+	sendPushoverMessage(pushoverBuilder("Heating Pool for One Hour"))
+	logInfo("PoolHeatTimer", "Heating Pool for One Hour")
         initialPumpState = Pool_Pump.state
         Pool_Pump.sendCommand(50)
         Thread::sleep(20000)
         Pool_Heater.sendCommand(ON)
 
-        heatTimer = createTimer(now.plusHours(1)) [| 
+        heatTimer = createTimer(now.plusHours(1)) [ | 
                 logInfo("PoolHeatTimer", "Pool Heater timer expired")
                 heatTimer.cancel()
                 heatTimer = null
                 Pool_Heat_Timer.sendCommand("off")
-                pushover("Pool Heater timer expired, turning off")
+                sendPushoverMessage(pushoverBuilder("Pool Heater timer expired, turning off"))
         ]
 }else if(Pool_Heat_Timer.state == "2h"){
-        cancelIfRequired.apply(heatTimer);
-        pushover("Heating Pool for Two Hours")
-        logInfo("PoolHeatTimer", "Heating Pool for Two Hours");
+        cancelIfRequired.apply(heatTimer)
+        sendPushoverMessage(pushoverBuilder("Heating Pool for Two Hours"))
+        logInfo("PoolHeatTimer", "Heating Pool for Two Hours")
         initialPumpState = Pool_Pump.state
         Pool_Pump.sendCommand(50)
         Thread::sleep(20000)
         Pool_Heater.sendCommand(ON)
         
-        heatTimer = createTimer(now.plusHours(2)) [| 
+        heatTimer = createTimer(now.plusHours(2)) [ | 
                 logInfo("PoolHeatTimer", "Pool Heater timer expired")
                 heatTimer.cancel()
                 heatTimer = null
                 Pool_Heat_Timer.sendCommand("off")
-                pushover("Pool Heater timer expired, turning off")
+                sendPushoverMessage(pushoverBuilder("Pool Heater timer expired, turning off"))
         ]
 }else if(Pool_Heat_Timer.state == "4h"){
-        cancelIfRequired.apply(heatTimer);
-        pushover("Heating Pool for Four Hours")
-        logInfo("PoolHeatTimer", "Heating Pool for Four Hours");
+        cancelIfRequired.apply(heatTimer)
+        sendPushoverMessage(pushoverBuilder("Heating Pool for Four Hours"))
+        logInfo("PoolHeatTimer", "Heating Pool for Four Hours")
         initialPumpState = Pool_Pump.state
         Pool_Pump.sendCommand(50)
         Thread::sleep(20000)
         Pool_Heater.sendCommand(ON)
 
-        heatTimer = createTimer(now.plusHours(4)) [|
+        heatTimer = createTimer(now.plusHours(4)) [ |
                 logInfo("PoolHeatTimer", "Pool Heater timer expired")
                 heatTimer.cancel()
                 heatTimer = null
                 Pool_Heat_Timer.sendCommand("off")
-                pushover("Pool Heater timer expired, turning off")
+                sendPushoverMessage(pushoverBuilder("Pool Heater timer expired, turning off"))
         ]
 }
 
