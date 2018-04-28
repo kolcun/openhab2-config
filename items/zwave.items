@@ -5,7 +5,9 @@ Contact FrontDoorSensor "Front door is [%s]" (Sensors) {channel="zwave:device:92
 
 Dimmer PowderRoomFoyer "Powder Room Foyer" <light> (GroundFloor) ["Lighting"] {channel="zwave:device:9292c72c:node4:switch_dimmer"}
 
-Dimmer HomeSeerTest "Home Seer Test" <light> {channel="zwave:device:9292c72c:node6:switch_dimmer"}
+Dimmer TVRoomFireplace "TV Room Fireplace" <light> (GroundFloor) ["Lighting"] {channel="zwave:device:9292c72c:node6:switch_dimmer"}
+Dimmer TVRoom "TV Room" <light> (GroundFloor) ["Lighting"] {channel="zwave:device:9292c72c:node8:switch_dimmer"}
+Dimmer TVRoomAccent "TV Room Accent" <light> (GroundFloor) ["Lighting"] {channel="zwave:device:9292c72c:node9:switch_dimmer"}
 
 
 /*
