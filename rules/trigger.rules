@@ -157,3 +157,21 @@ then
     Basement_Foyer.postUpdate(OFF)
     LaundryRoom.sendCommand(OFF)
 end
+
+rule "TV Room all on"
+when
+	Item TVRoomScene changed to 1.3 //top 2 clicks
+then
+	TVRoom.sendCommand(7)
+	TVRoomFireplace.sendCommand(7)
+	TVRoomAccent.sendCommand(7)
+end
+
+rule "TV Room all off"
+when
+	Item TVRoomScene changed to 2.3 //bottom 2 clicks
+then
+	TVRoom.sendCommand(OFF)
+	TVRoomFireplace.sendCommand(OFF)
+	TVRoomAccent.sendCommand(OFF)
+end

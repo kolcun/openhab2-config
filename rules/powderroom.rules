@@ -34,7 +34,7 @@ end
 
 rule "cancel powder room timer if running"
 when
-        Item Powder_Room changed to o or
+        Item Powder_Room changed to 0 or
         Item Powder_Room_Sconce changed to 0
 then
         bathroomTimer?.cancel()

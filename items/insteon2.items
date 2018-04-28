@@ -1,41 +1,23 @@
-// Dimmer Bookshelf_Light "Bookshelf Lights" <light> (Upstairs) ["Lighting"] {http=">[*:POST:http://192.168.24.117:8080/SET;none?select_item=Bookshelf&select_state=%2$s]"}
 Dimmer Bookshelf "Bookshelf Lights" <light> (Upstairs) ["Lighting"] {insteonplm="2B.B7.96:F00.00.01#dimmer"}
 
-// Switch Landscape_Light "Landscape Lights" <light> (Outside) ["Lighting"]{http=">[*:POST:http://192.168.24.117:8080/SET;none?select_item=Landscape_Lights&select_state=%2$s]"}
 Switch Landscape_Light "Landscape Lights" <light> (Outside) ["Lighting"] {insteonplm="2B.2A.B6:F00.00.02#switch"}
 
-// Dimmer Master_Light_Mike "Mike Night Table" <light> (MasterBedroom) ["Lighting"] {http=">[*:POST:http://192.168.24.117:8080/SET;none?select_item=Master_Light_Mike&select_state=%2$s]"}
-// Dimmer Master_Light_Diane "Diane Night Table" <light> (MasterBedroom) {http=">[*:POST:http://192.168.24.117:8080/SET;none?select_item=Master_Light_Diane&select_state=%2$s]"}
 Dimmer Master_Mike "Mike Night Table" <light> (MasterBedroom) ["Lighting"] {insteonplm="24.0E.48:0x000068#dimmer"}
 Dimmer Master_Diane "Diane Night Table" <light> (MasterBedroom) ["Lighting"] {insteonplm="24.0F.3C:0x000068#dimmer"}
 
-// Switch Pool_Light "Pool Light" <light> ["Lighting"] {mqtt="<[broker:kolcun/outdoor/pool/light/status:command:MAP(onoff.map)], >[broker:kolcun/outdoor/pool/light:status:on:on], >[broker:kolcun/outdoor/pool/light:status:off:off]", http=">[*:POST:http://192.168.24.117:8080/SET;none?select_item=Pool_Light&select_state=%2$s]"}
-// Switch Pool_Light "Pool Light" <light> (Outside) ["Lighting"] {mqtt="<[broker:kolcun/outdoor/pool/light/status:command:MAP(onoff.map)]", http=">[*:POST:http://192.168.24.117:8080/SET;none?select_item=Pool_Light&select_state=%2$s]"}
-// Switch Pool_Heater "Pool Heater" <fire> (Outside) {http=">[*:POST:http://192.168.24.117:8080/SET;none?select_item=Pool_Gas_Heater&select_state=%2$s]"}
 Switch Pool_Light "Pool Light" <light> (Outside) ["Lighting"] {mqtt="<[broker:kolcun/outdoor/pool/light/status:command:MAP(onoff.map)]", insteonplm="41.8D.81:F00.00.02#switch"}
 Switch Pool_Heater "Pool Heater" <fire> (Outside) {insteonplm="32.81.93:F00.00.02#switch"}
 
-// Dimmer Powder_Room "Powder Room" <light> (PowderRoom) {http=">[*:POST:http://192.168.24.117:8080/SET;none?select_item=Powder_Room&select_state=%2$s]"}
-// Dimmer Powder_Room_Sconce "Power Room Sconce" <light> (PowderRoom) {http=">[*:POST:http://192.168.24.117:8080/SET;none?select_item=Powder_Room_Sconce&select_state=%2$s]"}
 Dimmer Powder_Room "Powder Room" <light> (PowderRoom) ["Lighting"] {insteonplm="3C.E2.D8:F00.00.01#dimmer"}
 Dimmer Powder_Room_Sconce "Power Room Sconce" <light> (PowderRoom) ["Lighting"] {insteonplm="3C.F9.83:F00.00.01#dimmer"}
 
-// Dimmer Famiy_Room "Family Room" <light> (FamilyRoom) {http=">[*:POST:http://192.168.24.117:8080/SET;none?select_item=Family_Room_Main_Pot_Lights&select_state=%2$s]"}
-// Dimmer Family_Room_Fireplace "Family Room Fireplace" <light> (FamilyRoom) {http=">[*:POST:http://192.168.24.117:8080/SET;none?select_item=Family_Room_Fireplace_Pot_Lights&select_state=%2$s]"}
-// Dimmer Family_Room_Accent "Family Room Accent" <light> (FamilyRoom) {http=">[*:POST:http://192.168.24.117:8080/SET;none?select_item=Family_Room_Window_Pot_Lights&select_state=%2$s]"}
-Dimmer Famiy_Room "Family Room Lights" <light> (FamilyRoom) ["Lighting"] {insteonplm="24.9C.9F:F00.00.01#dimmer"}
-Dimmer Family_Room_Fireplace "Family Room Fireplace" <light> (FamilyRoom) ["Lighting"] {insteonplm="24.72.38:F00.00.01#dimmer"}
-Dimmer Family_Room_Accent "Family Room Accent" <light> (FamilyRoom) ["Lighting"] {insteonplm="24.09.E8:F00.00.01#dimmer"}
+Dimmer BasementRight "Basement Right" <light> (BasementRoom) {insteonplm="24.9C.9F:F00.00.01#dimmer"}
+Dimmer BasementMiddle "Basement Middle" <light> (BasementRoom) {insteonplm="24.72.38:F00.00.01#dimmer"}
+Dimmer BasementLeft "Basement Left" <light> (BasementRoom)  {insteonplm="24.09.E8:F00.00.01#dimmer"}
 
-// Dimmer Bathroom_Foyer "Bathroom Foyer" <light> (GroundFloor) {http=">[*:POST:http://192.168.24.117:8080/SET;none?select_item=Bathroom_Foyer&select_state=%2$s]"}
-//Dimmer Bathroom_Foyer "Bathroom Foyer" <light> (GroundFloor) ["Lighting"] {insteonplm="38.90.6B:F00.00.01#dimmer"}
-
-// Dimmer Laundry_Room_Hallway "Laundry Room Hallway" <light> (LaundryRoom) {http=">[*:POST:http://192.168.24.117:8080/SET;none?select_item=Laundry_Room_Hallway&select_state=%2$s]"}
-// Switch Laundry_Room "Laundry Room" <light> (LaundryRoom) {http=">[*:POST:http://192.168.24.117:8080/SET;none?select_item=Laundry_Room_Lights&select_state=%2$s]"}
 Dimmer Laundry_Room_Hallway "Laundry Room Hallway" <light> (LaundryRoom) ["Lighting"] {insteonplm="3C.E1.94:F00.00.01#dimmer"}
 Switch Laundry_Room "Laundry Room" <light> (LaundryRoom) ["Lighting"] {insteonplm="28.79.86:F00.00.02#switch"}
 
-// Dimmer Living_Room_Accent "Living Room Accent" <light> (LivingRoom) {http=">[*:POST:http://192.168.24.117:8080/SET;none?select_item=Living_Room_Pot_Lights&select_state=%2$s]"}
 // INSTEON_SWITCHLINC, 28.ED.6E, Living_Room_Pot_Lights, All_Lights
 // INSTEON_LAMPLINC, 23.49.F9, Living_Room_Floor_Light_Left, All_Lights
 // INSTEON_LAMPLINC, 21.FA.00, Living_Room_Floor_Light_Right, All_Lights
@@ -47,7 +29,6 @@ Dimmer Living_Room_Lamp_Right "Living Room Lamp Right" <light> (LivingRoomLamps)
 //Dimmer Living_Room_Lamps "Living Room Lamps" <light> (LivingRoom)
 
 //keypad - 8 button - on/off (2487S 6 button, with 8 button change kit used 2401WH8 8-Button Change Kit )
-// Switch Exterior_Lights "Exterior Lights" <light> (Outside) {http=">[*:POST:http://192.168.24.117:8080/SET;none?select_item=Front_Door_Keypad_Ext_Light&select_state=%2$s]"}
 //Jan 2018 - changed this to the fastonoff channel because it stopped working after the capacitor repair on the PLM, not sure why.
 Switch Outside_Lights "Outside Lights" <light> (Outside) {insteonplm="25.6A.AE:F00.00.16#loaddimmer"}
 
@@ -61,23 +42,19 @@ Switch frontdoorG   "front door keypad button G"   {insteonplm="25.6A.AE:F00.00.
 Switch frontdoorH   "front door keypad button H"   {insteonplm="25.6A.AE:F00.00.16#keypadbuttonH,group=0xf7"}
 
 
-
-// Dimmer Main_Hallway "Main Hallway" <light> (GroundFloor) {http=">[*:POST:http://192.168.24.117:8080/SET;none?select_item=Front_Hall_Hall_Side&select_state=%2$s]"}
 //LOAD switch - in hallway
 Dimmer Main_Hallway "Main Hallway" <light> (GroundFloor) {insteonplm="28.F4.FE:F00.00.01#dimmer"}
 //Dummy Switch at front door
 Dimmer Main_Hallway_Slave "Main Hallway Slave" <light> (GroundFloor) {insteonplm="28.F4.E7:F00.00.01#dimmer"}
 
-// Switch Basement_Foyer "Basement Foyer" <light> (Basement) {http=">[*:POST:http://192.168.24.117:8080/SET;none?select_item=Basement_Stairs_Top&select_state=%2$s]"}
-Switch Basement_Foyer "Basement Foyer" <light> (Basement) {insteonplm="28.81.9B:F00.00.02#switch"}
+Switch Basement_Foyer "Basement Foyer" <light> (BasementRoom) {insteonplm="28.81.9B:F00.00.02#switch"}
 Switch Basement_Foyer_Fast "Basement Foyer Fast" <light> {insteonplm="28.81.9B:F00.00.02#fastonoff"}
 //bottom of basement stairs
-Switch Basement_Foyer_Slave "Basement Foyer Slave" <light> (Basement) {insteonplm="28.8A.B7:F00.00.02#switch"}
+Switch Basement_Foyer_Slave "Basement Foyer Slave" <light> (BasementRoom) {insteonplm="28.8A.B7:F00.00.02#switch"}
 
 Dimmer Upstairs_Hallway2 "Upstairs Hallway2" <light> (Upstairs) {insteonplm="2B.B3.39:F00.00.01#dimmer"}
 
 //keypad - 6 button - dimmer
-// Dimmer Upstairs_Hallway "Upstairs Lights" <light> (Upstairs) {http=">[*:POST:http://192.168.24.117:8080/SET;none?select_item=Upstairs_Landing_Keypad_Light&select_state=%2$s]"}
 Dimmer Upstairs_Hallway "Upstairs Hallway" <light> (Upstairs) {insteonplm="2B.AC.C3:F00.00.15#loaddimmer"}
 // ADD REST OF KEYPAD
 Switch UpstairsHallwayA "Upstairs Hallway A" {insteonplm="2B.AC.C3:F00.00.15#keypadbuttonA,group=0xe1"}
@@ -95,11 +72,6 @@ Switch MasterBedroomB "Master Bedroom B" {insteonplm="24.15.E3:F00.00.15#keypadb
 Switch MasterBedroomC "Master Bedroom C" {insteonplm="24.15.E3:F00.00.15#keypadbuttonC,group=0xg3"}
 Switch MasterBedroomD "Master Bedroom D" {insteonplm="24.15.E3:F00.00.15#keypadbuttonD,group=0xg4"}
 
-
-// Dimmer Master_Fan "Master Fan" <fan>  {http=">[*:POST:http://192.168.24.117:8080/SET;none?select_item=Master_Fan&select_state=%2$s]"}
-// //for Homekit Sync
-// Switch Master_Fan2 "Master Fan" ["Lighting"]
-// Dimmer Master_Light "Master Light" <light> (MasterBedroom) ["Lighting"] {http=">[*:POST:http://192.168.24.117:8080/SET;none?select_item=Master_Light&select_state=%2$s]"}
 
 Dimmer Master_Light "Master Light [%d %%]" <light> (MasterBedroom) ["Lighting"] {insteonplm="21.69.CD:F00.00.1C#lightdimmer"}
 Number Master_Fan "Master Fan" <fan> (MasterBedroom) {insteonplm="21.69.CD:F00.00.1C#fan"}

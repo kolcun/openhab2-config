@@ -63,6 +63,7 @@ sitemap main label="My home automation" {
 		Slider item=TVRoomFireplace
 		Slider item=TVRoom
 		Slider item=TVRoomAccent
+		Default item=TVRoomScene
                 //Slider item=Famiy_Room
                 //Slider item=Family_Room_Fireplace
                 //Slider item=Family_Room_Accent
@@ -98,6 +99,10 @@ sitemap main label="My home automation" {
                 Switch item=Laundry_Room
                 Switch item=Basement_Foyer
 		Switch item=Basement_Foyer_Fast
+		Switch item=BasementLeft
+		Switch item=BasementRight
+		Switch item=BasementMiddle
+		Switch item=Basement
         }
 
 	Frame label="Weather"{

@@ -7,6 +7,7 @@ Dimmer PowderRoomFoyer "Powder Room Foyer" <light> (GroundFloor) ["Lighting"] {c
 
 Dimmer TVRoomFireplace "TV Room Fireplace" <light> (GroundFloor) ["Lighting"] {channel="zwave:device:9292c72c:node6:switch_dimmer"}
 Dimmer TVRoom "TV Room" <light> (GroundFloor) ["Lighting"] {channel="zwave:device:9292c72c:node8:switch_dimmer"}
+Number TVRoomScene "TV Room Scene Number [%.1f]" {channel="zwave:device:9292c72c:node8:scene_number"}
 Dimmer TVRoomAccent "TV Room Accent" <light> (GroundFloor) ["Lighting"] {channel="zwave:device:9292c72c:node9:switch_dimmer"}
 
 

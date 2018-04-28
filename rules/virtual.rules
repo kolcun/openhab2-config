@@ -24,9 +24,10 @@ then
     logInfo("Scene","Starting Work Scene Active")
     StartingWork.postUpdate(OFF)
     GroundFloor.sendCommand(OFF)
-    Basement.sendCommand(OFF)
+    BasementRoom.sendCommand(OFF)
     Upstairs.sendCommand(OFF)
     Main_Hallway.sendCommand(OFF)
+    GarageLight.sendCommand(OFF)
 end
 
 rule "Bedtime Rule"
@@ -45,6 +46,26 @@ then
     Upstairs_Hallway.sendCommand(20)
 end
 
+rule "Basement On"
+when 
+	Item Basement received command ON
+then
+	BasementMiddle.sendCommand(ON)
+	BasementRight.sendCommand(ON)
+	BasementLeft.sendCommand(ON)
+end
+
+rule "Basement Off"
+when
+	Item Basement received command OFF
+then
+	BasementMiddle.sendCommand(OFF)
+	BasementRight.sendCommand(OFF)
+	BasementLeft.sendCommand(OFF)
+	LaundryRoom.sendCommand(OFF)
+	Basement_Foyer.sendCommand(OFF)
+end
+
 rule "Playroom lights on"
 when
     Item Playroom received command ON
@@ -60,3 +81,12 @@ then
     LivingRoomLamps.sendCommand(OFF)
     Living_Room_Accent.sendCommand(OFF)
 end
+
+rule "Front Door E ON - all off"
+when
+	Item frontdoorE changed to ON
+then
+	StartingWork.sendCommand(ON)
+	frontdoorE.sendCommand(OFF)
+end
+
