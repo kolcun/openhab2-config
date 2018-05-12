@@ -68,7 +68,7 @@ then
         sendPushoverMessage(pushoverBuilder("Civil Dusk triggered Start"))
     }
     Outside_Lights.sendCommand(ON)
-    TVRoomAccent.sendCommand(20)
+    TVRoomAccent.sendCommand(7)
     Living_Room_Accent.sendCommand(20)
     Main_Hallway.sendCommand(20)
     Bookshelf.sendCommand(20)
