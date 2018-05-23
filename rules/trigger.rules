@@ -175,3 +175,13 @@ then
 	TVRoomFireplace.sendCommand(OFF)
 	TVRoomAccent.sendCommand(OFF)
 end
+
+rule "Going to bed - 3 clicks"
+when
+	Item TVRoomScene changed to 2.4 //bottom 3 clicks
+then
+	TVRoom.sendCommand(OFF)
+        TVRoomFireplace.sendCommand(OFF)
+        TVRoomAccent.sendCommand(OFF)
+	Bedtime.sendCommand(ON)
+end
