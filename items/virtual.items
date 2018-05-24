@@ -5,4 +5,6 @@ Switch Bedtime "Bedtime Scene" ["Switchable"]
 Switch Basement "Basement Lights" ["Lighting"]
 Switch Playroom "Playroom lights" ["Lighting"]
 
+Switch Backyard "Backyard Lights" ["Lighting"]
+
 Switch DebugSwitch

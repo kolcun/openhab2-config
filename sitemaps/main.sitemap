@@ -144,6 +144,7 @@ sitemap main label="My home automation" {
 		Switch item=StartingWork
 		Switch item=Bedtime
 		Switch item=Playroom
+		Switch item=Backyard
 	}
 /*
    Frame label="Sonos"{

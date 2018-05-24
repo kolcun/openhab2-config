@@ -90,3 +90,19 @@ then
 	frontdoorE.sendCommand(OFF)
 end
 
+rule "Backyard lights on"
+when 
+	Item Backyard received command ON
+then
+	Landscape_Light.sendCommand(ON)
+	Pool_Light.sendCommand(ON)
+end
+
+rule "Backyard lights off"
+when
+	Item Backyard received command OFF
+then
+	Landscape_Light.sendCommand(OFF)
+	Pool_Light.sendCommand(OFF)
+end
+
