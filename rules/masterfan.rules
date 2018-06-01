@@ -1,17 +1,16 @@
 rule "homekit sync - master fan - virtual to real on"
 when
-	Item Master_Fan2 changed to ON
+	Item Master_Fan2 received command  ON
 then
-	Master_Fan.sendCommand(80)
+	Master_Fan.sendCommand(2)
 end
 
 rule "homekit sync - master fan - virtual to real off"
 when
-	Item Master_Fan2 changed to OFF
+	Item Master_Fan2 received command  OFF
 then
 	Master_Fan.sendCommand(0)
 end
-
 
 rule "homekit sync - master fan - real to virtual on"
 when
