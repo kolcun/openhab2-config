@@ -1,0 +1,2 @@
+String Echo_Mike_TTS "Mike Echo TTS" {channel="amazonechocontrol:echo:ae467c3c:G090LF1174320B73:textToSpeech"}
+String Echo_Kitchen_TTS "Kitchen Echo TTS" {channel="amazonechocontrol:echo:ae467c3c:G090LF1174320CF1:textToSpeech"}

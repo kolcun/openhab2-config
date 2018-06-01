@@ -36,14 +36,15 @@ sitemap main label="My home automation" {
 		Switch item=Presence_Mobile_Mike
 	}
 
-	Frame label="Pool Heating" visibility=[Pool_Pump==ON]{
+	Frame label="Pool Heating"{// visibility=[Pool_Pump==ON]{
 		Switch item=Pool_Heat_Timer mappings=[off="Off", 1h="1 Hour", 2h="2 Hours", 4h="4 Hours"]
 	}
 
-	Frame label="Pool" visibility=[Pool_Pump==ON]{
+	Frame label="Pool"{// visibility=[Pool_Pump==ON]{
 		Switch item=Pool_Pump label="Pump Speed" mappings=[0="Off", 25="Skim", 50="Heat", 100="Max"]
 		Switch item=Pool_Heater
 		Switch item=Pool_Light
+		Switch item=Pool_SWG
 	}
 	
 	Frame label="Outside"{

@@ -1,0 +1,7 @@
+rule "test speak"
+when
+	Item OutdoorPortable changed to OFF
+then
+	Echo_Kitchen_TTS.sendCommand("Hello Diane. I'm Listening to you.")
+	Echo_Mike_TTS.sendCommand("Hello Mike. I'm listening to you.")
+end

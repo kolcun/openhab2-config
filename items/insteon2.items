@@ -5,7 +5,8 @@ Switch Landscape_Light "Landscape Lights" <light> (Outside) ["Lighting"] {insteo
 Dimmer Master_Mike "Mike Night Table" <light> (MasterBedroom) ["Lighting"] {insteonplm="24.0E.48:0x000068#dimmer"}
 Dimmer Master_Diane "Diane Night Table" <light> (MasterBedroom) ["Lighting"] {insteonplm="24.0F.3C:0x000068#dimmer"}
 
-Switch Pool_Light "Pool Light" <light> (Outside) ["Lighting"] {mqtt="<[broker:kolcun/outdoor/pool/light/status:command:MAP(onoff.map)]", insteonplm="41.8D.81:F00.00.02#switch"}
+Switch Pool_Light "Pool Light" <light> (Outside) ["Lighting"] {mqtt="<[broker:kolcun/outdoor/pool/light/status:command:MAP(onoff.map)]", insteonplm="41.8D.81:0x000039#topoutlet"}
+Switch Pool_SWG "Pool SWG" (Outside) {insteonplm="41.8D.81:0x000039#bottomoutlet"}
 Switch Pool_Heater "Pool Heater" <fire> (Outside) {insteonplm="32.81.93:F00.00.02#switch"}
 
 Dimmer Powder_Room "Powder Room" <light> (PowderRoom) ["Lighting"] {insteonplm="3C.E2.D8:F00.00.01#dimmer"}

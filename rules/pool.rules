@@ -1,4 +1,4 @@
-/*
+
 
 // Use Cronmaker.com
 rule "Pool Heater - off at night"
@@ -74,5 +74,16 @@ then
 	sendPushoverMessage(pushoverBuilder("Pool Pump - Heater Speed"))
 end
 
-*/
+rule "Sync SWG - on"
+when
+	Item Pool_Pump changed from 0
+then
+	Pool_SWG.sendCommand(ON)	
+end
 
+rule "Syng SWG - off"
+when
+	Item Pool_Pump changed to 0
+then
+	Pool_SWG.sendCommand(OFF)
+end
