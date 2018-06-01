@@ -9,16 +9,29 @@ end
 
 rule "homekit sync - out"
 when
-	Item Awning2 changed to ON
+	Item Awning2 received command ON
 then
-	Awning.sendCommand(DOWN)
+	Awning.sendCommand(STOP)
 end
 
 rule "homekit sync - in"
 when
-	Item Awning2 changed to OFF
+	Item Awning2 received command OFF
 then
 	Awning.sendCommand(UP)
 end
+/*
+rule "homekit sync - awning - real to virtual on"
+when
+	Item Awning changed from OFF
+then
+	Awsning2.postUpdate(ON)
+end
 
-
+rule "homekit sync - awning - real to virtual off"
+when
+	Item Awning changed to OFF
+then
+	Master_Fan2.postUpdate(OFF)
+end
+*/
