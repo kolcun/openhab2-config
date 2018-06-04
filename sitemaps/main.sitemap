@@ -8,21 +8,27 @@ sitemap main label="My home automation" {
 	}
 	Frame label="Garage"{
 		Default item=GarageLight
-		Default item=TestSwitchDiane
-		Default item=TestSwitchMike
-		Text item=MikeGarageSensor
-		Default item=MikeGarage
-		Text item=DianeGarageSensor
-		Default item=DianeGarage
+		//Default item=TestSwitchDiane
+		//Default item=TestSwitchMike
+		//Text item=MikeGarageSensor
+		//Default item=MikeGarage
+		//Text item=DianeGarageSensor
+		//Default item=DianeGarage
+		Switch item=MikeGarage label="Mike Garage - open" visibility=[MikeGarageSensor==OPEN]
+		Switch item=MikeGarage label="Mike Garage - closed" visibility=[MikeGarageSensor==CLOSED]
+		Switch item=DianeGarage label="Diane Garage - open" visibility=[DianeGarageSensor==OPEN]
+                Switch item=DianeGarage label="Diane Garage - closed" visibility=[DianeGarageSensor==CLOSED]
+		
 	}
-	Frame label="Master Bedroom Keypad"{
+	/*Frame label="Master Bedroom Keypad"{
 		Slider item=Master_Bedroom
 		Default item=MasterBedroomA
 		Default item=MasterBedroomB
 		Default item=MasterBedroomC
 		Default item=MasterBedroomD
 	}
-
+*/
+/*
 	Frame label="Upstairs Hallway Keypad"{
 		Slider item=Upstairs_Hallway
 		Default item=UpstairsHallwayA
@@ -30,12 +36,12 @@ sitemap main label="My home automation" {
 		Default item=UpstairsHallwayC
 		Default item=UpstairsHallwayD
 	}
-
-	Frame label="Date" {
+*/
+/*	Frame label="Date" {
 		Text item=CurrentDate
 		Switch item=Presence_Mobile_Mike
 	}
-
+*/
 	Frame label="Pool Heating"{// visibility=[Pool_Pump==ON]{
 		Switch item=Pool_Heat_Timer mappings=[off="Off", 1h="1 Hour", 2h="2 Hours", 4h="4 Hours"]
 	}
@@ -77,14 +83,14 @@ sitemap main label="My home automation" {
         }
 	Frame label="Front Door Keypad"{
 		Default item=Outside_Lights
-		Default item=frontdoorB
+/*		Default item=frontdoorB
 		Default item=frontdoorC
 		Default item=frontdoorD
 		Default item=frontdoorE
 		Default item=frontdoorF
 		Default item=frontdoorG
 		Default item=frontdoorH
-	}
+*/	}
 
 	Frame label="Upstairs"{
 		Slider item=Bookshelf

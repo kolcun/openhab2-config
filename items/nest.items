@@ -1,13 +1,10 @@
-String home_away "Home/Away [%s]" <present> { nest="=[structures(Home).away]" }
-DateTime Family_Room_last_connection "Last Connection [%1$tm/%1$td/%1$tY %1$tH:%1$tM:%1$tS]" <calendar> {nest="<[thermostats(Family Room).last_connection]"}
-String Family_Room_hvac_mode "HVAC Mode" <climate> { nest="=[thermostats(Family Room).hvac_mode]" }
-String Family_Room_temperature_scale "Temperature Scale [%s]" { nest="<[thermostats(Family Room).temperature_scale]" }
-Number Family_Room_ambient_temperature_f "Ambient Temperature [%.1f °F]" <temperature> { nest="<[thermostats(Family Room).ambient_temperature_f]" }
-Number Family_Room_ambient_temperature_c "Ambient Temperature [%.1f °C]" <temperature> { nest="<[thermostats(Family Room).ambient_temperature_c]" }
-Number Family_Room_humidity "Humidity [%d %%]" <humidity> { nest="<[thermostats(Family Room).humidity]" }
-Number Family_Room_target_temperature_c "Target Temperature [%.1f °C]" <temperature> { nest="=[thermostats(Family Room).target_temperature_c]" }
-Number Family_Room_target_temperature_low_c "Minimum Temperature [%.1f °C]" <temperature> { nest="=[thermostats(Family Room).target_temperature_low_c]" }
-Number Family_Room_target_temperature_high_c "Maximum Temperature [%.1f °C]" <temperature> { nest="=[thermostats(Family Room).target_temperature_high_c]" }
-Number Family_Room_away_temperature_low_c "Minimum Away Temp. [%.1f °C]" <temperature> { nest="<[thermostats(Family Room).away_temperature_low_c]" }
-Number Family_Room_away_temperature_high_c "Maximum Away Temp. [%.1f °C]" <temperature> { nest="<[thermostats(Family Room).away_temperature_high_c]" }
 
+Switch   Thermostat_FT_Active      "Fan Timer Active" { channel="nest:thermostat:95541f25:WlMl4T0btUfuquX_mG04KOQ80YU-WoTJ:fan_timer_active" }
+Number:Time Thermostat_FT_Duration "Fan Timer Duration [%d %unit%]" { channel="nest:thermostat:95541f25:WlMl4T0btUfuquX_mG04KOQ80YU-WoTJ:fan_timer_duration" }
+DateTime Thermostat_FT_Timeout     "Fan Timer Timeout [%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS]" { channel="nest:thermostat:95541f25:WlMl4T0btUfuquX_mG04KOQ80YU-WoTJ:fan_timer_timeout" }
+Number:Dimensionless Thermostate_Humidity     "Humidity [%.1f %unit%]" { channel="nest:thermostat:95541f25:WlMl4T0btUfuquX_mG04KOQ80YU-WoTJ:humidity" }
+String   Thermostat_Mode           "Mode [%s]" { channel="nest:thermostat:95541f25:WlMl4T0btUfuquX_mG04KOQ80YU-WoTJ:mode" }
+String   Thermostat_State          "State [%s]" { channel="nest:thermostat:95541f25:WlMl4T0btUfuquX_mG04KOQ80YU-WoTJ:state" }
+Number:Temperature Thermostat_SP   "Set Point [%.1f %unit%]" { channel="nest:thermostat:95541f25:WlMl4T0btUfuquX_mG04KOQ80YU-WoTJ:set_point" }
+Number:Temperature Thermostate_Temp      "Temperature [%.1f %unit%]" { channel="nest:thermostat:95541f25:WlMl4T0btUfuquX_mG04KOQ80YU-WoTJ:temperature" }
+Number:Time Thermostat_Time_To_Target   "Time To Target [%d %unit%]" { channel="nest:thermostat:95541f25:WlMl4T0btUfuquX_mG04KOQ80YU-WoTJ:time_to_target" }

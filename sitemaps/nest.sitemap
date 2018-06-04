@@ -1,19 +1,13 @@
-sitemap nest label="Nest"
-{
-	Frame label="Home" icon="house" {
-		Switch item=home_away mappings=[home="Home",away="Away"]
-	}
-	Frame label="Family Room Thermostat" {
-		Text item=Family_Room_ambient_temperature_f visibility=[Family_Room_temperature_scale=="F"]
-		Text item=Family_Room_ambient_temperature_c visibility=[Family_Room_temperature_scale=="C"]
-		Text item=Family_Room_humidity
-		Switch item=Family_Room_hvac_mode mappings=[heat="Heat",cool="Cool","heat-cool"="Auto",off="Off"]
-		Text item=Family_Room_away_temperature_low_c visibility=[home_away=="away",home_away=="auto-away"]
-		Text item=Family_Room_away_temperature_high_c visibility=[home_away=="away",home_away=="auto-away"]
-		Setpoint item=Family_Room_target_temperature_c label="Target Temperature [%.1f °C]" minValue=5 maxValue=40 step=0.5 visibility=[Family_Room_hvac_mode=="heat",Family_Room_hvac_mode=="cool"]
-		Setpoint item=Family_Room_target_temperature_low_c label="Minimum Temperature [%.1f °C]" minValue=5 maxValue=40 step=0.5 visibility=[Family_Room_hvac_mode=="heat-cool"]
-		Setpoint item=Family_Room_target_temperature_high_c label="Maximum Temperature [%.1f °C]" minValue=5 maxValue=40 step=0.5 visibility=[Family_Room_hvac_mode=="heat-cool"]
-		Text item=Family_Room_last_connection
+sitemap nest label="Nest" {
+	Frame label="Thermostat" {
+		Default item=Thermostat_FT_Active
+		Default item=Thermostat_FT_Duration
+		Default item=Thermostat_FT_Timeout
+		Default item=Thermostate_Humidity
+		Default item=Thermostat_Mode
+		Default item=Thermostat_State
+		Default item=Thermostat_SP
+		Default item=Thermostate_Temp
+		Default item=Thermostat_Time_To_Target
 	}
 }
-
