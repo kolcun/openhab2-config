@@ -73,7 +73,7 @@ when
 then
 	sendPushoverMessage(pushoverBuilder("Pool Pump - Heater Speed"))
 end
-
+/* This was causing the heater to turn on - I think, disabling to test
 rule "Sync SWG - on"
 when
 	Item Pool_Pump changed from 0
@@ -87,6 +87,7 @@ when
 then
 	Pool_SWG.sendCommand(OFF)
 end
+*/
 
 rule "control panel heater enable"
 when
