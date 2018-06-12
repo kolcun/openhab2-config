@@ -2,6 +2,24 @@ rule "test speak"
 when
 	Item OutdoorPortable changed to OFF
 then
-	Echo_Kitchen_TTS.sendCommand("Hello Diane. I'm Listening to you.")
-	Echo_Mike_TTS.sendCommand("Hello Mike. I'm listening to you.")
+	//Echo_Kitchen_TTS.sendCommand("Hello Diane. I'm Listening to you.")
+	//Echo_Mike_TTS.sendCommand("Hello Mike. I'm listening to you.")
+	Echo_Upstairs_TTS.sendCommand("It's 9pm and the garage door is still open")
+	Echo_Mike_TTS.sendCommand("It's 9pm and the garage door is still open")
 end
+
+/*
+rule "front door open"
+when
+	Item FrontDoorSensor changed to OPEN
+then
+	Echo_Kitchen_TTS.sendCommand("Front door is open")
+end
+
+rule "front door closed"
+when
+	Item FrontDoorSensor changed to CLOSED
+then
+	Echo_Kitchen_TTS.sendCommand("Front door is closed")
+end
+*/

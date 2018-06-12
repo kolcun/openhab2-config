@@ -81,9 +81,25 @@ then
 	Pool_SWG.sendCommand(ON)	
 end
 
-rule "Syng SWG - off"
+rule "Sync SWG - off"
 when
 	Item Pool_Pump changed to 0
 then
 	Pool_SWG.sendCommand(OFF)
+end
+
+rule "control panel heater enable"
+when
+	Item Pool_Heater_Control_Panel received command ON
+then
+	Pool_Heat_Timer.sendCommand("2h")
+	sendPushoverMessage(pushoverBuilder("control panel activating heater"))
+end
+
+rule "control panel heater disable"
+when
+	Item Pool_Heater_Control_Panel received command OFF
+then
+	Pool_Heat_Timer.sendCommand("off")
+	sendPushoverMessage(pushoverBuilder("control panel deactivate heater"))
 end

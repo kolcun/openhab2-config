@@ -8,6 +8,7 @@ Dimmer Master_Diane "Diane Night Table" <light> (MasterBedroom) ["Lighting"] {in
 Switch Pool_Light "Pool Light" <light> (Outside) ["Lighting"] {mqtt="<[broker:kolcun/outdoor/pool/light/status:command:MAP(onoff.map)]", insteonplm="41.8D.81:0x000039#topoutlet"}
 Switch Pool_SWG "Pool SWG" (Outside) {insteonplm="41.8D.81:0x000039#bottomoutlet"}
 Switch Pool_Heater "Pool Heater" <fire> (Outside) {insteonplm="32.81.93:F00.00.02#switch"}
+Switch Pool_Heater_Control_Panel "Control Panel Pool Heater" <fire> {mqtt="<[broker:kolcun/outdoor/pool/heater/status:command:MAP(onoff.map)]"}
 
 Dimmer Powder_Room "Powder Room" <light> (PowderRoom) ["Lighting"] {insteonplm="3C.E2.D8:F00.00.01#dimmer"}
 Dimmer Powder_Room_Sconce "Power Room Sconce" <light> (PowderRoom) ["Lighting"] {insteonplm="3C.F9.83:F00.00.01#dimmer"}

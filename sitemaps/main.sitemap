@@ -51,6 +51,7 @@ sitemap main label="My home automation" {
 		Switch item=Pool_Heater
 		Switch item=Pool_Light
 		Switch item=Pool_SWG
+		Switch item=Pool_Heater_Control_Panel
 	}
 	
 	Frame label="Outside"{
