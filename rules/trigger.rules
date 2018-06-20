@@ -11,7 +11,7 @@ end
 
 rule "pool heater - off"
 when
-    Time cron "0 30 21 1/1 * ? *" or//9:30pm
+    //Time cron "0 30 21 1/1 * ? *" or//9:30pm
     Time cron "0 30 22 1/1 * ? *" or//10:30pm
     Time cron "0 45 23 1/1 * ? *" or//11:45am
     Time cron "0 0 1 1/1 * ? *"//1am
@@ -46,7 +46,7 @@ then
     }
 end
 
-rule "10:30 off"
+rule "10:30pm off"
 when 
     Time cron "0 30 22 1/1 * ? *"//10:30pm
 then
@@ -55,6 +55,9 @@ then
     }
     if(Bookshelf.state > 0){
         Bookshelf.sendCommand(OFF)
+    }
+    if(GarageLights.state == ON){
+	GarageLights.sendCommand(OFF)
     }
 end
 
