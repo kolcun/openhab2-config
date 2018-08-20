@@ -1,14 +1,14 @@
-Switch OutdoorPortable "Outdoor Portable" ["Lighting"] {channel="zwave:device:9292c72c:node2:switch_binary"}
+Switch OutdoorPortable "Outdoor Portable" ["Lighting"] {channel="zwave:device:a2cab7b4:node2:switch_binary"}
 
-Number FrontDoorSensorBatteryLevel "Front door battery [%d%%]" (Batteries) {channel="zwave:device:9292c72c:node5:battery-level"}
-Contact FrontDoorSensor "Front door is [%s]" (Sensors) {channel="zwave:device:9292c72c:node5:sensor_door"}
+Number FrontDoorSensorBatteryLevel "Front door battery [%d%%]" (Batteries) {channel="zwave:device:a2cab7b4:node5:battery-level"}
+Contact FrontDoorSensor "Front door is [%s]" (Sensors) {channel="zwave:device:a2cab7b4:node5:sensor_door"}
 
-Dimmer PowderRoomFoyer "Powder Room Foyer" <light> (GroundFloor) ["Lighting"] {channel="zwave:device:9292c72c:node4:switch_dimmer"}
+Dimmer PowderRoomFoyer "Powder Room Foyer" <light> (GroundFloor) ["Lighting"] {channel="zwave:device:a2cab7b4:node4:switch_dimmer"}
 
-Dimmer TVRoomFireplace "TV Room Fireplace" <light> (GroundFloor) ["Lighting"] {channel="zwave:device:9292c72c:node6:switch_dimmer"}
-Dimmer TVRoom "TV Room" <light> (GroundFloor) ["Lighting"] {channel="zwave:device:9292c72c:node8:switch_dimmer"}
-Number TVRoomScene "TV Room Scene Number [%.1f]" {channel="zwave:device:9292c72c:node8:scene_number"}
-Dimmer TVRoomAccent "TV Room Accent" <light> (GroundFloor) ["Lighting"] {channel="zwave:device:9292c72c:node9:switch_dimmer"}
+Dimmer TVRoomFireplace "TV Room Fireplace" <light> (GroundFloor) ["Lighting"] {channel="zwave:device:a2cab7b4:node6:switch_dimmer"}
+Dimmer TVRoom "TV Room" <light> (GroundFloor) ["Lighting"] {channel="zwave:device:a2cab7b4:node8:switch_dimmer"}
+Number TVRoomScene "TV Room Scene Number [%.1f]" {channel="zwave:device:a2cab7b4:node8:scene_number"}
+Dimmer TVRoomAccent "TV Room Accent" <light> (GroundFloor) ["Lighting"] {channel="zwave:device:a2cab7b4:node9:switch_dimmer"}
 
 
 /*
@@ -36,18 +36,18 @@ e.g.
 */
 
 
-Number HSScene "HS Scene [%.1f]" {channel="zwave:device:9292c72c:node6:scene_number"}
-Number HSMode "HS Mode" {channel="zwave:device:9292c72c:node6:config_decimal_param13"}
-Number HSNormalLedColor "HS Normal LED Color" {channel="zwave:device:9292c72c:node6:config_decimal_param14"}
-Number HSMode1Color "HS Mode 1 Color" {channel="zwave:device:9292c72c:node6:config_decimal_param21"}
-Number HSMode2Color "HS Mode 2 Color" {channel="zwave:device:9292c72c:node6:config_decimal_param22"}
-Number HSMode3Color "HS Mode 3 Color" {channel="zwave:device:9292c72c:node6:config_decimal_param23"}
-Number HSMode4Color "HS Mode 4 Color" {channel="zwave:device:9292c72c:node6:config_decimal_param24"}
-Number HSMode5Color "HS Mode 5 Color" {channel="zwave:device:9292c72c:node6:config_decimal_param25"}
-Number HSMode6Color "HS Mode 6 Color" {channel="zwave:device:9292c72c:node6:config_decimal_param26"}
-Number HSMode7Color "HS Mode 7 Color" {channel="zwave:device:9292c72c:node6:config_decimal_param27"}
-Number HSLedBlinkFreq "HS LED Blink Freq" {channel="zwave:device:9292c72c:node6:config_decimal_param30"}
-Number HSLedBlinkStatus "HS LED blink status" {channel="zwave:device:9292c72c:node6:config_decimal_param31"}
+Number HSScene "HS Scene [%.1f]" {channel="zwave:device:a2cab7b4:node6:scene_number"}
+Number HSMode "HS Mode" {channel="zwave:device:a2cab7b4:node6:config_decimal_param13"}
+Number HSNormalLedColor "HS Normal LED Color" {channel="zwave:device:a2cab7b4:node6:config_decimal_param14"}
+Number HSMode1Color "HS Mode 1 Color" {channel="zwave:device:a2cab7b4:node6:config_decimal_param21"}
+Number HSMode2Color "HS Mode 2 Color" {channel="zwave:device:a2cab7b4:node6:config_decimal_param22"}
+Number HSMode3Color "HS Mode 3 Color" {channel="zwave:device:a2cab7b4:node6:config_decimal_param23"}
+Number HSMode4Color "HS Mode 4 Color" {channel="zwave:device:a2cab7b4:node6:config_decimal_param24"}
+Number HSMode5Color "HS Mode 5 Color" {channel="zwave:device:a2cab7b4:node6:config_decimal_param25"}
+Number HSMode6Color "HS Mode 6 Color" {channel="zwave:device:a2cab7b4:node6:config_decimal_param26"}
+Number HSMode7Color "HS Mode 7 Color" {channel="zwave:device:a2cab7b4:node6:config_decimal_param27"}
+Number HSLedBlinkFreq "HS LED Blink Freq" {channel="zwave:device:a2cab7b4:node6:config_decimal_param30"}
+Number HSLedBlinkStatus "HS LED blink status" {channel="zwave:device:a2cab7b4:node6:config_decimal_param31"}
 
-Switch GarageLight "Garage Light" <light> (Outside) ["Lighting"] {channel="zwave:device:9292c72c:node7:switch_binary"}
+Switch GarageLight "Garage Light" <light> (Outside) ["Lighting"] {channel="zwave:device:a2cab7b4:node7:switch_binary"}
 
