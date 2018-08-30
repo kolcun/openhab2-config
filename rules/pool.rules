@@ -26,8 +26,10 @@ rule "Pool Pump - on in morning"
 when
     Time cron "0 30 6 1/1 * ? *"
 then
-    Pool_Pump.sendCommand(25)
-        sendPushoverMessage(pushoverBuilder("Pool Pump - on - chlorine - morning"))
+	if(Pool_Pump.state == 0){
+    		Pool_Pump.sendCommand(25)
+        	sendPushoverMessage(pushoverBuilder("Pool Pump - on - chlorine - morning"))
+	}
 end
 
 rule "pump off - peak"
