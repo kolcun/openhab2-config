@@ -112,6 +112,14 @@ sitemap main label="My home automation" {
 		Switch item=BasementMiddle
 		Switch item=Basement
         }
+	
+	Frame label="Washing Machine"{
+		Switch item=WashingMachine
+		Text item=WashingMachineEnergyW
+		Text item=WashingMachineEnergyKwh
+		Text item=WashingMachineEnergyA
+		Switch item=WashingMachineEnergyReset
+	}
 
 	Frame label="Weather"{
 		Text item=Conditions

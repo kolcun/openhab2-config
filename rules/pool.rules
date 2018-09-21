@@ -53,6 +53,10 @@ when
 	Item Pool_Pump changed to 0
 then
 	sendPushoverMessage(pushoverBuilder("Pool Pump is Off"))
+	if(Pool_Heater.state == ON){
+                sendPushoverMessage(pushoverBuilder("Turning Heater Off, pump speed too low"))
+                Pool_Heater.sendCommand(OFF)
+        }
 end
 
 rule "Pump Chlorine"
@@ -60,6 +64,10 @@ when
 	Item Pool_Pump changed to 25
 then
 	sendPushoverMessage(pushoverBuilder("Pool Pump - Chlorine Speed"))
+	if(Pool_Heater.state == ON){
+                sendPushoverMessage(pushoverBuilder("Turning Heater Off, pump speed too low"))
+                Pool_Heater.sendCommand(OFF)
+        }
 end
 
 rule "Pump Max"

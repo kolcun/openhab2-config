@@ -51,3 +51,11 @@ Number HSLedBlinkStatus "HS LED blink status" {channel="zwave:device:a2cab7b4:no
 
 Switch GarageLight "Garage Light" <light> (Outside) ["Lighting"] {channel="zwave:device:a2cab7b4:node7:switch_binary"}
 
+Switch WashingMachine "Washing Machine" {channel="zwave:device:a2cab7b4:node10:switch_binary"}
+Number WashingMachineEnergyW "Washing Machine Watts [%.2f W]" {channel="zwave:device:a2cab7b4:node10:meter_watts"}
+Number WashingMachineEnergyKwh "Washing Machine Energy Use [%.2f KWh]" {channel="zwave:device:a2cab7b4:node10:meter_kwh"}
+Number WashingMachineEnergyA "Washing Machine Current [%.2f A]" {channel="zwave:device:a2cab7b4:node10:meter_current"}
+//Number WashingMachineEnergyV "Washing Machine Voltage [%.2f V]" {channel="zwave:device:a2cab7b4:node10:meter_voltage"}
+Switch WashingMachineEnergyReset "Washing Machine Meter Reset" {channel="zwave:device:a2cab7b4:node10:meter_reset"}
+//Color WashingMachineColor "Washing Machine Color" (Basement) {channel="zwave:device:a2cab7b4:node10:color_color"}
+
