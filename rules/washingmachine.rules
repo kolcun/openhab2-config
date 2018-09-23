@@ -1,0 +1,29 @@
+/*rule "WashingMachine cycle complete"
+when
+	Item WashingMachineEnergyW changed to 0.0
+then
+	sendPushoverMessage(pushoverBuilder("Washing Machine Cycle Complete"))
+	if(WashingMachineEnergyW.state == 0.0){
+	logInfo("ENERGY", "W state is 0")
+	}else{
+	logInfo("ENERGY", "W non 0")
+	}
+end
+*/
+
+rule "WashingMachine cycle finished"
+when
+        Item WashingMachineEnergyW changed to 0.0
+then
+	//sendPushoverMessage(pushoverBuilder("washing machine wattage is 0"))
+	createTimer(now.plusSeconds(45), [ |
+		if(WashingMachineEnergyW.state == 0.0){
+                	if(WashingMachineEnergyA.state == 0.0){
+                         sendPushoverMessage(pushoverBuilder("The Washing cycle is complete. Go change the laundry!").withApiKey("a8uio4bf5abpazbg9fqqvx1kyh13jz").withUser("u9fphcu68ik8ezgybj9a4p4bf44zaw"))
+			 sendPushoverMessage(pushoverBuilder("The Washing cycle is complete. Go change the laundry!"))
+                	}
+		}
+	])
+end
+//Echo_Mike_TTS.sendCommand("The Washing Machine Cycle is complete. Go change the laundry!")
+
