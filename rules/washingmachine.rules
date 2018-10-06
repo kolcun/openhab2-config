@@ -19,7 +19,7 @@ then
 	createTimer(now.plusSeconds(45), [ |
 		if(WashingMachineEnergyW.state == 0.0){
                 	if(WashingMachineEnergyA.state == 0.0){
-                         sendPushoverMessage(pushoverBuilder("The Washing cycle is complete. Go change the laundry!").withApiKey("a8uio4bf5abpazbg9fqqvx1kyh13jz").withUser("u9fphcu68ik8ezgybj9a4p4bf44zaw"))
+                         sendPushoverMessage(pushoverBuilder("The Washing cycle is complete. Go change the laundry!").withApiKey("a8uio4bf5abpazbg9fqqvx1kyh13jz").withUser("u9fphcu68ik8ezgybj9a4p4bf44zaw").withSound("echo")
 			 sendPushoverMessage(pushoverBuilder("The Washing cycle is complete. Go change the laundry!"))
                 	}
 		}
