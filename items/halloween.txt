@@ -1,0 +1,6 @@
+Switch Halloween_Spooky_Man "Spooky Man"     <spookyman> {mqtt=">[broker:kolcun/halloween/2:command:ON:momentary100],<[broker:kolcun/halloween/2/state:state:default]"}
+Switch Halloween_Ghoul "Lunging Ghoul"  <ghoul>	{mqtt=">[broker:kolcun/halloween/4:command:ON:momentary100],<[broker:kolcun/halloween/4/state:state:default]"}
+//Switch Halloween_Spider "Jumping Spider" <spider> {mqtt=">[broker:kolcun/halloween/3:command:ON:momentary100],<[broker:kolcun/halloween/3/state:state:default]"}
+Switch Halloween_Nightmare "Nightmare Harvester" {mqtt=">[broker:kolcun/halloween/1:command:ON:momentary100],<[broker:kolcun/halloween/1/state:state:default]"}
+Switch Halloween_Zapper "Zapper" {mqtt=">[broker:kolcun/halloween/3:command:ON:momentary100],<[broker:kolcun/halloween/3/state:state:default]"}
+
