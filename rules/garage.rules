@@ -6,6 +6,7 @@ then
 	logInfo("Garage","Mike - OPEN")
 	// frontdoorD.sendCommand(ON)
 	frontdoorH.sendCommand(ON)
+	MikeGarageVirtual.sendCommand(ON)
 end
 
 rule "Garage Sensor - Mike closed"
@@ -16,6 +17,33 @@ then
         logInfo("Garage","Mike - CLOSED")
 	// frontdoorD.sendCommand(OFF)
 	frontdoorH.sendCommand(OFF)
+	MikeGarageVirtual.sendCommand(OFF)
+end
+
+rule "mike garage virtual turned off"
+when
+	Item MikeGarageVirtual changed from ON to OFF
+then
+	// if garage open, close it
+	if(MikeGarageSensor.state == OPEN){
+		sendPushoverMessage(pushoverBuilder("turned off, closing the currently open garage"))
+		MikeGarage.sendCommand(ON)
+	}else{
+		sendPushoverMessage(pushoverBuilder("turned off but garage already closed"))
+	}	
+end
+
+rule "mike garage virtual turned on"
+when
+	Item MikeGarageVirtual changed from OFF to ON
+then
+	//if garage closed, open it
+	if(MikeGarageSensor.state == CLOSED){
+		sendPushoverMessage(pushoverBuilder("turned on, opening the currently closed garage"))
+		MikeGarage.sendCommand(ON)
+	}else{
+		sendPushoverMessage(pushoverBuilder("turned on, but garage already opened"))
+	}
 end
 
 rule "Garage Sensor - Diane"
@@ -26,6 +54,7 @@ then
         logInfo("Garage","Diane - OPEN")
 	// frontdoorC.sendCommand(ON)
 	frontdoorG.sendCommand(ON)
+	DianeGarageVirtual.sendCommand(ON)
 end
 
 rule "Garage Sensor - Diane closed"
@@ -36,6 +65,33 @@ then
         logInfo("Garage","Diane - CLOSED")
 	// frontdoorC.sendCommand(OFF)
 	frontdoorG.sendCommand(OFF)
+	DianeGarageVirtual.sendCommand(OFF)
+end
+
+rule "diane garage virtual turned off"
+when
+        Item DianeGarageVirtual changed from ON to OFF
+then
+        // if garage open, close it
+        if(DianeGarageSensor.state == OPEN){
+         //       sendPushoverMessage(pushoverBuilder("turned off, closing the currently open garage"))
+                DianeGarage.sendCommand(ON)
+        //}else{
+          //      sendPushoverMessage(pushoverBuilder("turned off but garage already closed"))
+        }
+end
+
+rule "diane garage virtual turned on"
+when
+        Item DianeGarageVirtual changed from OFF to ON
+then
+        //if garage closed, open it
+        if(DianeGarageSensor.state == CLOSED){
+                //sendPushoverMessage(pushoverBuilder("turned on, opening the currently closed garage"))
+                DianeGarage.sendCommand(ON)
+        //}else{
+          //      sendPushoverMessage(pushoverBuilder("turned on, but garage already opened"))
+        }
 end
 
 /*

@@ -45,9 +45,9 @@ Switch frontdoorH   "front door keypad button H"   {insteonplm="25.6A.AE:F00.00.
 
 
 //LOAD switch - in hallway
-Dimmer Main_Hallway "Main Hallway" <light> (GroundFloor) {insteonplm="28.F4.FE:F00.00.01#dimmer"}
+Dimmer Main_Hallway "Ground Floor Hallway" <light> (GroundFloor) {insteonplm="28.F4.FE:F00.00.01#dimmer"}
 //Dummy Switch at front door
-Dimmer Main_Hallway_Slave "Main Hallway Slave" <light> (GroundFloor) {insteonplm="28.F4.E7:F00.00.01#dimmer"}
+Dimmer Main_Hallway_Slave "Ground Floor Hallway Slave" <light> (GroundFloor) {insteonplm="28.F4.E7:F00.00.01#dimmer"}
 
 Switch Basement_Foyer "Basement Foyer" <light> (BasementRoom) {insteonplm="28.81.9B:F00.00.02#switch"}
 Switch Basement_Foyer_Fast "Basement Foyer Fast" <light> {insteonplm="28.81.9B:F00.00.02#fastonoff"}
@@ -81,8 +81,8 @@ Number Master_Fan "Master Fan" <fan> (MasterBedroom) {insteonplm="21.69.CD:F00.0
 Switch Master_Fan2 "Master Fan" ["Lighting"]
 
 
-Switch MikeGarage "Mike Garage" <garagedoor> (Outside) ["Switchable"] {insteonplm="25.2B.F1:0x00001A#switch", autoupdate="false"}
-Contact MikeGarageSensor "Mike Garage sensor [MAP(contact.map):%s]" (Sensors) {insteonplm="25.2B.F1:0x00001A#contact"}
+Switch MikeGarage "MGarage" <garagedoor> (Outside) ["Switchable"] {insteonplm="25.2B.F1:0x00001A#switch", autoupdate="false"}
+Contact MikeGarageSensor "MGarage sensor [MAP(contact.map):%s]" (Sensors) {insteonplm="25.2B.F1:0x00001A#contact"}
 
-Switch DianeGarage "Diane Garage" <garagedoor> (Outside) ["Switchable"] {insteonplm="28.BE.FD:0x00001A#switch", autoupdate="false"}
-Contact DianeGarageSensor "Diane Garage sensor [MAP(contact.map):%s]" (Sensors) {insteonplm="28.BE.FD:0x00001A#contact"}
+Switch DianeGarage "DGarage" <garagedoor> (Outside) ["Switchable"] {insteonplm="28.BE.FD:0x00001A#switch", autoupdate="false"}
+Contact DianeGarageSensor "DGarage sensor [MAP(contact.map):%s]" (Sensors) {insteonplm="28.BE.FD:0x00001A#contact"}

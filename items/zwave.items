@@ -1,4 +1,4 @@
-Switch OutdoorPortable "Outdoor Portable" ["Lighting"] {channel="zwave:device:a2cab7b4:node2:switch_binary"}
+Switch OutdoorPortable "Garland" ["Switchable"] {channel="zwave:device:a2cab7b4:node2:switch_binary"}
 
 Number FrontDoorSensorBatteryLevel "Front door battery [%d%%]" (Batteries) {channel="zwave:device:a2cab7b4:node5:battery-level"}
 Contact FrontDoorSensor "Front door is [%s]" (Sensors) {channel="zwave:device:a2cab7b4:node5:sensor_door"}

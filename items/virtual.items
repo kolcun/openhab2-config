@@ -4,7 +4,14 @@ Switch Bedtime "Bedtime Scene" ["Switchable"]
 
 Switch Basement "Basement Lights" ["Lighting"]
 Switch Playroom "Playroom lights" ["Lighting"]
+Switch MainHallway "Main Hallway Lights" ["Switchable"]
+Switch Synchro "Synchro Scene" ["Switchable"]
 
 Switch Backyard "Backyard Lights" ["Lighting"]
 
 Switch DebugSwitch
+
+//enable on/off with Alexa
+Switch MikeGarageVirtual "Mike Garage" ["Switchable"]
+Switch DianeGarageVirtual "Diane Garage" ["Switchable"]
+

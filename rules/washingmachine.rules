@@ -15,7 +15,7 @@ rule "WashingMachine cycle finished"
 when
         Item WashingMachineEnergyW changed to 0.0
 then
-	sendPushoverMessage(pushoverBuilder("washing machine wattage is 0"))
+	//sendPushoverMessage(pushoverBuilder("washing machine wattage is 0"))
 	createTimer(now.plusSeconds(45), [ |
 		if(WashingMachineEnergyW.state == 0.0){
                 	if(WashingMachineEnergyA.state == 0.0){

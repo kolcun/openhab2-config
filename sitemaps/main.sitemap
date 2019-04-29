@@ -18,6 +18,8 @@ sitemap main label="My home automation" {
 		Switch item=MikeGarage label="Mike Garage - closed" visibility=[MikeGarageSensor==CLOSED]
 		Switch item=DianeGarage label="Diane Garage - open" visibility=[DianeGarageSensor==OPEN]
                 Switch item=DianeGarage label="Diane Garage - closed" visibility=[DianeGarageSensor==CLOSED]
+		Switch item=MikeGarageVirtual label="Mike Garage"
+		Switch item=DianeGarageVirtual label="Diane Garage"
 		
 	}
 	/*Frame label="Master Bedroom Keypad"{
