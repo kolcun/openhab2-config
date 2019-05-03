@@ -26,10 +26,7 @@ when
 then
 	// if garage open, close it
 	if(MikeGarageSensor.state == OPEN){
-		sendPushoverMessage(pushoverBuilder("turned off, closing the currently open garage"))
 		MikeGarage.sendCommand(ON)
-	}else{
-		sendPushoverMessage(pushoverBuilder("turned off but garage already closed"))
 	}	
 end
 
@@ -39,10 +36,7 @@ when
 then
 	//if garage closed, open it
 	if(MikeGarageSensor.state == CLOSED){
-		sendPushoverMessage(pushoverBuilder("turned on, opening the currently closed garage"))
 		MikeGarage.sendCommand(ON)
-	}else{
-		sendPushoverMessage(pushoverBuilder("turned on, but garage already opened"))
 	}
 end
 
@@ -52,7 +46,6 @@ when
 then
         sendPushoverMessage(pushoverBuilder("Diane Garage Sensor - OPEN"))
         logInfo("Garage","Diane - OPEN")
-	// frontdoorC.sendCommand(ON)
 	frontdoorG.sendCommand(ON)
 	DianeGarageVirtual.sendCommand(ON)
 end
@@ -63,7 +56,6 @@ when
 then
         sendPushoverMessage(pushoverBuilder("Diane Garage Sensor - CLOSED"))
         logInfo("Garage","Diane - CLOSED")
-	// frontdoorC.sendCommand(OFF)
 	frontdoorG.sendCommand(OFF)
 	DianeGarageVirtual.sendCommand(OFF)
 end
@@ -74,10 +66,7 @@ when
 then
         // if garage open, close it
         if(DianeGarageSensor.state == OPEN){
-         //       sendPushoverMessage(pushoverBuilder("turned off, closing the currently open garage"))
                 DianeGarage.sendCommand(ON)
-        //}else{
-          //      sendPushoverMessage(pushoverBuilder("turned off but garage already closed"))
         }
 end
 
@@ -87,10 +76,7 @@ when
 then
         //if garage closed, open it
         if(DianeGarageSensor.state == CLOSED){
-                //sendPushoverMessage(pushoverBuilder("turned on, opening the currently closed garage"))
                 DianeGarage.sendCommand(ON)
-        //}else{
-          //      sendPushoverMessage(pushoverBuilder("turned on, but garage already opened"))
         }
 end
 
