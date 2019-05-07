@@ -1,4 +1,9 @@
-Speed1=0
-Speed2=25
-Speed3=50
-Speed4=100
+0.0=Speed1
+Speed1=0.0
+25.0=Speed2
+Speed2=25.0
+50.0=Speed3
+Speed3=50.0
+100.0=Speed4
+Speed4=100.0
+
