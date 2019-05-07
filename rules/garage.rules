@@ -214,10 +214,12 @@ when
     Time cron "0 0 21 1/1 * ? *"//9pm
 then
     if(DianeGarageSensor.state == OPEN){
+	Echo_Kitchen_TTS.sendCommand("It's 9pm. The Garage door is open, I'm closing it for you.")
         sendPushoverMessage(pushoverBuilder("9pm close Diane garage"))
         DianeGarage.sendCommand(ON)
     }
     if(MikeGarageSensor.state == OPEN){
+	Echo_Kitchen_TTS.sendCommand("It's 9pm. The Garage door is open, I'm closing it for you.")
         sendPushoverMessage(pushoverBuilder("9pm close Mike garage"))
         MikeGarage.sendCommand(ON)
     }

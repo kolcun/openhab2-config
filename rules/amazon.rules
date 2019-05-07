@@ -1,11 +1,10 @@
 rule "test speak"
 when
-	Item OutdoorPortable changed to OFF
+	Item OutdoorPortable changed
 then
 	//Echo_Kitchen_TTS.sendCommand("Hello Diane. I'm Listening to you.")
 	//Echo_Mike_TTS.sendCommand("Hello Mike. I'm listening to you.")
-	Echo_Upstairs_TTS.sendCommand("It's 9pm and the garage door is still open")
-	Echo_Mike_TTS.sendCommand("It's 9pm and the garage door is still open")
+	//Echo_Kitchen_TTS.sendCommand("It's 9pm. The Garage door is open, I'm closing it for you.")
 end
 
 /*

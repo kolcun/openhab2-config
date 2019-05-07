@@ -81,7 +81,8 @@ Number Master_Fan "Master Fan" <fan> (MasterBedroom) {insteonplm="21.69.CD:F00.0
 Switch Master_Fan2 "Master Fan" ["Lighting"]
 
 
-Switch MikeGarage "MGarage" <garagedoor> (Outside) ["Switchable"] {insteonplm="25.2B.F1:0x00001A#switch", autoupdate="false"}
+
+Switch MikeGarage "Michael Garage" <garagedoor> (Outside) ["Switchable"] {insteonplm="25.2B.F1:0x00001A#switch", autoupdate="false"}
 Contact MikeGarageSensor "MGarage sensor [MAP(contact.map):%s]" (Sensors) {insteonplm="25.2B.F1:0x00001A#contact"}
 
 Switch DianeGarage "DGarage" <garagedoor> (Outside) ["Switchable"] {insteonplm="28.BE.FD:0x00001A#switch", autoupdate="false"}

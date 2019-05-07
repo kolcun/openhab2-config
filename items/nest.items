@@ -1,10 +1,10 @@
 
-Switch   Thermostat_FT_Active      "Fan Timer Active" { channel="nest:thermostat:95541f25:WlMl4T0btUfuquX_mG04KOQ80YU-WoTJ:fan_timer_active" }
-Number:Time Thermostat_FT_Duration "Fan Timer Duration [%d %unit%]" { channel="nest:thermostat:95541f25:WlMl4T0btUfuquX_mG04KOQ80YU-WoTJ:fan_timer_duration" }
-DateTime Thermostat_FT_Timeout     "Fan Timer Timeout [%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS]" { channel="nest:thermostat:95541f25:WlMl4T0btUfuquX_mG04KOQ80YU-WoTJ:fan_timer_timeout" }
-Number:Dimensionless Thermostate_Humidity     "Humidity [%.1f %unit%]" { channel="nest:thermostat:95541f25:WlMl4T0btUfuquX_mG04KOQ80YU-WoTJ:humidity" }
-String   Thermostat_Mode           "Mode [%s]" { channel="nest:thermostat:95541f25:WlMl4T0btUfuquX_mG04KOQ80YU-WoTJ:mode" }
-String   Thermostat_State          "State [%s]" { channel="nest:thermostat:95541f25:WlMl4T0btUfuquX_mG04KOQ80YU-WoTJ:state" }
-Number:Temperature Thermostat_SP   "Set Point [%.1f %unit%]" { channel="nest:thermostat:95541f25:WlMl4T0btUfuquX_mG04KOQ80YU-WoTJ:set_point" }
-Number:Temperature Thermostate_Temp      "Temperature [%.1f %unit%]" { channel="nest:thermostat:95541f25:WlMl4T0btUfuquX_mG04KOQ80YU-WoTJ:temperature" }
-Number:Time Thermostat_Time_To_Target   "Time To Target [%d %unit%]" { channel="nest:thermostat:95541f25:WlMl4T0btUfuquX_mG04KOQ80YU-WoTJ:time_to_target" }
+Switch   Thermostat_FT_Active      "Fan Timer Active" { channel="nest:thermostat:5003cbf3:WlMl4T0btUfuquX_mG04KOQ80YU-WoTJ:fan_timer_active" }
+Number:Time Thermostat_FT_Duration "Fan Timer Duration [%d %unit%]" { channel="nest:thermostat:5003cbf3:WlMl4T0btUfuquX_mG04KOQ80YU-WoTJ:fan_timer_duration" }
+DateTime Thermostat_FT_Timeout     "Fan Timer Timeout [%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS]" { channel="nest:thermostat:5003cbf3:WlMl4T0btUfuquX_mG04KOQ80YU-WoTJ:fan_timer_timeout" }
+Number:Dimensionless Thermostate_Humidity     "Humidity [%.1f %unit%]" { channel="nest:thermostat:5003cbf3:WlMl4T0btUfuquX_mG04KOQ80YU-WoTJ:humidity" }
+String   Thermostat_Mode           "Mode [%s]" { channel="nest:thermostat:5003cbf3:WlMl4T0btUfuquX_mG04KOQ80YU-WoTJ:mode" }
+String   Thermostat_State          "State [%s]" { channel="nest:thermostat:5003cbf3:WlMl4T0btUfuquX_mG04KOQ80YU-WoTJ:state" }
+Number:Temperature Thermostat_SP   "Set Point [%.1f %unit%]" { channel="nest:thermostat:5003cbf3:WlMl4T0btUfuquX_mG04KOQ80YU-WoTJ:set_point" }
+Number:Temperature Thermostate_Temp      "Temperature [%.1f %unit%]" { channel="nest:thermostat:5003cbf3:WlMl4T0btUfuquX_mG04KOQ80YU-WoTJ:temperature" }
+Number:Time Thermostat_Time_To_Target   "Time To Target [%d %unit%]" { channel="nest:thermostat:5003cbf3:WlMl4T0btUfuquX_mG04KOQ80YU-WoTJ:time_to_target" }
