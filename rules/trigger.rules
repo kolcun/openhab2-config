@@ -93,7 +93,7 @@ when
     Time cron "0 59 19 1/1 * ? *"//7:59pm
 then
     if(Landscape_Light.state == OFF){
-        Landscape_Light.sendCommand(ON)
+      //  Landscape_Light.sendCommand(ON)
     }
 end
 

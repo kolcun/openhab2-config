@@ -1,6 +1,17 @@
 
 
 // Use Cronmaker.com
+rule "Pool Light - off at night"
+when
+    Time cron "0 0 23 1/1 * ? *"
+then
+        if(Pool_Light.state == ON){
+                sendPushoverMessage(pushoverBuilder("Pool Light is on, turning off for the night"))
+                Pool_Light.sendCommand(OFF)
+        }
+end
+
+
 rule "Pool Heater - off at night"
 when
     Time cron "0 0 23 1/1 * ? *"

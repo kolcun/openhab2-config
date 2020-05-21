@@ -1,3 +1,4 @@
+//this isn't needed with the new MQTT implementation, as the channel lets you specify it directly in paperUI
 100=out
 0=in
 stop=stop

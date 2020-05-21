@@ -16,12 +16,18 @@ when
         Item WashingMachineEnergyW changed to 0.0
 then
 	//sendPushoverMessage(pushoverBuilder("washing machine wattage is 0"))
+	logInfo("WashingMachine","STARTING timer")
+	Thread::sleep(10000)
 	createTimer(now.plusSeconds(45), [ |
+		logInfo("WashingMachine","TIMER EXPIRED, checking current power use")
 		if(WashingMachineEnergyW.state == 0.0){
                 	if(WashingMachineEnergyA.state == 0.0){
+			logInfo("WashingMachine","SENDING MESSAGE -- POWER use is 0W 0A, sending message that laundry is done")
                          sendPushoverMessage(pushoverBuilder("The Washing cycle is complete. Go change the laundry!").withApiKey("a8uio4bf5abpazbg9fqqvx1kyh13jz").withUser("u9fphcu68ik8ezgybj9a4p4bf44zaw").withSound("echo"))
 			 sendPushoverMessage(pushoverBuilder("The Washing cycle is complete. Go change the laundry!").withSound("echo"))
                 	}
+		}else{
+			logInfo("WashingMachine", "POWER is not 0, no message will be sent")
 		}
 	])
 end

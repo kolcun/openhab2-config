@@ -19,6 +19,7 @@ Dimmer BasementLeft "Basement Left" <light> (BasementRoom)  {insteonplm="24.09.E
 
 Dimmer Laundry_Room_Hallway "Laundry Room Hallway" <light> (LaundryRoom) ["Lighting"] {insteonplm="3C.E1.94:F00.00.01#dimmer"}
 Switch Laundry_Room "Laundry Room" <light> (LaundryRoom) ["Lighting"] {insteonplm="28.79.86:F00.00.02#switch"}
+Dimmer Laundry_Room_Freezer "Laundry Room Freezer" <light> (LaundryRoom) ["Lighting"] {insteonplm="38.90.6B:F00.00.01#dimmer"}
 
 // INSTEON_SWITCHLINC, 28.ED.6E, Living_Room_Pot_Lights, All_Lights
 // INSTEON_LAMPLINC, 23.49.F9, Living_Room_Floor_Light_Left, All_Lights

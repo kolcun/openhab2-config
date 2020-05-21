@@ -2,9 +2,11 @@ rule "Landscape Lights off during day"
 when
 	Item Landscape_Light changed to ON
 then
-	if(NightState.state == OFF){
-		Thread::sleep(10000)
-		sendCommand(Landscape_Light, OFF)
+	if(DebugSwitch.state == OFF){
+		if(NightState.state == OFF){
+			Thread::sleep(10000)
+			sendCommand(Landscape_Light, OFF)
+		}	
 	}
 	
 end

@@ -14,10 +14,10 @@ sitemap main label="My home automation" {
 		//Default item=MikeGarage
 		//Text item=DianeGarageSensor
 		//Default item=DianeGarage
-		Switch item=MikeGarage label="Mike Garage - open" visibility=[MikeGarageSensor==OPEN]
-		Switch item=MikeGarage label="Mike Garage - closed" visibility=[MikeGarageSensor==CLOSED]
-		Switch item=DianeGarage label="Diane Garage - open" visibility=[DianeGarageSensor==OPEN]
-                Switch item=DianeGarage label="Diane Garage - closed" visibility=[DianeGarageSensor==CLOSED]
+		Text item=MikeGarage label="Mike Garage - open" visibility=[MikeGarageSensor==OPEN]
+		Text item=MikeGarage label="Mike Garage - closed" visibility=[MikeGarageSensor==CLOSED]
+		Text item=DianeGarage label="Diane Garage - open" visibility=[DianeGarageSensor==OPEN]
+                Text item=DianeGarage label="Diane Garage - closed" visibility=[DianeGarageSensor==CLOSED]
 		Switch item=MikeGarageVirtual label="Mike Garage"
 		Switch item=DianeGarageVirtual label="Diane Garage"
 		
@@ -44,6 +44,7 @@ sitemap main label="My home automation" {
 		Switch item=Presence_Mobile_Mike
 	}
 */
+
 	Frame label="Pool Heating"{// visibility=[Pool_Pump==ON]{
 		Switch item=Pool_Heat_Timer mappings=[off="Off", 1h="1 Hour", 2h="2 Hours", 4h="4 Hours"]
 	}
@@ -61,7 +62,6 @@ sitemap main label="My home automation" {
 		//Switch item=Outside_Lights_Fast
 		Switch item=Landscape_Light
 		Switch item=Awning
-		Switch item=OutdoorPortable
 	}
 
 	Frame label="Main Floor"{
@@ -105,8 +105,10 @@ sitemap main label="My home automation" {
 			
 	}
         Frame label="Basement"{
+		Switch label="Bike Fan" item=OutdoorPortable
                 Slider item=Laundry_Room_Hallway
                 Switch item=Laundry_Room
+		Switch item=Laundry_Room_Freezer
                 Switch item=Basement_Foyer
 		Switch item=Basement_Foyer_Fast
 		Switch item=BasementLeft
