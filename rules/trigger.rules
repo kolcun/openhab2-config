@@ -136,7 +136,12 @@ rule "pool heater notify"
 when
     Item Pool_Heater changed to ON
 then
-    sendPushoverMessage(pushoverBuilder("Pool heater turned on"))
+	if((Pool_Pump.state == 0) || (Pool_Pump.state == 50)){
+                sendPushoverMessage(pushoverBuilder("Pool heater turned on, pump too slow - turning off"))
+                Pool_Heater.sendCommand(OFF)
+        }else{
+    		sendPushoverMessage(pushoverBuilder("Pool heater turned on"))
+	}
 end
 
 rule "Basement Foyer fast on (laundry)"
