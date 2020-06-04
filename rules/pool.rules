@@ -1,4 +1,12 @@
-
+/*rule "one time"
+when
+    Time cron "0 30 5 23 5 ? 2020"
+then
+	Pool_Pump.sendCommand(100)
+	Thread::sleep(20000)
+	Pool_Heater.sendCommand(ON)
+end
+*/
 
 // Use Cronmaker.com
 rule "Pool Light - off at night"
@@ -47,7 +55,9 @@ rule "pump off - peak"
 when
 	Time cron "0 00 12 ? * MON-FRI *"
 then
-	Pool_Pump.sendCommand(0)
+	if(Pool_Heater.state == OFF){
+		Pool_Pump.sendCommand(0)
+	}
 end
 
 rule "pump on - peak"
@@ -94,7 +104,10 @@ when
 then
 	sendPushoverMessage(pushoverBuilder("Pool Pump - Heater Speed"))
 end
+
+
 /* This was causing the heater to turn on - I think, disabling to test
+*/
 rule "Sync SWG - on"
 when
 	Item Pool_Pump changed from 0
@@ -108,7 +121,7 @@ when
 then
 	Pool_SWG.sendCommand(OFF)
 end
-*/
+
 
 rule "control panel heater enable"
 when
