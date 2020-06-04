@@ -136,7 +136,7 @@ rule "pool heater notify"
 when
     Item Pool_Heater changed to ON
 then
-	if((Pool_Pump.state == 0) || (Pool_Pump.state == 50)){
+	if((Pool_Pump.state == 0) || (Pool_Pump.state == 25)){
                 sendPushoverMessage(pushoverBuilder("Pool heater turned on, pump too slow - turning off"))
                 Pool_Heater.sendCommand(OFF)
         }else{
