@@ -9,7 +9,7 @@ then
     SchoolMorning.postUpdate(OFF)
     PowderRoomFoyer.sendCommand(50)
     Upstairs_Hallway.sendCommand(20)
-    MainFloorHallway.sendCommand(40)
+    MainFloorHallway.sendCommand(49)
     Master_Light.sendCommand(40)    
 end
 
@@ -97,21 +97,6 @@ when
 then
 	MainFloorHallway.sendCommand(OFF)
 end
-
-rule "Synchro on"
-when
-	Item Synchro received command ON
-then
-	Main_Hallway.sendCommand(39)
-	Upstairs_Hallway.sendCommand(20)
-end
-/*
-rule "Synchro off"
-when
-	Item Synchro received command OFF
-then
-end
-*/
 
 
 

@@ -117,29 +117,6 @@ then
 	//tho sending the command as below works
 	//LivingRoomLamps.sendCommand(75)
 end
-/*
-rule "sync living room lamps2"
-when
-	Item LivingRoomLamps changed
-then
-	Living_Room_Switch.sendCommand(LivingRoomLamps.state as DecimalType)
-end
-*/
-/*
-rule "Living room lamps"
-when
-    Item Living_Room_Lamps received update
-then
-	var x = Living_Room_Lamps.state as DecimalType
-    Living_Room_Lamp_Left.sendCommand(x)
-    Living_Room_Lamp_Right.sendCommand(x)
-	if(Living_Room_Lamps.state > 0){
-	  logInfo("test", "state is not 0")
-	  //logInfo("test", x)
-	}
-    //logError("testing", Landscape_Light.state)
-end
-*/
 
 rule "pool heater notify"
 when
@@ -189,36 +166,6 @@ then
         TVRoomAccent.sendCommand(OFF)
 	Bedtime.sendCommand(ON)
 end
-
-/*
-rule "Basement Foyer Slave on"
-when
-	Item Basement_Foyer_Slave changed to ON
-then
-	BasementStairsTop.sendCommand(ON)
-end
-
-rule "Basement Foyer Slave off"
-when
-        Item Basement_Foyer_Slave changed to OFF
-then
-        BasementStairsTop.sendCommand(OFF)
-end
-
-rule "main floor hallway slave on"
-when
-	Item Main_Hallway_Slave changed to 100
-then
-	MainFloorHallway.sendCommand(ON)
-end
-
-rule "main floor hallway slave off"
-when
-        Item Main_Hallway_Slave changed to 0
-then
-        MainFloorHallway.sendCommand(OFF)
-end
-*/
 
 rule "Basement Stairs Command Button"
 when
