@@ -1,0 +1,13 @@
+// Switch Kitchen_Light "Kitchen Light" {channel="mqtt:mybroker:topic:mything:lamp" }
+
+//Switch Kitchen_Light "Pool Light" {channel="mqtt:topic:pool:poollight" }
+
+//mqtt:broker:bc6c747f
+
+/*
+Number  Attic_Temperature       "Temperature [%.1f °C]"     <temperature>   (gStore10, gAT)                                                     { channel = "mqtt:topic:AtticClimate:temperature" }
+Number  Attic_Humidity          "Humidity [%.0f %%]"        <humidity>      (gStore10, gAT)                                                     { channel = "mqtt:topic:AtticClimate:humidity" }
+Switch Attic_Lamp "lamp" {channel="mqtt:topic:AtticClimate:atticlamp"}
+*/
+
+Switch Pool_Request_Status {channel="mqtt:topic:pool:requeststatus"}

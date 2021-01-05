@@ -1,4 +1,5 @@
 var Timer laundryTimer = null
+var Timer freezerTimer = null
 
 rule "set timer for laundry room"
 when
@@ -23,6 +24,9 @@ then
 		if(Laundry_Room_Hallway.state > 0){
 			Laundry_Room_Hallway.sendCommand(OFF)
 		}
+		if(Laundry_Room_Freezer.state > 0){
+			Laundry_Room_Freezer.sendCommand(OFF)
+		}
         ]
 end
 
@@ -33,3 +37,33 @@ when
 then
 	laundryTimer?.cancel()
 end
+
+rule "set timer for freezer room"
+when
+    Item Laundry_Room_Freezer changed from 0
+then
+        if(DebugSwitch.state == ON){
+        sendPushoverMessage(pushoverBuilder("Freezer room timer started"))
+        }
+        logInfo("FreezerRoomTimer", "Starting timer")
+        freezerTimer?.cancel()
+    freezerTimer = createTimer(now.plusMinutes(5)) [|
+                logInfo("FreezerRoomTimer", "Freezer Room timer expired")
+                if(DebugSwitch.state == ON){
+                        sendPushoverMessage(pushoverBuilder("freezer room timer expired"))
+                }
+                freezerTimer.cancel()
+                freezerTimer = null
+                if(Laundry_Room_Freezer.state > 0){
+                        Laundry_Room_Freezer.sendCommand(OFF)
+                }
+        ]
+end
+
+rule "cancel freezer timer if running"
+when
+        Item Laundry_Room_Freezer changed to 0
+then
+        freezerTimer?.cancel()
+end
+

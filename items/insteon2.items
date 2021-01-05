@@ -1,3 +1,5 @@
+//Switch RemoteA "Remote A" {insteonplm="26.33.CD:F00.00.20#buttonH"}
+
 Dimmer Bookshelf "Bookshelf Lights" <light> (Upstairs) ["Lighting"] {insteonplm="2B.B7.96:F00.00.01#dimmer"}
 
 Switch Landscape_Light "Landscape Lights" <light> (Outside) ["Lighting"] {insteonplm="2B.2A.B6:F00.00.02#switch"}
@@ -5,17 +7,23 @@ Switch Landscape_Light "Landscape Lights" <light> (Outside) ["Lighting"] {insteo
 Dimmer Master_Mike "Mike Night Table" <light> (MasterBedroom) ["Lighting"] {insteonplm="24.0E.48:0x000068#dimmer"}
 Dimmer Master_Diane "Diane Night Table" <light> (MasterBedroom) ["Lighting"] {insteonplm="24.0F.3C:0x000068#dimmer"}
 
-Switch Pool_Light "Pool Light" <light> (Outside) ["Lighting"] {mqtt="<[broker:kolcun/outdoor/pool/light/status:command:MAP(onoff.map)]", insteonplm="41.8D.81:0x000039#topoutlet"}
+//Switch Pool_Light "Pool Light" <light> (Outside) ["Lighting"] {mqtt="<[broker:kolcun/outdoor/pool/light/status:command:MAP(onoff.map)]", insteonplm="41.8D.81:0x000039#topoutlet"}
+Switch Pool_Light "Pool Light" <light> (Outside) ["Lighting"] {insteonplm="41.8D.81:0x000039#topoutlet", channel="mqtt:topic:pool:poollight"}
+
+
+
 Switch Pool_SWG "Pool SWG" (Outside) {insteonplm="41.8D.81:0x000039#bottomoutlet"}
-Switch Pool_Heater "Pool Heater" <fire> (Outside) {insteonplm="32.81.93:F00.00.02#switch"}
+//Disabled - using Zwave one now
+//Switch Pool_Heater "Pool Heater" <fire> (Outside) {insteonplm="32.81.93:F00.00.02#switch", channel="mqtt:topic:pool:poolheater"}
 Switch Pool_Heater_Control_Panel "Control Panel Pool Heater" <fire> {mqtt="<[broker:kolcun/outdoor/pool/heater/status:command:MAP(onoff.map)]"}
 
 Dimmer Powder_Room "Powder Room" <light> (PowderRoom) ["Lighting"] {insteonplm="3C.E2.D8:F00.00.01#dimmer"}
 Dimmer Powder_Room_Sconce "Power Room Sconce" <light> (PowderRoom) ["Lighting"] {insteonplm="3C.F9.83:F00.00.01#dimmer"}
 
-Dimmer BasementRight "Basement Right" <light> (BasementRoom) {insteonplm="24.9C.9F:F00.00.01#dimmer"}
-Dimmer BasementMiddle "Basement Middle" <light> (BasementRoom) {insteonplm="24.72.38:F00.00.01#dimmer"}
-Dimmer BasementLeft "Basement Left" <light> (BasementRoom)  {insteonplm="24.09.E8:F00.00.01#dimmer"}
+Dimmer SarahBedroom "Sarah's Bedroom" <light> ["Lighting"] {insteonplm="24.9C.9F:F00.00.01#dimmer"}
+Dimmer LauraBedroom "Laura's Bedroom" <light> ["Lighting"] {insteonplm="24.72.38:F00.00.01#dimmer"}
+
+Dimmer Office "Office" <light> {insteonplm="24.09.E8:F00.00.01#dimmer"} //two wire device - no neutral in box
 
 Dimmer Laundry_Room_Hallway "Laundry Room Hallway" <light> (LaundryRoom) ["Lighting"] {insteonplm="3C.E1.94:F00.00.01#dimmer"}
 Switch Laundry_Room "Laundry Room" <light> (LaundryRoom) ["Lighting"] {insteonplm="28.79.86:F00.00.02#switch"}
@@ -46,14 +54,14 @@ Switch frontdoorH   "front door keypad button H"   {insteonplm="25.6A.AE:F00.00.
 
 
 //LOAD switch - in hallway
-Dimmer Main_Hallway "Ground Floor Hallway" <light> (GroundFloor) {insteonplm="28.F4.FE:F00.00.01#dimmer"}
+//Dimmer Main_Hallway "Ground Floor Hallway" <light> (GroundFloor) {insteonplm="28.F4.FE:F00.00.01#dimmer"}
 //Dummy Switch at front door
-Dimmer Main_Hallway_Slave "Ground Floor Hallway Slave" <light> (GroundFloor) {insteonplm="28.F4.E7:F00.00.01#dimmer"}
+//Dimmer Main_Hallway_Slave "Ground Floor Hallway Slave" <light> (GroundFloor) {insteonplm="28.F4.E7:F00.00.01#dimmer"}
 
-Switch Basement_Foyer "Basement Foyer" <light> (BasementRoom) {insteonplm="28.81.9B:F00.00.02#switch"}
-Switch Basement_Foyer_Fast "Basement Foyer Fast" <light> {insteonplm="28.81.9B:F00.00.02#fastonoff"}
+//Switch Basement_Foyer "Basement Foyer" <light> (BasementRoom) {insteonplm="28.81.9B:F00.00.02#switch"}
+//Switch Basement_Foyer_Fast "Basement Foyer Fast" <light> {insteonplm="28.81.9B:F00.00.02#fastonoff"}
 //bottom of basement stairs
-Switch Basement_Foyer_Slave "Basement Foyer Slave" <light> (BasementRoom) {insteonplm="28.8A.B7:F00.00.02#switch"}
+//Switch Basement_Foyer_Slave "Basement Foyer Slave" <light> (BasementRoom) {insteonplm="28.8A.B7:F00.00.02#switch"}
 
 Dimmer Upstairs_Hallway2 "Upstairs Hallway2" <light> (Upstairs) {insteonplm="2B.B3.39:F00.00.01#dimmer"}
 

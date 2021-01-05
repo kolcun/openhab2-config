@@ -2,9 +2,18 @@ rule "Outside lights - off"
 when
     Time cron "0 0 23 1/1 * ? *" or//11pm
     Time cron "0 59 23 1/1 * ? *" or//11:59pm
-    Time cron "0 0 2 1/1 * ? *"//2am
+    Time cron "0 0 2 1/1 * ? *" or //2am
+    Time cron "0 0 3 1/1 * ? *" //3am
 then
+	if(DebugSwitch.state == ON){
+		sendPushoverMessage(pushoverBuilder("Outside lights running"))
+	}
+	logInfo("OUTSIDELIGHTS", "Cron Trigger")
 	if(Outside_Lights.state == ON){
+		logInfo("OUTSIDELIGHTS", "command sent")
+		if(DebugSwitch.state == ON){
+			sendPushoverMessage(pushoverBuilder("sending off command"))
+		}
 		Outside_Lights.sendCommand(OFF)
 	}
 end
@@ -26,8 +35,8 @@ rule "11:59pm Off"
 when
     Time cron "0 59 23 1/1 * ? *"//11:59pm
 then
-    if(Main_Hallway.state > 0){
-        Main_Hallway.sendCommand(OFF)
+    if(MainFloorHallway.state > 0){
+        MainFloorHallway.sendCommand(OFF)
     }
 end
 
@@ -41,8 +50,8 @@ then
     if(PowderRoomFoyer.state > 0){
         PowderRoomFoyer.sendCommand(OFF)
     }
-    if(Family_Room_Accent.state > 0){
-        Family_Room_Accent.sendCommand(OFF)
+    if(TVRoomAccent.state > 0){
+        TVRoomAccent.sendCommand(OFF)
     }
 end
 
@@ -56,8 +65,8 @@ then
     if(Bookshelf.state > 0){
         Bookshelf.sendCommand(OFF)
     }
-    if(GarageLights.state == ON){
-	GarageLights.sendCommand(OFF)
+    if(GarageLight.state == ON){
+	GarageLight.sendCommand(OFF)
     }
 end
 
@@ -144,28 +153,6 @@ then
 	}
 end
 
-rule "Basement Foyer fast on (laundry)"
-when 
-    Item Basement_Foyer_Fast received command ON
-then
-    if(DebugSwitch.state == ON){
-        sendPushoverMessage(pushoverBuilder("Basement Foyer - fast on"))
-    }
-    Basement_Foyer.postUpdate(ON)
-    LaundryRoom.sendCommand(ON)
-end
-
-rule "Basement Foyer fast off (laundry)"
-when 
-    Item Basement_Foyer_Fast received command OFF
-then
-    if(DebugSwitch.state == ON){
-        sendPushoverMessage(pushoverBuilder("Basement Foyer - fast off"))
-    }
-    Basement_Foyer.postUpdate(OFF)
-    LaundryRoom.sendCommand(OFF)
-end
-
 rule "TV Room all on"
 when
 	Item TVRoomScene changed to 1.3 //top 2 clicks
@@ -173,6 +160,15 @@ then
 	TVRoom.sendCommand(7)
 	TVRoomFireplace.sendCommand(7)
 	TVRoomAccent.sendCommand(7)
+end
+
+rule "TV Room full bright"
+when 
+	Item TVRoomScene changed to 1.4 //top 3 clicks
+then
+	TVRoom.sendCommand(100)
+	TVRoomFireplace.sendCommand(100)
+	TVRoomAccent.sendCommand(100)
 end
 
 rule "TV Room all off"
@@ -192,4 +188,70 @@ then
         TVRoomFireplace.sendCommand(OFF)
         TVRoomAccent.sendCommand(OFF)
 	Bedtime.sendCommand(ON)
+end
+
+/*
+rule "Basement Foyer Slave on"
+when
+	Item Basement_Foyer_Slave changed to ON
+then
+	BasementStairsTop.sendCommand(ON)
+end
+
+rule "Basement Foyer Slave off"
+when
+        Item Basement_Foyer_Slave changed to OFF
+then
+        BasementStairsTop.sendCommand(OFF)
+end
+
+rule "main floor hallway slave on"
+when
+	Item Main_Hallway_Slave changed to 100
+then
+	MainFloorHallway.sendCommand(ON)
+end
+
+rule "main floor hallway slave off"
+when
+        Item Main_Hallway_Slave changed to 0
+then
+        MainFloorHallway.sendCommand(OFF)
+end
+*/
+
+rule "Basement Stairs Command Button"
+when
+	Item BasementStairsScene changed to 3.0 //Command buton
+then
+	if(DebugSwitch.state == ON){
+		sendPushoverMessage(pushoverBuilder("Basement Stairs Command Button Pushed"))
+	}
+	BasementStairsTop.sendCommand(OFF)
+	LaundryRoom.sendCommand(OFF)
+	
+end	
+
+rule "Basement Stairs 2x down"
+when
+        Item BasementStairsScene changed to 1.3
+then
+        if(DebugSwitch.state == ON){
+                sendPushoverMessage(pushoverBuilder("Basement Stairs Command Button Pushed"))
+        }
+        BasementStairsTop.sendCommand(OFF)
+        LaundryRoom.sendCommand(OFF)
+
+end
+
+rule "Basement Stairs 2x up"
+when
+        Item BasementStairsScene changed to 2.3
+then
+        if(DebugSwitch.state == ON){
+                sendPushoverMessage(pushoverBuilder("Basement Stairs Command Button Pushed"))
+        }
+        BasementStairsTop.sendCommand(ON)
+        LaundryRoom.sendCommand(ON)
+
 end

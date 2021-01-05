@@ -1,0 +1,15 @@
+rule "Pool Status Rule"
+when
+	Item Pool_Request_Status changed to ON
+then
+       //sendPushoverMessage(pushoverBuilder("Pool Status Requested"))
+       Pool_Request_Status.sendCommand(OFF)
+
+//	val mqttActions=getActions("mqtt","mqtt:broker:bc6c747f")
+  //    mqttActions.publishMQTT("kolcun/outdoor/pool/status/light",Pool_Light.state.toString)
+    //  mqttActions.publishMQTT("kolcun/outdoor/pool/status/heater", Pool_Heater.state.toString)
+     // mqttActions.publishMQTT("kolcun/outdoor/pool/status/pump", Pool_Pump.state.toString)
+
+end
+
+

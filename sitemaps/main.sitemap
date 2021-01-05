@@ -1,4 +1,5 @@
 sitemap main label="My home automation" {
+
 	Frame label="Groups"{
 		Switch item=Upstairs
 		Group item=Upstairs
@@ -22,6 +23,33 @@ sitemap main label="My home automation" {
 		Switch item=DianeGarageVirtual label="Diane Garage"
 		
 	}
+	Frame label="Pergola"{
+		//Switch item=PergolaResetMeter
+		Switch item=PergolaLedPower
+		Switch item=PergolaAmpSonosPower
+		//Default item=PergolaEnergyW
+		//Default item=PergolaEnergyA
+		//Default item=PergolaEnergyKwh
+		//Default item=PergolaLedEnergyW
+		//Default item=PergolaLedEnergyKwh
+		//Default item=PergolaLedEnergyA
+		//Default item=PergolaAmpSonosEnergyW
+		//Default item=PergolaAmpSonosEnergyKwh
+		//Default item=PergolaAmpSonosEnergyA
+		//Text item=PergolaVolts
+
+	}/*
+	Frame label="LED Test"{
+		Switch item=LEDStrip_Power
+		Selection item=LEDStrip_Mode label="Mode" mappings=[0="RGB", 1="White"]
+	//	Switch item=LEDStrip_Mode  mappings=[0="RGB", 25="White"]
+		//Selection item=LEDStrip_FX mappings=[1="BPM",2="Noise",3="Fire",4="Rainbow",5="Twinkle",6="Glitter",7="Solid",8="Sinelon",9="Juggle",10="Confetti",11="Dots",12="Lightning",13="Candy Cane",14="Cyclon Rainbow",15="Ripple",16="Christmas Alternate",17="Police All",18="Police One",19="Random Stars",20="Sine Hue",21="Christmas",22="St Patty",23="Valentine",24="Turkey Day",25="Thanksgiving",26="USA",27="Independence",28="Halloween",29="Go Lions",30="Hail",31="Touchdown",32="Punkin",33="Lovey Day",34="Holly Jolly",35="Full Hue",36="Breathe",37="Hue Breathe"]
+		Colorpicker item=LEDStrip_Color icon="colorwheel"
+		//Slider item=LEDStrip_Speed 
+		Slider item=LEDStrip_Brightness minValue=0 maxValue=255
+		Default item=PergolaTemperatureC
+		Default item=PergolaTemperatureF
+	}*/
 	/*Frame label="Master Bedroom Keypad"{
 		Slider item=Master_Bedroom
 		Default item=MasterBedroomA
@@ -39,12 +67,7 @@ sitemap main label="My home automation" {
 		Default item=UpstairsHallwayD
 	}
 */
-/*	Frame label="Date" {
-		Text item=CurrentDate
-		Switch item=Presence_Mobile_Mike
-	}
-*/
-
+/*
 	Frame label="Pool Heating"{// visibility=[Pool_Pump==ON]{
 		Switch item=Pool_Heat_Timer mappings=[off="Off", 1h="1 Hour", 2h="2 Hours", 4h="4 Hours"]
 	}
@@ -52,16 +75,21 @@ sitemap main label="My home automation" {
 	Frame label="Pool"{// visibility=[Pool_Pump==ON]{
 		Switch item=Pool_Pump label="Pump Speed" mappings=[0="Off", 25="Skim", 50="Heat", 100="Max"]
 		Switch item=Pool_Heater
+		//Switch item=PoolHeater
 		Switch item=Pool_Light
 		Switch item=Pool_SWG
 		Switch item=Pool_Heater_Control_Panel
+		Default item=Pool_Temperature_C
+		Default item=Pool_Temperature_F
+		Default item=Pool_Request_Status
 	}
-	
+*/	
 	Frame label="Outside"{
 		Switch item=Outside_Lights
 		//Switch item=Outside_Lights_Fast
 		Switch item=Landscape_Light
 		Switch item=Awning
+		Switch item=OutdoorPortable
 	}
 
 	Frame label="Main Floor"{
@@ -78,23 +106,26 @@ sitemap main label="My home automation" {
                 //Slider item=Family_Room_Fireplace
                 //Slider item=Family_Room_Accent
                 Slider item=Living_Room_Accent
-                Slider item=Main_Hallway
+		Slider item=MainFloorHallway
 		//Slider item=Living_Room_Switch
 		//Slider item=Living_Room_Lamp_Left
 		//Slider item=Living_Room_Lamp_Right
 		Slider item=LivingRoomLamps
+		Slider item=DiningRoomMain
+		Slider item=DiningRoomCentre
         }
-	Frame label="Front Door Keypad"{
+
+/*	Frame label="Front Door Keypad"{
 		Default item=Outside_Lights
-/*		Default item=frontdoorB
+		Default item=frontdoorB
 		Default item=frontdoorC
 		Default item=frontdoorD
 		Default item=frontdoorE
 		Default item=frontdoorF
 		Default item=frontdoorG
 		Default item=frontdoorH
-*/	}
-
+	}
+*/
 	Frame label="Upstairs"{
 		Slider item=Bookshelf
 		Switch item=Master_Fan mappings=[ 0="Off",  1="Slow", 2="Med", 3="Fast"] //mappings=[0="Off", 40="Slow", 80="Med", 100="Fast"]
@@ -102,21 +133,25 @@ sitemap main label="My home automation" {
 		Slider item=Master_Mike
 		Slider item=Master_Diane
 		Slider item=Upstairs_Hallway
+		Slider item=SarahBedroom
+		Slider item=LauraBedroom
 			
 	}
         Frame label="Basement"{
-		Switch label="Bike Fan" item=OutdoorPortable
+		Switch item=BasementStairsTop
+		//Default item=BasementStairsKwh
+		//Text item=BasementStairsScene
                 Slider item=Laundry_Room_Hallway
                 Switch item=Laundry_Room
 		Switch item=Laundry_Room_Freezer
-                Switch item=Basement_Foyer
-		Switch item=Basement_Foyer_Fast
-		Switch item=BasementLeft
-		Switch item=BasementRight
-		Switch item=BasementMiddle
+                //ddSwitch item=Basement_Foyer
+		//Switch item=Basement_Foyer_Fast
+		//Switch item=BasementLeft
+		//Switch item=BasementRight
+		//Switch item=BasementMiddle
 		Switch item=Basement
         }
-	
+/*	
 	Frame label="Washing Machine"{
 		Switch item=WashingMachine
 		Text item=WashingMachineEnergyW
@@ -124,6 +159,7 @@ sitemap main label="My home automation" {
 		Text item=WashingMachineEnergyA
 		Switch item=WashingMachineEnergyReset
 	}
+*/
 
 /*	Frame label="Weather"{
 		Text item=Conditions

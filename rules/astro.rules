@@ -70,7 +70,7 @@ then
     Outside_Lights.sendCommand(ON)
     TVRoomAccent.sendCommand(7)
     Living_Room_Accent.sendCommand(20)
-    Main_Hallway.sendCommand(20)
+    MainFloorHallway.sendCommand(20)
     Bookshelf.sendCommand(20)
     Upstairs_Hallway.sendCommand(20)
 end

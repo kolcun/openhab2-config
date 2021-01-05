@@ -1,0 +1,29 @@
+/*Thing mqtt:topic:AtticClimate   "Attic Climate" (mqtt:broker:home) {
+Channels:
+    Type number : temperature   "Temperature"       [ stateTopic="homie/attic/climate/temperature"]
+    Type number : humidity      "Humidity"          [ stateTopic="homie/attic/climate/humidity"]
+    Type switch : atticlamp "attic lamp" [stateTopic="homie/attic/climate/lamp", commandTopic="homie/attic/climate/lamp/command"]
+}
+*/	
+
+
+
+Thing mqtt:topic:pool "Pool MQTT" (mqtt:broker:bc6c747f){
+Channels:
+	Type switch : poollight "Pool Light" [ stateTopic="kolcun/outdoor/pool/light", commandTopic="kolcun/outdoor/pool/light", on="ON", off="OFF", postCommand="true" ]
+	Type switch : poolheater "Pool Heater" [ stateTopic="kolcun/outdoor/pool/heater", commandTopic="kolcun/outdoor/pool/heater", on="ON", off="OFF", postCommands="true" ]
+	Type number : poolTemperatureC   "Pool Temperature C"       [ stateTopic="kolcun/outdoor/pool/temperature/state", transformationPattern="JSONPATH:$.temperature.C"]
+	Type number : poolTemperatureF   "Pool Temperature F"       [ stateTopic="kolcun/outdoor/pool/temperature/state", transformationPattern="JSONPATH:$.temperature.F"]
+	Type switch : requeststatus "Request Status over MQTT" [stateTopic="kolcun/outdoor/pool/requeststatus", postCommands="true"]
+}
+
+
+Thing mqtt:topic:pergola "Pergola MQTT" (mqtt:broker:bc6c747f){
+Channels:
+	Type switch : ledPower "Power" [ stateTopic="kolcun/outdoor/pergola/led/power/state", commandTopic="kolcun/outdoor/pergola/led/power/set", on="1", off="0" ]
+	Type number : ledMode "Mode" [stateTopic="kolcun/outdoor/pergola/led/mode/state", commandTopic="kolcun/outdoor/pergola/led/mode/set" ] 
+	Type colorRGB : ledColour "Colour" [ stateTopic="kolcun/outdoor/pergola/led/colour/state", commandTopic="kolcun/outdoor/pergola/led/colour/set"]
+	Type number : ledBrightness "Brightness" [ stateTopic="kolcun/outdoor/pergola/led/brightness/state", commandTopic="kolcun/outdoor/pergola/led/brightness/set", min="0", max="255"]
+	Type number : pergolaTemperatureC   "Pergola Temperature C"       [ stateTopic="kolcun/outdoor/pergola/led/temperature/state", transformationPattern="JSONPATH:$.temperature.C"]
+        Type number : pergolaTemperatureF   "Pergola Temperature F"       [ stateTopic="kolcun/outdoor/pergola/led/temperature/state", transformationPattern="JSONPATH:$.temperature.F"]
+}

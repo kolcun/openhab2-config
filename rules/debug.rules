@@ -3,6 +3,7 @@ when
         Item DebugSwitch changed from OFF to ON
 then
 	sendPushoverMessage(pushoverBuilder("Debug enabled"))
+	Echo_Office_TTS.sendCommand("Debug mode is enabled")
 end
 
 rule "DebugDisabled"
@@ -10,4 +11,5 @@ when
 	Item DebugSwitch changed from ON to OFF
 then
 	sendPushoverMessage(pushoverBuilder("Debug disabled"))
+	Echo_Office_TTS.sendCommand("Debug mode is disabled")
 end

@@ -9,7 +9,7 @@ then
     SchoolMorning.postUpdate(OFF)
     PowderRoomFoyer.sendCommand(50)
     Upstairs_Hallway.sendCommand(20)
-    Main_Hallway.sendCommand(40)
+    MainFloorHallway.sendCommand(40)
     Master_Light.sendCommand(40)    
 end
 
@@ -26,7 +26,7 @@ then
     GroundFloor.sendCommand(OFF)
     BasementRoom.sendCommand(OFF)
     Upstairs.sendCommand(OFF)
-    Main_Hallway.sendCommand(OFF)
+    MainFloorHallway.sendCommand(OFF)
     GarageLight.sendCommand(OFF)
 end
 
@@ -46,6 +46,7 @@ then
     Upstairs_Hallway.sendCommand(20)
 end
 
+/*
 rule "Basement On"
 when 
 	Item Basement received command ON
@@ -54,16 +55,16 @@ then
 	BasementRight.sendCommand(ON)
 	BasementLeft.sendCommand(ON)
 end
-
+*/
 rule "Basement Off"
 when
 	Item Basement received command OFF
 then
-	BasementMiddle.sendCommand(OFF)
-	BasementRight.sendCommand(OFF)
-	BasementLeft.sendCommand(OFF)
+	//BasementMiddle.sendCommand(OFF)
+	//BasementRight.sendCommand(OFF)
+	//BasementLeft.sendCommand(OFF)
 	LaundryRoom.sendCommand(OFF)
-	Basement_Foyer.sendCommand(OFF)
+	BasementStairsTop.sendCommand(OFF)
 end
 
 rule "Playroom lights on"
@@ -87,14 +88,14 @@ rule "Hallway lights on"
 when
 	Item MainHallway received command ON
 then
-	Main_Hallway.sendCommand(49)
+	MainFloorHallway.sendCommand(49)
 end
 
 rule "Hallway lights off"
 when
 	Item MainHallway received command OFF
 then
-	Main_Hallway.sendCommand(OFF)
+	MainFloorHallway.sendCommand(OFF)
 end
 
 rule "Synchro on"

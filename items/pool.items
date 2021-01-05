@@ -1,5 +1,6 @@
 Dimmer Pool_Pump "Pool Pump" <pump> ["Lighting"] {channel="mqtt:topic:37a534c9:mqtt0002"}
-
+Number  Pool_Temperature_C "Temperature [%.1f °C]" <temperature> { channel = "mqtt:topic:pool:poolTemperatureC" }
+Number  Pool_Temperature_F "Temperature [%.0f °F]" <temperature> { channel = "mqtt:topic:pool:poolTemperatureF" }
 //Heater Timers
 
 String Pool_Heat_Timer "Pool Heat Timer"

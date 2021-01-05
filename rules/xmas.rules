@@ -1,0 +1,24 @@
+rule "Christmas Lights  - off"
+when
+    Time cron "0 0 2 1/1 * ? *" or
+    Time cron "0 5 2 1/1 * ? *" or
+    Time cron "0 10 2 1/1 * ? *" or
+    Time cron "0 15 2 1/1 * ? *" or
+    Time cron "0 3 3 1/1 * ? *" or
+    Time cron "0 4 4 1/1 * ? *" or
+    Time cron "0 5 5 1/1 * ? *" or
+    Time cron "0 6 6 1/1 * ? *" or
+    Time cron "0 7 7 1/1 * ? *" or
+    Time cron "0 8 8 1/1 * ? *"
+then
+	//logInfo("ChristmasLights", "Cron Trigger - OFF")
+        OutdoorPortable.sendCommand(OFF)
+end
+
+rule "Christmas Lights - on"
+when
+    Time cron "0 0 17 1/1 * ? *"//5pm
+then
+	logInfo("ChristmasLights", "Cron Trigger - ON")
+        OutdoorPortable.sendCommand(ON)
+end

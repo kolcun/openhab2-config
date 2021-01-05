@@ -1,4 +1,7 @@
-String Echo_Mike_TTS "Mike Echo TTS" {channel="amazonechocontrol:echo:07760b65:G090LF1174320B73:textToSpeech"}
-String Echo_Kitchen_TTS "Kitchen Echo TTS" {channel="amazonechocontrol:echo:07760b65:G090LF1174320CF1:textToSpeech"}
+String Echo_Playroom_TTS "Playroom Echo TTS" {channel="amazonechocontrol:echo:07760b65:G090LF1174320CF1:textToSpeech"}
+String Echo_Kitchen_TTS "Kitchen Echo TTS" {channel="amazonechocontrol:echo:07760b65:G090U5098457096B:textToSpeech"}
+String Echo_Office_TTS "Office Echo TTS" {channel="amazonechocontrol:echo:07760b65:G090LF1174320B73:textToSpeech"}
+String Echo_Upstairs_TTS "Upstairs Echo TTS" {channel="amazonechocontrol:echo:07760b65:G090LF1174320DVQ:textToSpeech"}
+String Echo_Garage_TTS "Garage Echo TTS" {channel="amazonechocontrol:echo:07760b65:G090VC0984661D76:textToSpeech"}
 
 

@@ -1,4 +1,4 @@
-Switch OutdoorPortable "Garland" ["Switchable"] {channel="zwave:device:a2cab7b4:node2:switch_binary"}
+Switch OutdoorPortable "Christmas Lights" ["Switchable"] {channel="zwave:device:a2cab7b4:node2:switch_binary"}
 
 Number FrontDoorSensorBatteryLevel "Front door battery [%d%%]" (Batteries) {channel="zwave:device:a2cab7b4:node5:battery-level"}
 Contact FrontDoorSensor "Front door is [%s]" (Sensors) {channel="zwave:device:a2cab7b4:node5:sensor_door"}
@@ -35,7 +35,6 @@ e.g.
 2.0 = Bottom, 1 Click
 */
 
-
 Number HSScene "HS Scene [%.1f]" {channel="zwave:device:a2cab7b4:node6:scene_number"}
 Number HSMode "HS Mode" {channel="zwave:device:a2cab7b4:node6:config_decimal_param13"}
 Number HSNormalLedColor "HS Normal LED Color" {channel="zwave:device:a2cab7b4:node6:config_decimal_param14"}
@@ -58,4 +57,55 @@ Number WashingMachineEnergyA "Washing Machine Current [%.2f A]" {channel="zwave:
 //Number WashingMachineEnergyV "Washing Machine Voltage [%.2f V]" {channel="zwave:device:a2cab7b4:node10:meter_voltage"}
 Switch WashingMachineEnergyReset "Washing Machine Meter Reset" {channel="zwave:device:a2cab7b4:node10:meter_reset"}
 //Color WashingMachineColor "Washing Machine Color" (Basement) {channel="zwave:device:a2cab7b4:node10:color_color"}
+
+//Switch PergolaDouble "both switches" {channel="zwave:device:a2cab7b4:node11:switch_binary"}
+Number PergolaVolts "volts" {channel="zwave:device:a2cab7b4:node11:meter_voltage"}
+Switch PergolaResetMeter {channel="zwave:device:a2cab7b4:node11:meter_reset"}
+Switch PergolaLedPower "LED and Motor Power" {channel="zwave:device:a2cab7b4:node11:switch_binary1"}
+Number PergolaEnergyW "Total Watts" {channel="zwave:device:a2cab7b4:node11:meter_watts"}
+Number PergolaEnergyA "Total Amps" {channel="zwave:device:a2cab7b4:node11:meter_current"}
+Number PergolaEnergyKwh "Total Kwh" {channel="zwave:device:a2cab7b4:node11:meter_kwh"}
+Number PergolaLedEnergyW "LED and Motor Watts" {channel="zwave:device:a2cab7b4:node11:meter_watts1"}
+Number PergolaLedEnergyKwh "LED and Motor Kwh" {channel="zwave:device:a2cab7b4:node11:meter_kwh1"}
+Number PergolaLedEnergyA "LED and Motor Amps" {channel="zwave:device:a2cab7b4:node11:meter_current1"}
+Switch PergolaAmpSonosPower "Sonos and Amp Power" {channel="zwave:device:a2cab7b4:node11:switch_binary2"}
+Number PergolaAmpSonosEnergyW "Sonos and Amp Watts" {channel="zwave:device:a2cab7b4:node11:meter_watts2"}
+Number PergolaAmpSonosEnergyKwh "Sonos and Amp Kwh" {channel="zwave:device:a2cab7b4:node11:meter_kwh2"}
+Number PergolaAmpSonosEnergyA "Sonos and Amp Amps" {channel="zwave:device:a2cab7b4:node11:meter_current2"}
+
+Switch Pool_Heater "Pool Heater" {channel="zwave:device:a2cab7b4:node12:switch_binary1"}
+
+
+/*
+    |--------------|-----|
+    | Button Press |State|
+    |--------------|-----|
+    | 1 x Up       | 2.0 |
+    | 1 x Down     | 1.0 |
+    | 2 x Up       | 2.3 |
+    | 2 x Down     | 1.3 |
+    | 3 x Up       | 2.4 |
+    | 3 x Down     | 1.4 |
+    | 4 x Up       | 2.5 |
+    | 4 x Down     | 1.5 |
+    | 5 x Up       | 2.6 |
+    | 5 x Down     | 1.6 |
+    | 1 x Config   | 3.0 |
+    | Hold Up      | 2.2 |
+    | Release Up   | 2.1 |
+    | Hold Down    | 1.2 |
+    | Release Down | 1.1 |
+    |--------------|-----|
+*/
+Switch BasementStairsTop "Basement Stairs" {channel="zwave:device:a2cab7b4:node13:switch_binary"}
+Number BasementStairsKwh "Basement Stairs kWh" {channel="zwave:device:a2cab7b4:node13:meter_kwh"}
+Number BasementStairsScene "Basement Stairs Scene [%.1f]" {channel="zwave:device:a2cab7b4:node13:scene_number"}
+//Dimmer BasementFoyer // not really needed in OH
+
+Dimmer MainFloorHallway "Main Floor Hallway" {channel="zwave:device:a2cab7b4:node14:switch_dimmer"}
+//Dimmer MainFloorHallwayFrontDoorEnd // not really needed in OH
+
+Dimmer DiningRoomMain "Dining Room" {channel="zwave:device:a2cab7b4:node16:switch_dimmer"}
+Dimmer DiningRoomCentre "Dining Room Centre" {channel="zwave:device:a2cab7b4:node15:switch_dimmer"}
+
 

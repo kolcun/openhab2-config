@@ -1,0 +1,12 @@
+String LEDStrip "LED Strip String"
+Switch LEDStrip_Power "LED Strip Power" { channel = "mqtt:topic:pergola:ledPower" }  
+Number LEDStrip_FX "LED Strip Fx" 
+Color LEDStrip_Color "LED Strip Color"	<rgb>	{channel = "mqtt:topic:pergola:ledColour" }
+Number LEDStrip_Speed "LED Strip Speed [%.0f]"		
+Number LEDStrip_Brightness "LED Strip Brightness" { channel = "mqtt:topic:pergola:ledBrightness" }
+Number LEDStrip_Mode "LED Strip Mode" { channel = "mqtt:topic:pergola:ledMode" }
+
+Number  PergolaTemperatureC "Temperature [%.1f °C]" <temperature> { channel = "mqtt:topic:pergola:pergolaTemperatureC" }
+Number  PergolaTemperatureF "Temperature [%.0f °F]" <temperature> { channel = "mqtt:topic:pergola:pergolaTemperatureF" }
+
+//Number  Pool_Temperature "Temperature [%.1f °C]" <temperature> { channel = "mqtt:topic:pool:pooltemperature" }
