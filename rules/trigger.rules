@@ -44,15 +44,17 @@ rule "11pm Off"
 when
     Time cron "0 0 23 1/1 * ? *"//11pm
 then
-	if(Living_Room_Accent.state > 0){
-		Living_Room_Accent.sendCommand(OFF)
-	}
+    if(Living_Room_Accent.state > 0){
+	Living_Room_Accent.sendCommand(OFF)
+    }
     if(PowderRoomFoyer.state > 0){
         PowderRoomFoyer.sendCommand(OFF)
     }
     if(TVRoomAccent.state > 0){
         TVRoomAccent.sendCommand(OFF)
     }
+    DiningRoomMain.sendCommand(OFF)
+    DiningRoomCentre.sendCommand(OFF)
 end
 
 rule "10:30pm off"

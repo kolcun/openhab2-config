@@ -73,4 +73,5 @@ then
     MainFloorHallway.sendCommand(40)
     Bookshelf.sendCommand(20)
     Upstairs_Hallway.sendCommand(20)
+    DiningRoom.sendCommand(ON)
 end

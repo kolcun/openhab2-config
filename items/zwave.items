@@ -97,15 +97,15 @@ Switch Pool_Heater "Pool Heater" {channel="zwave:device:a2cab7b4:node12:switch_b
     | Release Down | 1.1 |
     |--------------|-----|
 */
-Switch BasementStairsTop "Basement Stairs" {channel="zwave:device:a2cab7b4:node13:switch_binary"}
+Switch BasementStairsTop "Basement Stairs" (BasementRoom) ["Lighting"] {channel="zwave:device:a2cab7b4:node13:switch_binary"}
 Number BasementStairsKwh "Basement Stairs kWh" {channel="zwave:device:a2cab7b4:node13:meter_kwh"}
 Number BasementStairsScene "Basement Stairs Scene [%.1f]" {channel="zwave:device:a2cab7b4:node13:scene_number"}
 //Dimmer BasementFoyer // not really needed in OH
 
-Dimmer MainFloorHallway "Main Floor Hallway" {channel="zwave:device:a2cab7b4:node14:switch_dimmer"}
+Dimmer MainFloorHallway "Main Floor Hallway" (GroundFloor) ["Lighting"] {channel="zwave:device:a2cab7b4:node14:switch_dimmer"}
 //Dimmer MainFloorHallwayFrontDoorEnd // not really needed in OH
 
-Dimmer DiningRoomMain "Dining Room" {channel="zwave:device:a2cab7b4:node16:switch_dimmer"}
-Dimmer DiningRoomCentre "Dining Room Centre" {channel="zwave:device:a2cab7b4:node15:switch_dimmer"}
+Dimmer DiningRoomMain "Dining Room"  (DiningRoom) ["Lighting"] {channel="zwave:device:a2cab7b4:node16:switch_dimmer"}
+Dimmer DiningRoomCentre "Dining Room Centre" (DiningRoom) {channel="zwave:device:a2cab7b4:node15:switch_dimmer"}
 
 

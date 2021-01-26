@@ -23,7 +23,7 @@ Dimmer Powder_Room_Sconce "Power Room Sconce" <light> (PowderRoom) ["Lighting"] 
 Dimmer SarahBedroom "Sarah's Bedroom" <light> ["Lighting"] {insteonplm="24.9C.9F:F00.00.01#dimmer"}
 Dimmer LauraBedroom "Laura's Bedroom" <light> ["Lighting"] {insteonplm="24.72.38:F00.00.01#dimmer"}
 
-Dimmer Office "Office" <light> {insteonplm="24.09.E8:F00.00.01#dimmer"} //two wire device - no neutral in box
+Dimmer Office "Office" <light> ["Lighting"] {insteonplm="24.09.E8:F00.00.01#dimmer"} //two wire device - no neutral in box
 
 Dimmer Laundry_Room_Hallway "Laundry Room Hallway" <light> (LaundryRoom) ["Lighting"] {insteonplm="3C.E1.94:F00.00.01#dimmer"}
 Switch Laundry_Room "Laundry Room" <light> (LaundryRoom) ["Lighting"] {insteonplm="28.79.86:F00.00.02#switch"}
@@ -66,7 +66,7 @@ Switch frontdoorH   "front door keypad button H"   {insteonplm="25.6A.AE:F00.00.
 Dimmer Upstairs_Hallway2 "Upstairs Hallway2" <light> (Upstairs) {insteonplm="2B.B3.39:F00.00.01#dimmer"}
 
 //keypad - 6 button - dimmer
-Dimmer Upstairs_Hallway "Upstairs Hallway" <light> (Upstairs) {insteonplm="2B.AC.C3:F00.00.15#loaddimmer"}
+Dimmer Upstairs_Hallway "Upstairs Hallway" <light> (Upstairs) ["Lighting"] {insteonplm="2B.AC.C3:F00.00.15#loaddimmer"}
 // ADD REST OF KEYPAD
 Switch UpstairsHallwayA "Upstairs Hallway A" {insteonplm="2B.AC.C3:F00.00.15#keypadbuttonA,group=0xe1"}
 Switch UpstairsHallwayB "Upstairs Hallway B" {insteonplm="2B.AC.C3:F00.00.15#keypadbuttonB,group=0xe2"}
